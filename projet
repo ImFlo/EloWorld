@@ -1,0 +1,55 @@
+I-	Réseau social:	#servlet
+	a)	saisir infos principale	(1)
+		1) 	nom, prenom, ...
+		2)	steamId, riotId, ...
+			i)		trofais inGame
+			ii)		liste d'amis	(synchro avec le site)
+			iii)	liste de jeu
+	b)	jeu joué	(1)
+		1)	niveau dans ce jeu
+	c)	chatte(2)
+		1)	par jeu
+		2)	entre ami
+		3)	par grp d'ami
+	d)	annonce public	(1/2)
+		1)	status
+			i)		txt
+			ii)		img/video
+			iii)	commenter
+		2)	seek team
+		3)	vente
+		4)	mod
+	e)	flux d'actu	(3)
+		1)	MAJ jeu
+		2)	competition
+	f)	mailing (2)
+		a)	notif
+	g)	event	(3)
+		1)	competition
+			i)		lan
+			ii)		online
+			iii)	creation
+		2)	calendrier de raid
+			i)	par	guilde
+			ii)	par jeu/serveur
+	h)	stream/live	(4)
+		1)	par jeu
+		2)	par joueur
+		3)	par competition
+		4)	...
+	i)	find amis
+		1)	chercher des amis
+		2)	synchro avec steam/riot
+
+II-	Matchmaking:	#REST
+	a) systm de elo	(2)
+		1)	recuperer result des parties	(si partie du mm)
+			i)	api du dis jeu (ETRE SUR DE SOI !!!!!!)
+		2)	generer partie equilibré
+			i) 	si soloQ
+			ii) si grp
+		3)	generer elo pour joueur grace aux parties jouées
+	b) afficher resultat de game (2)
+	c) page de tournoi	(1)
+		i)	suivi auto des phases
+		ii)	systeme admin
