@@ -6,8 +6,25 @@ var FORM_LOGIN = "<form>" +
 								"Pas de compte ?<a href=\"./signIn.html\">Cree en un !</a>" +
 								"<a href=\"./lostPasswd.html\">Mot de passe perdu</a>";
 
-var MSG_WELCOME = "<a href=\"./index.html\">Elo World</a>"
+var MSG_WELCOME = "<a href=\"./index.html\">Elo World</a>";
 
 function login(){
 	$("#login").append(FORM_LOGIN);
 }
+
+function verifSyn(str){
+	var len = str.length;
+	for(var x = 0; x < len; x++){
+		if(str.charCodeAt(x) < 33 || str.charCodeAt(125))
+				return false
+	}
+	return true;
+}
+
+function verifChamp(field){
+	if(field.length < 2 || field.length > 16){
+		return false;
+	}
+	return verifSyn(field);
+}
+
