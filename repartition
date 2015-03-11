@@ -35,7 +35,7 @@ joueur{
 	pseudo
 }
 
-possede_un_jeu{
+possede{
 	id_joueur
 	id_jeu
 }
