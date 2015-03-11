@@ -45,6 +45,11 @@ possede_un_trophée{
 	id_trophée
 }
 
+trophée_jeu{
+	id_trophée
+	id_jeu
+}
+
 amis{
 	id_j1
 	id_j2
