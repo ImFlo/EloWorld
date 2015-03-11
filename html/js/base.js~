@@ -1,6 +1,6 @@
 var FORM_LOGIN = "<form>" +
-								 	"<input type=\"text\" value=\"login\" id=\"login\">" +
-									"<input type=\"password\" value=\"password\"id=\"passwd\">" +
+								 	"<input type=\"text\" placeholder=\"login\" id=\"login\">" +
+									"<input type=\"password\" placeholder=\"password\"id=\"passwd\">" +
 									"<input type=\"submit\" value=\"envoyer\" id=\"submit\">" +
 								"</form>" + 
 								"Pas de compte ?<a href=\"./signIn.html\">Cree en un !</a>" +

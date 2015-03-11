@@ -3,7 +3,7 @@ var FORM_LOGIN = "<form>" +
 									"<input type=\"password\" placeholder=\"password\"id=\"passwd\">" +
 									"<input type=\"submit\" value=\"envoyer\" id=\"submit\">" +
 								"</form>" + 
-								"Pas de compte ?<a href=\"./signIn.html\">Cree en un !</a>" +
+								"Pas de compte ? <a href=\"./signIn.html\">Cree en un !</a><br>" +
 								"<a href=\"./lostPasswd.html\">Mot de passe perdu</a>";
 
 var MSG_WELCOME = "<a href=\"./index.html\">Elo World</a>";
