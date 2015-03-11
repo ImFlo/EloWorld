@@ -33,10 +33,40 @@ joueur{
 	riotID
 }
 
+possede_un_jeu{
+	id_joueur
+	id_jeu
+}
+
+possede_un_trophée{
+	id_joueur
+	id_trophée
+}
+
+sont_ami{
+	id_j1
+	id_j2
+}
+
+publie{
+	id_joueur
+	id_publication
+}
+
 Jeux{
 	id
 	appID (ref steam)
 	nom
+}
+
+jeu_est_un{
+	id_jeu
+	id_categorie
+}
+
+publication{
+	id
+	public.
 }
 
 categorie{
