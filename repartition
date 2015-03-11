@@ -25,6 +25,7 @@ BDD
 #-------------------
 
 joueur{
+	id
 	prenom
 	nom
 	mdp
