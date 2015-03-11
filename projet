@@ -1,4 +1,4 @@
-I-		Réseau social:	#servlet
+I-Réseau social:	#servlet
 	a)	saisir infos principale	(1)
 		1) 	nom, prenom, ...
 		2)	steamId, riotId, ...
@@ -41,7 +41,7 @@ I-		Réseau social:	#servlet
 		1)	chercher des amis
 		2)	synchro avec steam/riot
 
-II-		Matchmaking:	#REST
+II- Matchmaking:	#REST
 	a) systm de elo	(2)
 		1)	recuperer result des parties	(si partie du mm)
 			i)	api du dis jeu (ETRE SUR DE SOI !!!!!!)
@@ -53,7 +53,7 @@ II-		Matchmaking:	#REST
 	c) page de tournoi	(1)
 		i)	suivi auto des phases
 		ii)	systeme admin
-III-	Application Mobile
+III- Application Mobile
 	a)	profil
 	b)	publication
 	c)	amis
