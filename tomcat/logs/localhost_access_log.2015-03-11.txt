@@ -132,3 +132,14 @@
 0:0:0:0:0:0:0:1 - - [11/Mar/2015:14:42:38 +0100] "GET /EloWorld/js/jquery.js HTTP/1.1" 200 284184
 0:0:0:0:0:0:0:1 - - [11/Mar/2015:14:42:38 +0100] "GET /EloWorld/js/base.js HTTP/1.1" 200 790
 0:0:0:0:0:0:0:1 - - [11/Mar/2015:14:42:40 +0100] "GET /EloWorld/signIn.html HTTP/1.1" 200 579
+127.0.0.1 - - [11/Mar/2015:14:48:27 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:14:48:27 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:14:48:27 +0100] "GET /manager/text/list HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:14:48:30 +0100] "GET /manager/text/list HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:14:48:33 +0100] "GET /manager/text/list HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:14:48:36 +0100] "GET /manager/text/list HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:14:48:39 +0100] "GET /manager/text/list HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:15:22:56 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:15:22:56 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:15:22:56 +0100] "GET /manager/text/list HTTP/1.1" 404 -
+127.0.0.1 - - [11/Mar/2015:15:22:59 +0100] "GET /manager/text/list HTTP/1.1" 404 -
