@@ -26,13 +26,13 @@ BDD
 
 joueur{
 	id
-	pseudo
 	prenom
 	nom
 	mdp
 	email
 	steamID
 	riotID
+	pseudo
 }
 
 possede_un_jeu{
@@ -45,7 +45,7 @@ possede_un_trophée{
 	id_trophée
 }
 
-sont_ami{
+amis{
 	id_j1
 	id_j2
 }
@@ -69,6 +69,7 @@ jeu_est_un{
 publication{
 	id
 	public.
+	date
 }
 
 categorie{
