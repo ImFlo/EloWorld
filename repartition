@@ -1,0 +1,51 @@
+Camille:
+	-servlet
+	-html/css
+Maxime:
+	-html/css
+	-ihm
+Florian:
+	-bdd
+	-math
+	-html/css
+Florent:
+	...
+Alexis:
+	je fais des *
+
+**************************
+techno
+***************************
+-apache2
+ +-tomcat
+ +-psql
+
+#-------------------
+BDD
+#-------------------
+
+joueur{
+	prenom
+	nom
+	mdp
+	email
+	steamID
+	riotID
+}
+
+Jeux{
+	id
+	appID (ref steam)
+	nom
+}
+
+categorie{
+	id
+	nom
+}
+
+trophée{
+	id
+	nom
+	description
+}
