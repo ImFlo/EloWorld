@@ -72,7 +72,7 @@ jeu_est_un{
 
 publication{
 	id
-	public.
+	texte
 	date
 }
 

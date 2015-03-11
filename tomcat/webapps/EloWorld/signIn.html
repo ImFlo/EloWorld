@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script src="./js/jquery.js">	</script>
+		<script src="./js/base.js"></script>
+		<script>
+			$( document ).ready(function() {
+				login();
+				$("#welcome").append(MSG_WELCOME);
+			});
+		</script>
+	</head>
+	<body>
+		<h1 id="welcome"></h1>
+		<div id="login"></div>
+		<form>
+			<input type="text" value="pseudo" id="pseudo">
+			<input type="password" value="password" id ="passwd">
+			<input type="password" value="" id="verif_passwd">
+			<input type="text" value="e-mail" id="mail">
+			<input type="button" id="submit" value="envoyer">
+		</form>
+	</body>
+</html>
