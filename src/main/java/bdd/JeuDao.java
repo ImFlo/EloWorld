@@ -18,7 +18,7 @@ public interface JeuDao {
 
 	@SqlQuery("select * from jeu where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
-	Joueur findById(@Bind("id") int id);
+	Jeu findById(@Bind("id") int id);
 
 	@SqlUpdate("drop table if exists jeu")
 	void dropJeuTable(); 

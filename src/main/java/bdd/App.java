@@ -16,8 +16,10 @@ public class App extends Application {
     public Set<Class<?>> getClasses() {
     	Set<Class<?>> s = new HashSet<Class<?>>();
     	s.add(JoueurRessource.class);
+    	s.add(JeuRessource.class);
     	s.add(LoggingFilter.class);
     	s.add(JoueurDBRessource.class);
+    	s.add(JeuDBRessource.class);
     	return s;
     }
     

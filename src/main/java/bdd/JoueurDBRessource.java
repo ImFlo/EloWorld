@@ -30,7 +30,7 @@ public class JoueurDBRessource {
 	}
 
 	@GET
-	@Path("/{name}")
+	@Path("/{id}")
 	public Joueur getJoueur(@PathParam("id") int id) {
 		Joueur out = dao.findById(id);
 		if (out == null) {
