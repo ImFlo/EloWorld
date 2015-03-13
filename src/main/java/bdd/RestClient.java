@@ -1,4 +1,4 @@
-package fr.iutinfo;
+package bdd;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,20 +17,20 @@ public class RestClient {
         .get(String.class);
 	}
 	
-	public List<User> getUrlAsUser (String url) {
+	public List<Joueur> getUrlAsJoueur (String url) {
 		return ClientBuilder.newClient()//
         .target(url)
         .request()
-        .get(new GenericType<List<User>>(){});
+        .get(new GenericType<List<Joueur>>(){});
 	}
 	
-	public User addUser (User user, String url) {
-		Entity<User> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
+	public Joueur addJoueur (Joueur joueur, String url) {
+		Entity<Joueur> userEntity = Entity.entity(joueur, MediaType.APPLICATION_JSON);
 		
 		return ClientBuilder.newClient()
 				.target(url)
 				.request()
 				.post(userEntity)
-				.readEntity(User.class);
+				.readEntity(Joueur.class);
 	}
 }

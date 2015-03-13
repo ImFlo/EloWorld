@@ -1,4 +1,4 @@
-package fr.iutinfo;
+package bdd;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,6 +14,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.skife.jdbi.v2.DBI;
 import org.sqlite.SQLiteDataSource;
+
+import bdd.App;
 
 public class UserDBTest extends JerseyTest {
 	private static UserDao dao;

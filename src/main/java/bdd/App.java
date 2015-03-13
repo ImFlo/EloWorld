@@ -10,9 +10,6 @@ import org.glassfish.jersey.filter.LoggingFilter;
 import org.skife.jdbi.v2.DBI;
 import org.sqlite.SQLiteDataSource;
 
-import fr.iutinfo.UserDBResource;
-import fr.iutinfo.UserResource;
-
 @ApplicationPath("/v1/")
 public class App extends Application {
     @Override

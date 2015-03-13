@@ -77,9 +77,9 @@ public class JoueurRessource {
 	}
 	
 	@GET
-	@Path("/{name}")
-	public Joueur getJoueur(@PathParam("nom") String nom ) {
-		Joueur out = find(nom);
+	@Path("/{pseudo}")
+	public Joueur getJoueur(@PathParam("pseudo") String pseudo ) {
+		Joueur out = find(pseudo);
 		if (out == null) {
 			throw new WebApplicationException(404);
 		}

@@ -1,4 +1,4 @@
-package fr.iutinfo;
+package bdd;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -17,6 +17,8 @@ import javax.ws.rs.core.Response.Status;
 
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
+
+import bdd.App;
 
 
 public class UserTest extends JerseyTest {

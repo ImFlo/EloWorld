@@ -1,7 +1,5 @@
 package bdd;
 
-import fr.iutinfo.User;
-
 public class Joueur {
 	private int id = 0;
 	private String prenom;
@@ -94,7 +92,7 @@ public class Joueur {
 	}
 	
 	public boolean equals(Object u) {
-		return id == ((User) u).getId();
+		return id == ((Joueur) u).getId();
 	}
 
 	public String toString() {

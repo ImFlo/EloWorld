@@ -1,4 +1,4 @@
-package fr.iutinfo;
+package bdd;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +8,9 @@ import javax.ws.rs.core.Application;
 
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
+
+import bdd.App;
+import bdd.RestClient;
 
 public class RestClientTest extends JerseyTest {
 	@Override
