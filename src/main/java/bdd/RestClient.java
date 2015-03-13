@@ -27,6 +27,8 @@ public class RestClient {
 	public Joueur addJoueur (Joueur joueur, String url) {
 		Entity<Joueur> joueurEntity = Entity.entity(joueur, MediaType.APPLICATION_JSON);
 		
+		//on essai
+		
 		return ClientBuilder.newClient()
 				.target(url)
 				.request()
