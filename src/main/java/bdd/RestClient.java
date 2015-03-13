@@ -25,12 +25,12 @@ public class RestClient {
 	}
 	
 	public Joueur addJoueur (Joueur joueur, String url) {
-		Entity<Joueur> userEntity = Entity.entity(joueur, MediaType.APPLICATION_JSON);
+		Entity<Joueur> joueurEntity = Entity.entity(joueur, MediaType.APPLICATION_JSON);
 		
 		return ClientBuilder.newClient()
 				.target(url)
 				.request()
-				.post(userEntity)
+				.post(joueurEntity)
 				.readEntity(Joueur.class);
 	}
 }
