@@ -1,4 +1,4 @@
-package bdd;
+package bdd.joueur;
 
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;

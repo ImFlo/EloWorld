@@ -10,6 +10,11 @@ import org.glassfish.jersey.filter.LoggingFilter;
 import org.skife.jdbi.v2.DBI;
 import org.sqlite.SQLiteDataSource;
 
+import bdd.jeu.JeuDBRessource;
+import bdd.jeu.JeuRessource;
+import bdd.joueur.JoueurDBRessource;
+import bdd.joueur.JoueurRessource;
+
 @ApplicationPath("/v1/")
 public class App extends Application {
     @Override

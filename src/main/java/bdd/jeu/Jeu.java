@@ -1,4 +1,4 @@
-package bdd;
+package bdd.jeu;
 
 public class Jeu {
 	private int id = 0;

@@ -1,4 +1,4 @@
-package bdd;
+package bdd.jeu;
 
 import java.util.ArrayList;
 import java.util.HashMap;

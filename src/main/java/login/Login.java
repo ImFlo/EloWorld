@@ -1,6 +1,9 @@
 package login;
 
 import bdd.*;
+import bdd.joueur.Joueur;
+import bdd.joueur.JoueurDao;
+
 import java.util.HashMap;
 import java.util.Random;
 import javax.ws.rs.*;
