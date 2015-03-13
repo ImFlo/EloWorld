@@ -12,13 +12,13 @@ public interface JoueurDao {
 			"mdp text not null, email text not null, steamID text, riotID text)")
 	void createJoueurTable();
 
-	@SqlUpdate("insert into users (prenom, nom, pseudo, mdp, email, steamID, riotID) " +
+	@SqlUpdate("insert into joueur (prenom, nom, pseudo, mdp, email, steamID, riotID) " +
 			"values (:prenom, :nom, :pseudo, :mdp, :email, :steamID, :riotID)")
 	@GetGeneratedKeys
 	int insert(@Bind("prenom") String prenom, @Bind("nom") String nom, @Bind("pseudo") String pseudo,
 			@Bind("mdp") String mdp, @Bind("email") String email, @Bind("steamID") String steamID, @Bind("riotID") String riotID);
 
-	@SqlQuery("select * from users where id = :id")
+	@SqlQuery("select * from joueur where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
 	Joueur findById(@Bind("id") int id);
 
