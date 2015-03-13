@@ -14,6 +14,9 @@ import bdd.jeu.JeuDBRessource;
 import bdd.jeu.JeuRessource;
 import bdd.joueur.JoueurDBRessource;
 import bdd.joueur.JoueurRessource;
+import bdd.publication.Publication;
+import bdd.publication.PublicationDBRessource;
+import bdd.publication.PublicationRessource;
 
 @ApplicationPath("/v1/")
 public class App extends Application {
@@ -22,9 +25,11 @@ public class App extends Application {
     	Set<Class<?>> s = new HashSet<Class<?>>();
     	s.add(JoueurRessource.class);
     	s.add(JeuRessource.class);
+    	s.add(PublicationRessource.class);
     	s.add(LoggingFilter.class);
     	s.add(JoueurDBRessource.class);
     	s.add(JeuDBRessource.class);
+    	s.add(PublicationDBRessource.class);
     	return s;
     }
     
