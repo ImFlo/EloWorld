@@ -9,7 +9,7 @@ function loginIn(login, mdp){
             return key;
         },
         error: function() {
-            alert("loging failed");
+            return undefined;
         }
     });
 }
@@ -25,7 +25,7 @@ function isConnected(key){
             return ok;
         },
         error: function() {
-            alert("loging failed");
+            return undefined;
         }
     });
 }
