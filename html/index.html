@@ -6,12 +6,19 @@
 		<script>
 			$(document).ready(function(){
 				login();
+				create();
 				$("#welcome").append(MSG_WELCOME);
+				
+				$("#button_create").click(function(){
+					$("#create").show();
+			    });
+				
 			});
 		</script>
 	</head>
 	<body>
 		<h1 id="welcome"></h1>
 		<div id="login"></div>
+		<div id="create"></div>
 	</body>
 </html>

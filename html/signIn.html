@@ -2,6 +2,7 @@
 	<head>
 		<script src="./js/jquery.js">	</script>
 		<script src="./js/base.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style_index.css">
 		<script>
 			$( document ).ready(function() {
 				login();
@@ -12,12 +13,14 @@
 	<body>
 		<h1 id="welcome"></h1>
 		<div id="login"></div>
+		<div id="create">
 		<form>
-			<input type="text" value="pseudo" id="pseudo">
-			<input type="password" value="password" id ="passwd">
-			<input type="password" value="" id="verif_passwd">
-			<input type="text" value="e-mail" id="mail">
+			<input type="text" placeholder="pseudo" id="pseudo">
+			<input type="password" placeholder="password" id ="passwd">
+			<input type="password" placeholder="repeat password" id="verif_passwd">
+			<input type="text" placeholder="e-mail" id="mail">
 			<input type="button" id="submit" value="envoyer">
 		</form>
+		</div>
 	</body>
 </html>
