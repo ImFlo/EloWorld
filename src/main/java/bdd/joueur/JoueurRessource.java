@@ -61,7 +61,7 @@ public class JoueurRessource {
 	public Response updateJoueur(@PathParam("id") int id, 
 			Joueur joueur) {
 		Joueur oldJoueur = find(id);
-		System.out.println("Should update user with id: "+id
+		System.out.println("Should update joueur with id: "+id
 				+" ("+oldJoueur+") to " +joueur);
 		if (joueur == null) {
 			throw new WebApplicationException(404);

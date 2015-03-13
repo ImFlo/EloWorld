@@ -1,4 +1,4 @@
-package bdd.publication;
+package bdd.categorie;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -10,30 +10,30 @@ import javax.ws.rs.core.MediaType;
 
 import bdd.App;
 
-@Path("/publicationdb")
+@Path("/categoriedb")
 @Produces(MediaType.APPLICATION_JSON)
-public class PublicationDBRessource {
-	private static PublicationDao dao = App.dbi.open(PublicationDao.class);
+public class CategorieDBRessource {
+	private static CategorieDao dao = App.dbi.open(CategorieDao.class);
 
-	public PublicationDBRessource() {
+	public CategorieDBRessource() {
 		try {
-			dao.createPublicationTable();
+			dao.createCategorieTable();
 		} catch (Exception e) {
 			System.out.println("Table déjà là !");
 		}
 	}
 	
 	@POST
-	public Publication createPublication(Publication pub) {
-		int id = dao.insert(pub.getTexte(), pub.getDate());
-		pub.setId(id);
-		return pub;
+	public Categorie createCategorie(Categorie cat) {
+		int id = dao.insert(cat.getNom());
+		cat.setId(id);
+		return cat;
 	}
 
 	@GET
 	@Path("/{id}")
-	public Publication getPublication(@PathParam("id") int id) {
-		Publication out = dao.findById(id);
+	public Categorie getCategorie(@PathParam("id") int id) {
+		Categorie out = dao.findById(id);
 		if (out == null) {
 			throw new WebApplicationException(404);
 		}

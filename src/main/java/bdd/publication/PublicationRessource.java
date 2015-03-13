@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-@Path("/joueur")
+@Path("/publication")
 @Produces(MediaType.APPLICATION_JSON)
 public class PublicationRessource {
 	private static Map<Integer, Publication> pubs = new HashMap<>();
@@ -62,7 +62,7 @@ public class PublicationRessource {
 	public Response updatePublication(@PathParam("id") int id, 
 			Publication pub) {
 		Publication oldPub = find(id);
-		System.out.println("Should update user with id: "+id
+		System.out.println("Should update publication with id: "+id
 				+" ("+oldPub+") to " +pub);
 		if (pub == null) {
 			throw new WebApplicationException(404);

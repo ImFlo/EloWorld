@@ -1,4 +1,4 @@
-package bdd.jeu;
+package bdd.categorie;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,61 +20,60 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-@Path("/jeu")
+@Path("/categorie")
 @Produces(MediaType.APPLICATION_JSON)
-public class JeuRessource {
-	private static Map<Integer, Jeu> jeux = new HashMap<>();
+public class CategorieRessource {
+	private static Map<Integer, Categorie> cats = new HashMap<>();
 	
 	@POST
-	public Jeu createJeu(Jeu jeu) {
-		int id = jeux.size();
-		jeu.setId(id+1);
-		jeux.put(jeu.getId(), jeu);
-		return jeu;
+	public Categorie createCategorie(Categorie cat) {
+		int id = cats.size();
+		cat.setId(id+1);
+		cats.put(cat.getId(), cat);
+		return cat;
 	}
 	
 	@DELETE
 	@Path("{id}")
 	public Response deleteJeu(@PathParam("id") Integer id) {
-		if (jeux.containsKey(id)) {
+		if (cats.containsKey(id)) {
 			return Response.accepted().status(Status.ACCEPTED).build();
 		}
 	    return Response.accepted().status(Status.NOT_FOUND).build();
 	}
 	
-	protected Jeu find(String nom) {
-		Jeu out = null;
-		for (Jeu jeu : jeux.values()) {
-			if (jeu.getNom().equals(nom)) {
-				return jeu;
+	protected Categorie find(String nom) {
+		Categorie out = null;
+		for (Categorie cat : cats.values()) {
+			if (cat.getNom().equals(nom)) {
+				return cat;
 			}
 		}
 		return out;
 	}
-	protected Jeu find(int id) {
-		return jeux.get(id);
+	protected Categorie find(int id) {
+		return cats.get(id);
 	}
 	
 	@PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("{id}")
-	public Response updateJeu(@PathParam("id") int id, 
-			Jeu jeu) {
-		Jeu oldJeu = find(id);
-		System.out.println("Should update jeu with id: "+id
-				+" ("+oldJeu+") to " +jeu);
-		if (jeu == null) {
+	public Response updateCategorie(@PathParam("id") int id, 
+			Categorie cat) {
+		Categorie oldCat = find(id);
+		System.out.println("Should update categorie with id: "+id
+				+" ("+oldCat+") to " +cat);
+		if (cat == null) {
 			throw new WebApplicationException(404);
 		}
-		oldJeu.setAppID(jeu.getAppID());
-		oldJeu.setNom(jeu.getNom());
-		return Response.status(200).entity(oldJeu).build();
+		oldCat.setNom(cat.getNom());
+		return Response.status(200).entity(oldCat).build();
 	}
 	
 	@GET
 	@Path("/{nom}")
-	public Jeu getJeu(@PathParam("nom") String nom ) {
-		Jeu out = find(nom);
+	public Categorie getCategorie(@PathParam("nom") String nom ) {
+		Categorie out = find(nom);
 		if (out == null) {
 			throw new WebApplicationException(404);
 		}
@@ -82,8 +81,8 @@ public class JeuRessource {
 	}
 	
 	@GET
-	public List<Jeu> getJeux(@DefaultValue("10") @QueryParam("limit") int limit) {
-		return new ArrayList<Jeu>(jeux.values());
+	public List<Categorie> getJeux(@DefaultValue("10") @QueryParam("limit") int limit) {
+		return new ArrayList<Categorie>(cats.values());
 	}
 
 }
