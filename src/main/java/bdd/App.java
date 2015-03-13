@@ -10,6 +10,9 @@ import org.glassfish.jersey.filter.LoggingFilter;
 import org.skife.jdbi.v2.DBI;
 import org.sqlite.SQLiteDataSource;
 
+import bdd.categorie.Categorie;
+import bdd.categorie.CategorieDBRessource;
+import bdd.categorie.CategorieRessource;
 import bdd.jeu.JeuDBRessource;
 import bdd.jeu.JeuRessource;
 import bdd.joueur.JoueurDBRessource;
@@ -26,10 +29,12 @@ public class App extends Application {
     	s.add(JoueurRessource.class);
     	s.add(JeuRessource.class);
     	s.add(PublicationRessource.class);
+    	s.add(CategorieRessource.class);
     	s.add(LoggingFilter.class);
     	s.add(JoueurDBRessource.class);
     	s.add(JeuDBRessource.class);
     	s.add(PublicationDBRessource.class);
+    	s.add(CategorieDBRessource.class);
     	return s;
     }
     
