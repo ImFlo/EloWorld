@@ -33,6 +33,34 @@ joueur{
 	riotID
 	pseudo
 }
+done
+
+Jeux{
+	id
+	appID (ref steam)
+	nom
+}
+done
+
+publication{
+	id
+	texte
+	date
+}
+done
+
+categorie{
+	id
+	nom
+}
+done
+
+trophée{
+	id
+	nom
+	description
+}
+done
 
 possede{
 	id_joueur
@@ -59,30 +87,7 @@ publie{
 	id_publication
 }
 
-Jeux{
-	id
-	appID (ref steam)
-	nom
-}
-
 jeu_est_un{
 	id_jeu
 	id_categorie
-}
-
-publication{
-	id
-	texte
-	date
-}
-
-categorie{
-	id
-	nom
-}
-
-trophée{
-	id
-	nom
-	description
 }
