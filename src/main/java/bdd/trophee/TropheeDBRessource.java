@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 
 import bdd.App;
 
-@Path("/jeudb")
+@Path("/tropheedb")
 @Produces(MediaType.APPLICATION_JSON)
 public class TropheeDBRessource {
 	private static TropheeDao dao = App.dbi.open(TropheeDao.class);

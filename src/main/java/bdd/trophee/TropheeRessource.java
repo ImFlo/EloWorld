@@ -20,7 +20,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-@Path("/jeu")
+@Path("/trophee")
 @Produces(MediaType.APPLICATION_JSON)
 public class TropheeRessource {
 	private static Map<Integer, Trophee> trophees = new HashMap<>();
