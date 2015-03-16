@@ -10,16 +10,16 @@ import org.glassfish.jersey.filter.LoggingFilter;
 import org.skife.jdbi.v2.DBI;
 import org.sqlite.SQLiteDataSource;
 
-import bdd.categorie.Categorie;
 import bdd.categorie.CategorieDBRessource;
 import bdd.categorie.CategorieRessource;
 import bdd.jeu.JeuDBRessource;
 import bdd.jeu.JeuRessource;
 import bdd.joueur.JoueurDBRessource;
 import bdd.joueur.JoueurRessource;
-import bdd.publication.Publication;
 import bdd.publication.PublicationDBRessource;
 import bdd.publication.PublicationRessource;
+import bdd.trophee.TropheeDBRessource;
+import bdd.trophee.TropheeRessource;
 
 @ApplicationPath("/v1/")
 public class App extends Application {
@@ -30,11 +30,13 @@ public class App extends Application {
     	s.add(JeuRessource.class);
     	s.add(PublicationRessource.class);
     	s.add(CategorieRessource.class);
+    	s.add(TropheeRessource.class);
     	s.add(LoggingFilter.class);
     	s.add(JoueurDBRessource.class);
     	s.add(JeuDBRessource.class);
     	s.add(PublicationDBRessource.class);
     	s.add(CategorieDBRessource.class);
+    	s.add(TropheeDBRessource.class);
     	return s;
     }
     
