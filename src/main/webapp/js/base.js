@@ -7,7 +7,7 @@ var FORM_LOGIN = "<form>" +
 var LINK_CREATE = "Pas de compte ? <button id=\"button_create\">Cree en un !</button><br>" +
         "<a href=\"./lostPasswd.html\">Mot de passe perdu</a>";
 
-var MSG_WELCOME = "<a href=\"./index.html\">Elo World</a>";
+var MSG_WELCOME = "<a href=\"./index.jsp\">Elo World</a>";
 
 var FORM_CREATE = "<center><h3>Creer un compte :</h3>" +
         "<form>" +
@@ -20,13 +20,22 @@ var FORM_CREATE = "<center><h3>Creer un compte :</h3>" +
 
 var connecting_key = "";
 
-function login() {
-    if (isConnected(connecting_key)) {
+function login(str) {
+	switch (str) {
+		case "true":  
+			$("#login").append(welcome);
+		break;
+		case "false":
+			$("#login").append(FORM_LOGIN);
+			$("#login").append(LINK_CREATE);
+		break;
+	}
+   /* if (isConnected(connecting_key)) {
         $("#login").append("welcome");
     } else {
         $("#login").append(FORM_LOGIN);
         $("#login").append(LINK_CREATE);
-    }
+    }*/
 }
 
 function signIn(log, mdp){
