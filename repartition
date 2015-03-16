@@ -62,10 +62,11 @@ trophée{
 }
 done
 
-possede{
+possede_un_jeu{
 	id_joueur
 	id_jeu
 }
+done
 
 possede_un_trophée{
 	id_joueur
