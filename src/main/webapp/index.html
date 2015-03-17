@@ -5,14 +5,13 @@
 		<script src="./js/base.js"></script>
 		<script>
 			$(document).ready(function(){
-				login();
+				login(document.cookie);
 				create();
 				$("#welcome").append(MSG_WELCOME);
 				
 				$("#button_create").click(function(){
 					$("#create").show();
 			    });
-				
 			});
 		</script>
 	</head>

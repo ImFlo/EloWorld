@@ -20,15 +20,19 @@ var FORM_CREATE = "<center><h3>Creer un compte :</h3>" +
 
 var connecting_key = "";
 
-function login(str) {
+function login(str) {	
 	switch (str) {
 		case "true":  
 			$("#login").append(welcome);
-		break;
+			break;
 		case "false":
 			$("#login").append(FORM_LOGIN);
 			$("#login").append(LINK_CREATE);
-		break;
+			break;
+		case "":
+			$("#login").append(FORM_LOGIN);
+			$("#login").append(LINK_CREATE);
+			break;
 	}
    /* if (isConnected(connecting_key)) {
         $("#login").append("welcome");
@@ -47,7 +51,8 @@ function signIn(log, mdp){
 }
 
 function create() {
-    $("#create").append(FORM_CREATE);
+    
+	$("#create").append(FORM_CREATE);
     $("#create").hide();
 }
 
