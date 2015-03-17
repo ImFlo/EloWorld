@@ -12,7 +12,7 @@ public interface PossedeJeuDao {
     @SqlUpdate("create table possede_jeu ("
     		+ "idJoueur integer foreign key references Joueur(id), "
     		+ "idJeu integer foreign key references Jeu(id),"
-    		+ "constraint pk_possedeID primary key (idJoueur,idJeu)")
+    		+ "constraint pk_possedeID primary key (idJoueur, idJeu)")
     void createPossedeJeuTable();
 
     @SqlUpdate("insert into possede_jeu (idJoueur, idJeu) "

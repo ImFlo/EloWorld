@@ -1,4 +1,4 @@
-package bdd;
+/*package bdd;
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,3 +29,4 @@ public class RestClientTest extends JerseyTest {
 		assertEquals(2, users.size());
 	}
 }
+*/

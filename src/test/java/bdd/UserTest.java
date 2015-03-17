@@ -1,4 +1,4 @@
-package bdd;
+/*package bdd;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -93,3 +93,4 @@ public class UserTest extends JerseyTest {
 	}
 	
 }
+*/
