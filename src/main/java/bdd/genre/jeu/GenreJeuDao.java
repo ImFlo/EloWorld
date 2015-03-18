@@ -9,7 +9,7 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 import bdd.possede.jeu.PossedeJeu;
 
-public class GenreJeuDao {
+public interface GenreJeuDao {
 
 	@SqlUpdate("create table genre_jeu ("
     		+ "idJeu integer foreign key references Jeu(id), "
