@@ -8,13 +8,34 @@ import javax.servlet.http.HttpSession;
 import javax.ws.rs.Path;
 import javax.ws.rs.client.ClientBuilder;
 import bdd.joueur.*;
+import java.lang.Exception;
+import java.io.IOException;
 
 @Path("/loging")
 public class Loging extends HttpServlet {
 
-    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException {
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 			/*trouver comment utiliser le dao*/
-			response.sendRedirect("index.jsp");
+			try{
+				//response.sendRedirect("index.jsp");
+				Joueur str =  ClientBuilder.newClient()//
+        	.target("localhost:8080/v1/joueurdb/" + request.getParameter("login") + "&" + request.getParameter("passwd"))
+        	.request()
+        	.get(Joueur.class);
+
+					if(str.getPseudo() == request.getParameter("login") && str.getMdp() == request.getParameter("passwd")){
+						HttpSession session = request.getSession();
+						session.setAttribute("login",request.getParameter("login"));
+						response.sendRedirect("homepage.jsp");
+					}
+					response.getOutputStream().print("patate");
+					response.getOutputStream().print("#" + str.toString());
+						
+			}catch(Exception e){
+				/*not logging*/
+				response.getOutputStream().print("catched !");
+				response.sendRedirect("index.jsp?fail=true");
+			}
     }
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException {

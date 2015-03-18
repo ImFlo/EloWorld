@@ -1,4 +1,4 @@
-var FORM_LOGIN = "<form>" +
+var FORM_LOGIN = "<form method=\"POST\" action=\"loging\">" +
         "<input type=\"text\" placeholder=\"login\" id=\"login\">" +
         "<input type=\"password\" placeholder=\"password\"id=\"passwd\">" +
         "<input type=\"submit\" value=\"envoyer\" id=\"submit\">" +

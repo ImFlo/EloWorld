@@ -6,9 +6,11 @@
 		<script src="./js/base.js"></script>
 		<script>
 			$(document).ready(function(){
+				var url = window.location.search;
+				url = url.substring(url.lastIndexOf("fail")+5);
 				<%
 					/*on checkl si la session a etait créer*/
-					if(session.getAttribute("username") != null)
+					if(session.getAttribute("login") != null)
 						out.print("login(\"true\")");
 					else
 						out.print("login(\"false\")");
@@ -19,6 +21,8 @@
 				$("#button_create").click(function(){
 					$("#create").show();
 			  });		
+				if(url === "true")
+					alert("login/mdp incorrect");
 			});
 		</script>
 	</head>

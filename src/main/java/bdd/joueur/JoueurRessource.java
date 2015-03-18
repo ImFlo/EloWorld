@@ -77,6 +77,22 @@ public class JoueurRessource {
 	}
 	
 	@GET
+	@Path("/{pseudo}&{mdp}")
+	public Joueur verifJoueur(@PathParam("pseudo") String login,
+	@PathParam("pwd") String pwd){
+		Joueur ret = null;
+		try{
+			ret = find(login);
+		}catch(Exception e){
+			return null;
+		}
+		if(ret.getMdp().equals(pwd)){
+				return ret;
+		}
+		return null;
+	}
+
+	@GET
 	@Path("/{pseudo}")
 	public Joueur getJoueur(@PathParam("pseudo") String pseudo ) {
 		Joueur out = find(pseudo);
