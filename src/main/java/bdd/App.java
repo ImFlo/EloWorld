@@ -10,6 +10,8 @@ import org.glassfish.jersey.filter.LoggingFilter;
 import org.skife.jdbi.v2.DBI;
 import org.sqlite.SQLiteDataSource;
 
+import bdd.ami.AmiDBRessource;
+import bdd.ami.AmiRessource;
 import bdd.categorie.CategorieDBRessource;
 import bdd.categorie.CategorieRessource;
 import bdd.jeu.JeuDBRessource;
@@ -40,6 +42,7 @@ public class App extends Application {
     	s.add(PossedeJeuRessource.class);
     	s.add(PossedeTropheeRessource.class);
     	s.add(TropheeJeuRessource.class);
+    	s.add(AmiRessource.class);
     	s.add(LoggingFilter.class);
     	s.add(JoueurDBRessource.class);
     	s.add(JeuDBRessource.class);
@@ -49,6 +52,7 @@ public class App extends Application {
     	s.add(PossedeJeuDBRessource.class);
     	s.add(PossedeTropheeDBRessource.class);
     	s.add(TropheeJeuDBRessource.class);
+    	s.add(AmiDBRessource.class);
     	return s;
     }
     

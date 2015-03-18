@@ -78,6 +78,7 @@ trophée_jeu{
 	id_jeu
 	id_trophée
 }
+done
 
 amis{
 	id_j1
