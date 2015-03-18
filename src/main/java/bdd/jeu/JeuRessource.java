@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/jeu")
 @Produces(MediaType.APPLICATION_JSON)
 public class JeuRessource {
-	private static Map<Integer, Jeu> jeux = new HashMap<>();
+	private static Map<Integer, Jeu> jeux = new HashMap<Integer, Jeu>();
 	
 	@POST
 	public Jeu createJeu(Jeu jeu) {

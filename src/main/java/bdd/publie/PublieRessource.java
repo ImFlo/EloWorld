@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/publie")
 @Produces(MediaType.APPLICATION_JSON)
 public class PublieRessource {
-	private static Map<Integer, ArrayList<Integer>> pubs = new HashMap<>();
+	private static Map<Integer, ArrayList<Integer>> pubs = new HashMap<Integer, ArrayList<Integer>>();
 	
 	@POST
 	public Publie createPublie(Publie publie) {

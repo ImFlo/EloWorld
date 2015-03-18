@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/categorie")
 @Produces(MediaType.APPLICATION_JSON)
 public class CategorieRessource {
-	private static Map<Integer, Categorie> cats = new HashMap<>();
+	private static Map<Integer, Categorie> cats = new HashMap<Integer, Categorie>();
 	
 	@POST
 	public Categorie createCategorie(Categorie cat) {

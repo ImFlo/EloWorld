@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/possede_trophee")
 @Produces(MediaType.APPLICATION_JSON)
 public class PossedeTropheeRessource {
-	private static Map<Integer, ArrayList<Integer>> possede = new HashMap<>();
+	private static Map<Integer, ArrayList<Integer>> possede = new HashMap<Integer, ArrayList<Integer>>();
 	
 	@POST
 	public PossedeTrophee createPossedeTrophee(PossedeTrophee possedeTrophee) {

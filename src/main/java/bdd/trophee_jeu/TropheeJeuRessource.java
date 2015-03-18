@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/trophee_jeu")
 @Produces(MediaType.APPLICATION_JSON)
 public class TropheeJeuRessource {
-	private static Map<Integer, ArrayList<Integer>> tj = new HashMap<>();
+	private static Map<Integer, ArrayList<Integer>> tj = new HashMap<Integer, ArrayList<Integer>>();
 	
 	@POST
 	public TropheeJeu createTropheeJeu(TropheeJeu tropheeJeu) {

@@ -24,7 +24,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/publication")
 @Produces(MediaType.APPLICATION_JSON)
 public class PublicationRessource {
-	private static Map<Integer, Publication> pubs = new HashMap<>();
+	private static Map<Integer, Publication> pubs = new HashMap<Integer, Publication>();
 	
 	@POST
 	public Publication createPublication(Publication pub) {

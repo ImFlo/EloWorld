@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/ami")
 @Produces(MediaType.APPLICATION_JSON)
 public class AmiRessource {
-	private static Map<Integer, ArrayList<Integer>> amis = new HashMap<>();
+	private static Map<Integer, ArrayList<Integer>> amis = new HashMap<Integer, ArrayList<Integer>>();
 	
 	@POST
 	public Ami createAmi(Ami ami) {
