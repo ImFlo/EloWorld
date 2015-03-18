@@ -84,11 +84,13 @@ amis{
 	id_j1
 	id_j2
 }
+done
 
 publie{
 	id_joueur
 	id_publication
 }
+done
 
 jeu_est_un{
 	id_jeu
