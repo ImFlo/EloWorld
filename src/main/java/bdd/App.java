@@ -14,6 +14,8 @@ import bdd.ami.AmiDBRessource;
 import bdd.ami.AmiRessource;
 import bdd.categorie.CategorieDBRessource;
 import bdd.categorie.CategorieRessource;
+import bdd.genre.jeu.GenreJeuDBRessource;
+import bdd.genre.jeu.GenreJeuRessource;
 import bdd.jeu.JeuDBRessource;
 import bdd.jeu.JeuRessource;
 import bdd.joueur.JoueurDBRessource;
@@ -57,6 +59,8 @@ public class App extends Application {
     	s.add(TropheeJeuDBRessource.class);
     	s.add(AmiDBRessource.class);
     	s.add(PublieDBRessource.class);
+    	s.add(GenreJeuDBRessource.class);
+    	s.add(GenreJeuRessource.class);
     	return s;
     }
     
