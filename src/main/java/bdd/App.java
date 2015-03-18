@@ -24,6 +24,8 @@ import bdd.publication.PublicationDBRessource;
 import bdd.publication.PublicationRessource;
 import bdd.trophee.TropheeDBRessource;
 import bdd.trophee.TropheeRessource;
+import bdd.trophee_jeu.TropheeJeuDBRessource;
+import bdd.trophee_jeu.TropheeJeuRessource;
 
 @ApplicationPath("/v1/")
 public class App extends Application {
@@ -37,6 +39,7 @@ public class App extends Application {
     	s.add(TropheeRessource.class);
     	s.add(PossedeJeuRessource.class);
     	s.add(PossedeTropheeRessource.class);
+    	s.add(TropheeJeuRessource.class);
     	s.add(LoggingFilter.class);
     	s.add(JoueurDBRessource.class);
     	s.add(JeuDBRessource.class);
@@ -45,6 +48,7 @@ public class App extends Application {
     	s.add(TropheeDBRessource.class);
     	s.add(PossedeJeuDBRessource.class);
     	s.add(PossedeTropheeDBRessource.class);
+    	s.add(TropheeJeuDBRessource.class);
     	return s;
     }
     

@@ -72,6 +72,7 @@ possede_un_trophée{
 	id_joueur
 	id_trophée
 }
+done
 
 trophée_jeu{
 	id_jeu
