@@ -11,15 +11,26 @@
 				<%
 					/*on checkl si la session a etait créer*/
 					if(session.getAttribute("login") != null)
-						out.print("login(\"true\")");
+						out.print("login(\"true\");");
 					else
-						out.print("login(\"false\")");
+						out.print("login(\"false\");");
 				%>
 				create();
 				$("#welcome").append(MSG_WELCOME);
 				
 				$("#button_create").click(function(){
 					$("#create").show();
+					$("#sub_account").click(function(){
+						console.log("patate");
+						var player = new Object();
+						player.pseudo = $("#pseudo").value;
+						player.email = $("#passwd").value;
+						player.mdp = $("#mail").value;
+						player.prenom = $("#prenom").value;
+						player.nom = $("#nom").value;
+						alert("clicked");
+						createAccount(player);
+					});
 			  });		
 				if(url === "true")
 					alert("login/mdp incorrect");

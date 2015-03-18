@@ -9,15 +9,16 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface JoueurDao {
 
-    @SqlUpdate("create table joueur (id integer primary key autoincrement, prenom text not null, nom text not null, pseudo text not null,"
+    @SqlUpdate("create table joueur (id integer primary key autoincrement,"
+						+" prenom text not null, nom text not null, pseudo text not null primary key,"
             + "mdp text not null, email text not null, steamID text, riotID text)")
     void createJoueurTable();
 
-    @SqlUpdate("insert into joueur (prenom, nom, pseudo, mdp, email, steamID, riotID) "
-            + "values (:prenom, :nom, :pseudo, :mdp, :email, :steamID, :riotID)")
+    @SqlUpdate("insert into joueur (prenom, nom, pseudo, mdp, email) "
+            + "values (:prenom, :nom, :pseudo, :mdp, :email)")
     @GetGeneratedKeys
     int insert(@Bind("prenom") String prenom, @Bind("nom") String nom, @Bind("pseudo") String pseudo,
-            @Bind("mdp") String mdp, @Bind("email") String email, @Bind("steamID") String steamID, @Bind("riotID") String riotID);
+            @Bind("mdp") String mdp, @Bind("email") String email);
 
     @SqlQuery("select * from joueur where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)

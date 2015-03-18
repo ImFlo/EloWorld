@@ -28,9 +28,6 @@ public class Loging extends HttpServlet {
 						session.setAttribute("login",request.getParameter("login"));
 						response.sendRedirect("homepage.jsp");
 					}
-					response.getOutputStream().print("patate");
-					response.getOutputStream().print("#" + str.toString());
-						
 			}catch(Exception e){
 				/*not logging*/
 				response.getOutputStream().print("catched !");

@@ -15,7 +15,9 @@ var FORM_CREATE = "<center><h3>Creer un compte :</h3>" +
         "<input type=\"password\" placeholder=\"password\" id =\"passwd\">" +
         "<input type=\"password\" placeholder=\"repeat password\" id=\"verif_passwd\">" +
         "<input type=\"text\" placeholder=\"e-mail\" id=\"mail\">" +
-        "<input type=\"button\" id=\"submit\" value=\"envoyer\">" +
+				 "<input type=\"text\" placeholder=\"e-mail\" id=\"nom\">" +
+				  "<input type=\"text\" placeholder=\"e-mail\" id=\"prenom\">" +
+        "<input type=\"button\" id=\"sub_account\" value=\"envoyer\">" +
         "</form></center>";
 
 var connecting_key = "";
@@ -54,6 +56,30 @@ function create() {
     
 	$("#create").append(FORM_CREATE);
     $("#create").hide();
+}
+
+function createAccount(player){
+
+	var ps = player.pseudo;
+
+	$.ajax({
+ 		url: "http://localhost:8080/v1/joueurdb/create",
+		data: {
+			"pseudo" : player.pseudo,
+			"mdp" : player.mdp,
+			"email" : player.email,
+			"nom" : player.nom ,
+			"prenom" : player.prenom
+		},
+		type:"POST",
+		dataType:"json",
+		success:function(j) {
+			alert(j);
+		},
+		error: function(){
+			alert("fail");
+		}
+	});
 }
 
 function verifSyn(str) {
