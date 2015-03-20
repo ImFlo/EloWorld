@@ -16,20 +16,22 @@ public class Loging extends HttpServlet {
 
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 			/*trouver comment utiliser le dao*/
+			System.out.println("patate radioactive ! " +  request.getParameter("password") + " et " +request.getParameter("login"));
 			try{
 				//response.sendRedirect("index.jsp");
 				Joueur str =  ClientBuilder.newClient()//
-        	.target("localhost:8080/v1/joueurdb/" + request.getParameter("login") + "&" + request.getParameter("password"))
+        	.target("http://localhost:8080/v1/joueurdb/" + request.getParameter("login") + "&" + request.getParameter("password"))
         	.request()
         	.get(Joueur.class);
-
-					if(str.getPseudo() == request.getParameter("login") && str.getMdp() == request.getParameter("password")){
+					System.out.println("patate asexué ! " + request.getParameter("password") + ":"+str.getMdp() + ":" + ( request.getParameter("password").equals(str.getMdp())));
+					if(str.getPseudo().equals(request.getParameter("login")) && str.getMdp().equals(request.getParameter("password"))){
 						
 						HttpSession session = request.getSession();
 						session.setAttribute("login",request.getParameter("login"));
 						response.sendRedirect("homepage.jsp");
 					}
 			}catch(Exception e){
+				System.out.println(e.toString());
 				/*not logging*/
 				response.getOutputStream().print("catched !");
 				response.sendRedirect("index.jsp?fail=true");

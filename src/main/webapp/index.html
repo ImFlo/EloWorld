@@ -1,23 +1,99 @@
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/style_index.css">
-		<script src="./js/jquery.js" ></script>
-		<script src="./js/base.js"></script>
-		<script>
-			$(document).ready(function(){
-				login(document.cookie);
-				create();
-				$("#welcome").append(MSG_WELCOME);
-				
-				$("#button_create").click(function(){
-					$("#create").show();
-			    });
-			});
-		</script>
-	</head>
-	<body>
-		<h1 id="welcome"></h1>
-		<div id="login"></div>
-		<div id="create"></div>
-	</body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Elo World</title>
+  <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+  
+  <style>
+  div#elo{
+	background: lightblue;
+  }
+  
+  a#buttonCON{
+	color:white;
+  }
+  </style>
+  
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="jumbotron" id="elo">
+		<center><h1>Elo World</h1>
+		<p>Le réseau social des gamers</p></center>
+	</div>
+
+	<h2>Se connecter</h2>
+	<form class="form" role="form">
+	<div class="form-group">
+		<label for="login">Login : </label>
+		<input type="text" class="form-control" placeholder="Login" id="login">
+	</div>
+	<div class="form-group">
+		<label for="password">Password : </label>
+		<input type="password" class="form-control" placeholder="Password" id="password">
+	</div>
+	<div class="form-group">
+		<center><button type="submit" class="btn btn-success"><a href="accueil.html" id="buttonCON">Connexion</a></button></center>
+	</div>
+	</form>
+</div>	
+
+<div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<center><a data-toggle="collapse" data-parent="#accordion" href="#create">
+					Pas encore inscrit ? Créez un compte !
+				</a></center>
+			</h4>
+		</div>
+
+		<div id="create" class="panel-collapse collapse">
+			<div class="panel-body">
+				<form class="form" role="form">
+					<div class="form-group">
+						<label for="name">Last-Name : </label>
+						<input type="text" placeholder="Last-Name" id="last-name" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="name">First-Name : </label>
+						<input type="text" placeholder="First-Name" id="first-name" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="name">E-mail : </label>
+						<input type="email" placeholder="E-mail" id="email" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="name">Password : </label>
+						<input type="password" placeholder="Password" id="password" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="name">Confirm password : </label>
+						<input type="password" placeholder="Confirm password" id="confirm-password" class="form-control">
+					</div>
+					<div class="form-group">
+						<center><button type="submit" class="btn btn-success">Créer le compte</button></center>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<h3>Qu'est-ce que "Elo World" ?</h3>
+			<p>Elo World est un réseau social qui réunit des joueurs du monde entier, afin de partager leurs connaissances, leurs points de vue.<br />
+			Mais surtout dans le but de faire rencontrer les joueurs entre eux, pour s'affronter !<br />
+			En effet, ce réseau social comprends des algorythmes qui "match" les joueurs jouant au même jeu, en fonction de leurs niveaux<br />
+			Vous ne tomberez jamais contre quelqu'un ayant un niveau nettement supérieur à vous, sauf si c'est un smurf ;)</p>
+		</div>
+	</div>
+
+
+</body>
 </html>
