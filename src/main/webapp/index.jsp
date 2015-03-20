@@ -21,13 +21,13 @@
 				$("#button_create").click(function(){
 					$("#create").show();
 					$("#sub_account").click(function(){
-						console.log("patate");
+						console.log($("#pseudo").val());
 						var player = new Object();
-						player.pseudo = $("#pseudo").value;
-						player.email = $("#passwd").value;
-						player.mdp = $("#mail").value;
-						player.prenom = $("#prenom").value;
-						player.nom = $("#nom").value;
+						player.pseudo = $("#pseudo").val();
+						player.email = $("#passwd").val();
+						player.mdp = $("#mail").val();
+						player.prenom = $("#prenom").val();
+						player.nom = $("#nom").val();
 						alert("clicked");
 						createAccount(player);
 					});

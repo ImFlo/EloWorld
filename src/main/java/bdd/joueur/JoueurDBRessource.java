@@ -8,8 +8,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import java.lang.Exception;
-
-
 import bdd.App;
 
 @Path("/joueurdb")
@@ -26,17 +24,13 @@ public class JoueurDBRessource {
 	}
 	
 	@POST
-	@Path("/create")
+	@Path("/create:{pseudo}:{mdp}:{email}:{nom}:{prenom}")
 	@Produces("application/json")
-	@Consumes("application/x-www-form-urlencoded") 
-	public String createJoueur(@FormParam("pseudo") String pseudo, @FormParam("mdp") String mdp,
-													@FormParam("email") String email, @FormParam("nom") String nom,
-													@FormParam("prenom") String prenom){
-		try{
-			int id = dao.insert(prenom, nom, pseudo, mdp, email);
-		}catch(Exception e){
-				return e.toString();
-		}
+	public String createJoueur(@PathParam("pseudo") String pseudo, @PathParam("mdp") String mdp,
+													@PathParam("email") String email, @PathParam("nom") String nom,
+													@PathParam("prenom") String prenom){
+		int id = dao.insert(prenom, nom, pseudo, mdp, email);
+		System.out.println("patate" + id);
 		return "ok";
 	}
 

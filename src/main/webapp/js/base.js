@@ -10,15 +10,14 @@ var LINK_CREATE = "Pas de compte ? <button id=\"button_create\">Cree en un !</bu
 var MSG_WELCOME = "<a href=\"./index.jsp\">Elo World</a>";
 
 var FORM_CREATE = "<center><h3>Creer un compte :</h3>" +
-        "<form>" +
-        "<input type=\"text\" placeholder=\"pseudo\" id=\"pseudo\">" +
+        "<input type=\"text\" placeholder=\"pseudo\" id=\"pseudo\" value=\"\">" +
         "<input type=\"password\" placeholder=\"password\" id =\"passwd\">" +
         "<input type=\"password\" placeholder=\"repeat password\" id=\"verif_passwd\">" +
         "<input type=\"text\" placeholder=\"e-mail\" id=\"mail\">" +
 				 "<input type=\"text\" placeholder=\"e-mail\" id=\"nom\">" +
 				  "<input type=\"text\" placeholder=\"e-mail\" id=\"prenom\">" +
         "<input type=\"button\" id=\"sub_account\" value=\"envoyer\">" +
-        "</form></center>";
+        "</center>";
 
 var connecting_key = "";
 
@@ -63,18 +62,14 @@ function createAccount(player){
 	var ps = player.pseudo;
 
 	$.ajax({
- 		url: "http://localhost:8080/v1/joueurdb/create",
-		data: {
-			"pseudo" : player.pseudo,
-			"mdp" : player.mdp,
-			"email" : player.email,
-			"nom" : player.nom ,
-			"prenom" : player.prenom
-		},
+ 		url: "http://localhost:8080/v1/joueurdb/create:"+ player.pseudo +":"+player.mdp+":"
+																										+player.email+":"+player.nom+":"
+																										+player.prenom,
+		data: {},
 		type:"POST",
 		dataType:"json",
-		success:function(j) {
-			alert(j);
+		success:function() {
+			alert("patate");
 		},
 		error: function(){
 			alert("fail");
