@@ -1,6 +1,6 @@
 var FORM_LOGIN = "<form method=\"POST\" action=\"loging\">" +
-        "<input type=\"text\" placeholder=\"login\" id=\"login\">" +
-        "<input type=\"password\" placeholder=\"password\"id=\"passwd\">" +
+        "<input type=\"text\" placeholder=\"login\" id=\"login\" name=\"login\">" +
+        "<input type=\"password\" placeholder=\"password\"id=\"passwd\" name=\"password\">" +
         "<input type=\"submit\" value=\"envoyer\" id=\"submit\">" +
         "</form>";
 

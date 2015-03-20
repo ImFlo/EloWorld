@@ -29,11 +29,12 @@
 					$("#create").show();
 					$("#sub_account").click(function(){
 						var player = new Object();
-						player.pseudo = $("#pseudo", $("create_form")).val();
-						player.email = $("#mail", $("create_form")).val();
+						player.pseudo = $("#pseudo").val();
+						player.email = $("#mail").val();
 						player.mdp = $("#create_passwd", $("#create_form")).val();
-						player.prenom = $("#prenom", $("create_form")).val();
-						player.nom = $("#nom", $("create_form")).val();
+						player.prenom = $("#prenom").val();
+						player.nom = $("#nom").val();
+						console.log(player);
 						createAccount(player);
 					});
 			  });		

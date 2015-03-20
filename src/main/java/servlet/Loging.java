@@ -19,11 +19,12 @@ public class Loging extends HttpServlet {
 			try{
 				//response.sendRedirect("index.jsp");
 				Joueur str =  ClientBuilder.newClient()//
-        	.target("localhost:8080/v1/joueurdb/" + request.getParameter("login") + "&" + request.getParameter("passwd"))
+        	.target("localhost:8080/v1/joueurdb/" + request.getParameter("login") + "&" + request.getParameter("password"))
         	.request()
         	.get(Joueur.class);
 
-					if(str.getPseudo() == request.getParameter("login") && str.getMdp() == request.getParameter("passwd")){
+					if(str.getPseudo() == request.getParameter("login") && str.getMdp() == request.getParameter("password")){
+						
 						HttpSession session = request.getSession();
 						session.setAttribute("login",request.getParameter("login"));
 						response.sendRedirect("homepage.jsp");
