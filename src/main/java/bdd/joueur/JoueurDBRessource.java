@@ -9,6 +9,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import java.lang.Exception;
 import bdd.App;
+import java.util.List;
 
 @Path("/joueurdb")
 @Produces(MediaType.APPLICATION_JSON)
@@ -29,8 +30,12 @@ public class JoueurDBRessource {
 	public String createJoueur(@PathParam("pseudo") String pseudo, @PathParam("mdp") String mdp,
 													@PathParam("email") String email, @PathParam("nom") String nom,
 													@PathParam("prenom") String prenom){
+		try{
 		int id = dao.insert(prenom, nom, pseudo, mdp, email);
-		System.out.println("patate" + id);
+		System.out.println("patate= " + id);
+		}catch(Exception e){
+			return "not ok";
+		}
 		return "ok";
 	}
 
@@ -44,12 +49,9 @@ public class JoueurDBRessource {
 	}
 
 	@GET
-	public Joueur getInstanceof(){
-		Joueur j = new Joueur();
-		j.setPseudo("patate");
-		j.setMdp("patate");
-		j.setEmail("patate@atate.patate");
-		return j;
+	public List<Joueur> getInstanceof(){
+		
+		return dao.getAll();
 	}
 
 	@GET

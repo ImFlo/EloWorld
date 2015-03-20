@@ -6,7 +6,7 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
-
+import java.util.List;
 public interface JoueurDao {
 
     @SqlUpdate("create table joueur (id serial,"
@@ -24,6 +24,10 @@ public interface JoueurDao {
     @SqlQuery("select * from joueur where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Joueur findById(@Bind("id") int id);
+
+		@SqlQuery("select * from joueur")
+		@RegisterMapperFactory(BeanMapperFactory.class)
+    List<Joueur> getAll();
 
     @SqlQuery("select * from jeu where pseudo = :pseudo and mdp = :mdp")
     @RegisterMapperFactory(BeanMapperFactory.class)

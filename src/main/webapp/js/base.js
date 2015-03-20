@@ -10,14 +10,15 @@ var LINK_CREATE = "Pas de compte ? <button id=\"button_create\">Cree en un !</bu
 var MSG_WELCOME = "<a href=\"./index.jsp\">Elo World</a>";
 
 var FORM_CREATE = "<center><h3>Creer un compte :</h3>" +
-        "<input type=\"text\" placeholder=\"pseudo\" id=\"pseudo\" value=\"\">" +
-        "<input type=\"password\" placeholder=\"password\" id =\"passwd\">" +
+				"<form id=\"create_form\">" +
+        "<input type=\"text\" placeholder=\"pseudo\" id=\"pseudo\">" +
+        "<input type=\"password\" placeholder=\"password\" id =\"create_passwd\">" +
         "<input type=\"password\" placeholder=\"repeat password\" id=\"verif_passwd\">" +
         "<input type=\"text\" placeholder=\"e-mail\" id=\"mail\">" +
 				 "<input type=\"text\" placeholder=\"e-mail\" id=\"nom\">" +
 				  "<input type=\"text\" placeholder=\"e-mail\" id=\"prenom\">" +
         "<input type=\"button\" id=\"sub_account\" value=\"envoyer\">" +
-        "</center>";
+        "</form></center>";
 
 var connecting_key = "";
 
@@ -35,12 +36,6 @@ function login(str) {
 			$("#login").append(LINK_CREATE);
 			break;
 	}
-   /* if (isConnected(connecting_key)) {
-        $("#login").append("welcome");
-    } else {
-        $("#login").append(FORM_LOGIN);
-        $("#login").append(LINK_CREATE);
-    }*/
 }
 
 function signIn(log, mdp){
@@ -67,12 +62,12 @@ function createAccount(player){
 																										+player.prenom,
 		data: {},
 		type:"POST",
-		dataType:"json",
-		success:function() {
-			alert("patate");
+		dataType:"text",
+		success:function(ok) {
+			console.log("vraiment " + ok);
 		},
-		error: function(){
-			alert("fail");
+		error: function(ok){
+			console.log("pas vraiment"+ok);
 		}
 	});
 }
