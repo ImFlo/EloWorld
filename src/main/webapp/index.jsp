@@ -5,13 +5,6 @@
 		<script src="./js/jquery.js" ></script>
 		<script src="./js/base.js"></script>
 		<script>
-			function patate(field){
-				return $(field).focusout(function(){
-   				var txt = $(this).val();
-    			return txt;
-				});
-			}
-
 			$(document).ready(function(){
 				var url = window.location.search;
 				url = url.substring(url.lastIndexOf("fail")+5);
@@ -28,13 +21,14 @@
 				$("#button_create").click(function(){
 					$("#create").show();
 					$("#sub_account").click(function(){
+						console.log("patate");
 						var player = new Object();
-						player.pseudo = $("#pseudo").val();
-						player.email = $("#mail").val();
-						player.mdp = $("#create_passwd", $("#create_form")).val();
-						player.prenom = $("#prenom").val();
-						player.nom = $("#nom").val();
-						console.log(player);
+						player.pseudo = $("#pseudo").value;
+						player.email = $("#passwd").value;
+						player.mdp = $("#mail").value;
+						player.prenom = $("#prenom").value;
+						player.nom = $("#nom").value;
+						alert("clicked");
 						createAccount(player);
 					});
 			  });		
