@@ -25,7 +25,8 @@ public class Initialize extends HttpServlet{
 		App app = new App();
 		DBI dbi = app.dbi;
 		JoueurDao dao = dbi.open(JoueurDao.class);
-		//dao.createJoueurTable();
+		dao.dropJoueurTable();
+		dao.createJoueurTable();
 		response.sendRedirect("index.jsp");
 	}
 }
