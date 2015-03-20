@@ -25,7 +25,7 @@ var connecting_key = "";
 function login(str) {	
 	switch (str) {
 		case "true":  
-			$("#login").append(welcome);
+			$("#login").append(MSG_WELCOME);
 			break;
 		case "false":
 			$("#login").append(FORM_LOGIN);
