@@ -14,4 +14,14 @@
     <servlet-name>loging</servlet-name>
     <url-pattern>/loging</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>initialize</servlet-name>
+    <servlet-class>
+      servlet.Initialize
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>initialize</servlet-name>
+    <url-pattern>/initialize</url-pattern>
+  </servlet-mapping>
 </web-app>

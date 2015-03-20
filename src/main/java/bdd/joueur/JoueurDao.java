@@ -9,9 +9,10 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface JoueurDao {
 
-    @SqlUpdate("create table joueur (id integer primary key autoincrement,"
-						+" prenom text not null, nom text not null, pseudo text not null primary key,"
-            + "mdp text not null, email text not null, steamID text, riotID text)")
+    @SqlUpdate("create table joueur (id serial,"
+						+" prenom text not null, nom text not null, pseudo text not null,"
+            + "mdp text not null, email text not null, steamID text, riotID text," +
+            "constraint pk_joueur primary key (id, pseudo))")
     void createJoueurTable();
 
     @SqlUpdate("insert into joueur (prenom, nom, pseudo, mdp, email) "
