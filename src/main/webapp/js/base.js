@@ -1,16 +1,25 @@
-var FORM_LOGIN = "<form method=\"POST\" action=\"loging\">" +
-        "<input type=\"text\" placeholder=\"login\" id=\"login\">" +
-        "<input type=\"password\" placeholder=\"password\"id=\"passwd\">" +
-        "<input type=\"submit\" value=\"envoyer\" id=\"submit\">" +
+var FORM_LOGIN = "<form class=\"form\" role=\"form\" method=\"POST\" action=\"loging\">" +
+		"<div class=\"form-group\">" +
+		"<label for=\"login\">Login : </label>" +
+        "<input type=\"text\" class=\"form-control\" placeholder=\"login\" id=\"login\">" +
+        "</div>" +
+        "<div class=\"form-group\">" +
+		"<label for=\"passwd\">Password : </label>" +
+        "<input type=\"password\" class=\"form-control\" placeholder=\"password\"id=\"passwd\">" +
+        "</div>" +
+        "<div class=\"form-group\">" +
+        "<center><button type=\"submit\" class=\"btn btn-success\" value=\"envoyer\" id=\"submit\">Envoyer</button></center>" +
         "</form>";
 
 var LINK_CREATE = "Pas de compte ? <button id=\"button_create\">Cree en un !</button><br>" +
         "<a href=\"./lostPasswd.html\">Mot de passe perdu</a>";
 
-var MSG_WELCOME = "<a href=\"./index.jsp\">Elo World</a>";
+var MSG_WELCOME = "Elo World";
 
-var FORM_CREATE = "<center><h3>Creer un compte :</h3>" +
-        "<input type=\"text\" placeholder=\"pseudo\" id=\"pseudo\" value=\"\">" +
+var FORM_CREATE = "<form class=\"form\" role=\"form\">" +
+		"<div class=\"form-group\">" +
+		"<label for=\"pseudo\">Pseudo : </label>" +
+        "<input type=\"text\" class=\"form-control\" placeholder=\"pseudo\" id=\"pseudo\" value=\"\">" +
         "<input type=\"password\" placeholder=\"password\" id =\"passwd\">" +
         "<input type=\"password\" placeholder=\"repeat password\" id=\"verif_passwd\">" +
         "<input type=\"text\" placeholder=\"e-mail\" id=\"mail\">" +
@@ -28,11 +37,11 @@ function login(str) {
 			break;
 		case "false":
 			$("#login").append(FORM_LOGIN);
-			$("#login").append(LINK_CREATE);
+			//$("#login").append(LINK_CREATE);
 			break;
 		case "":
 			$("#login").append(FORM_LOGIN);
-			$("#login").append(LINK_CREATE);
+			//$("#login").append(LINK_CREATE);
 			break;
 	}
    /* if (isConnected(connecting_key)) {
@@ -52,9 +61,9 @@ function signIn(log, mdp){
 }
 
 function create() {
-    
+   /* 
 	$("#create").append(FORM_CREATE);
-    $("#create").hide();
+    $("#create").hide();*/
 }
 
 function createAccount(player){
