@@ -1,5 +1,7 @@
 package bdd.jeu;
 
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -9,6 +11,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
 import bdd.App;
+import bdd.joueur.Joueur;
 
 @Path("/jeudb")
 @Produces(MediaType.APPLICATION_JSON)
@@ -28,6 +31,12 @@ public class JeuDBRessource {
 		int id = dao.insert(jeu.getAppID(), jeu.getNom());
 		jeu.setId(id);
 		return jeu;
+	}
+	
+	@GET
+	public List<Jeu> getInstanceof(){
+		
+		return dao.getAll();
 	}
 
 	@GET

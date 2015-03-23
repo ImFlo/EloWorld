@@ -8,6 +8,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
+import bdd.jeu.Jeu;
 import bdd.joueur.Joueur;
 
 public class RestClient {
