@@ -26,7 +26,7 @@ var FORM_CREATE = "<form class=\"form\" role=\"form\" id=\"create_form\">" +
 				 "<input type=\"text\" placeholder=\"e-mail\" id=\"nom\">" +
 				  "<input type=\"text\" placeholder=\"e-mail\" id=\"prenom\">" +
         "<input type=\"button\" id=\"sub_account\" value=\"envoyer\">" +
-        "</center><>";
+        "</center>";
 
 var connecting_key = "";
 
@@ -70,7 +70,7 @@ function createAccount(player){
 																										+player.prenom,
 		data: {},
 		type:"POST",
-		dataType:"text",
+		dataType:"json",
 		success:function() {
 			alert("patate");
 		},
