@@ -56,12 +56,12 @@ public class JoueurDBRessource {
 
 	@GET
 	@Path("/{log}&{mdp}")
-	public Joueur getJoueurCorresponding(@PathParam("log") String login,
+	public String  getJoueurCorresponding(@PathParam("log") String login,
 																			 @PathParam("mdp") String pwd){
 		Joueur j = dao.findJoueur(login, pwd);
 		if(j == null)
 			throw new WebApplicationException(405);
-		return j;
+		return j.getId() + "";
 	}
 
 	@GET

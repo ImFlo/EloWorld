@@ -7,18 +7,36 @@
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<script src="./js/jquery.js" ></script>
 		<script src="./js/base.js"></script>
+		<script src="js/cookie.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				var url = window.location.search;
-				url = url.substring(url.lastIndexOf("fail")+5);
-				<%
-					/*on checkl si la session a etait créer*/
-					if(session.getAttribute("login") != null)
-						out.print("login(\"true\");");
-					else
-						out.print("login(\"false\");");
-				%>
+				<!-- si lutilisateur est deja co -->
+				if(readCookie("id") != null){
+					 document.location.href="homepage.jsp"; 
+				}
+
+				$("#login").append(FORM_LOGIN);
+				$("#submit").click(function(){
+					var lgn = $("#login", $("#form_login")).val();
+					var mdp = $("#passwd", $("#form_login")).val();
+					console.log(login);
+					$.ajax({
+ 						url: "http://localhost:8080/v1/joueurdb/" + lgn + "&" + mdp,
+						data: {},
+						type:"GET",
+						dataType:"text",
+						success:function(a) {
+							createCookie("id",a,new Date());
+							document.location.href="homepage.jsp";
+						},
+						error: function(a){
+							alert("fail" + a);
+							console.log(a);
+						}
+					});
+
+				});
 				create();
 				$("#welcome").append(MSG_WELCOME);
 				$("#sub_account").click(function(){
@@ -35,8 +53,6 @@
 						createAccount(player);
 					});
 			  		
-				if(url === "true")
-					alert("login/mdp incorrect");
 			});
 		</script>
 	</head>

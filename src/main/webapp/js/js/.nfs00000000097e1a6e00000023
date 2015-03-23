@@ -1,4 +1,4 @@
-var FORM_LOGIN = "<form class=\"form\" role=\"form\" id=\"form_login\">" +
+var FORM_LOGIN = "<form class=\"form\" role=\"form\" method=\"POST\" action=\"loging\">" +
 		"<div class=\"form-group\">" +
 		"<label for=\"login\">Login : </label>" +
         "<input type=\"text\" class=\"form-control\" placeholder=\"login\" id=\"login\" name=\"login\">" +
@@ -8,7 +8,7 @@ var FORM_LOGIN = "<form class=\"form\" role=\"form\" id=\"form_login\">" +
         "<input type=\"password\" class=\"form-control\" placeholder=\"password\"id=\"passwd\" name=\"password\">" +
         "</div>" +
         "<div class=\"form-group\">" +
-        "<center><input type=\"button\" class=\"btn btn-success\" value=\"envoyer\" id=\"submit\"></center>" +
+        "<center><button type=\"submit\" class=\"btn btn-success\" value=\"envoyer\" id=\"submit\">Envoyer</button></center>" +
         "</form>";
 
 var LINK_CREATE = "Pas de compte ? <button id=\"button_create\">Cree en un !</button><br>" +
@@ -16,7 +16,7 @@ var LINK_CREATE = "Pas de compte ? <button id=\"button_create\">Cree en un !</bu
 
 var MSG_WELCOME = "Elo World";
 
-var FORM_CREATE = "<form class=\"form\" role=\"form\" id=\"create_form\">" +
+var FORM_CREATE = "<form class=\"form\" role=\"form\">" +
 		"<div class=\"form-group\">" +
 		"<label for=\"pseudo\">Pseudo : </label>" +
         "<input type=\"text\" class=\"form-control\" placeholder=\"pseudo\" id=\"pseudo\" value=\"\">" +
@@ -26,7 +26,7 @@ var FORM_CREATE = "<form class=\"form\" role=\"form\" id=\"create_form\">" +
 				 "<input type=\"text\" placeholder=\"e-mail\" id=\"nom\">" +
 				  "<input type=\"text\" placeholder=\"e-mail\" id=\"prenom\">" +
         "<input type=\"button\" id=\"sub_account\" value=\"envoyer\">" +
-        "</center><>";
+        "</center>";
 
 var connecting_key = "";
 
@@ -70,9 +70,9 @@ function createAccount(player){
 																										+player.prenom,
 		data: {},
 		type:"POST",
-		dataType:"text",
+		dataType:"json",
 		success:function() {
-			alert("account created");
+			alert("patate");
 		},
 		error: function(){
 			alert("fail");

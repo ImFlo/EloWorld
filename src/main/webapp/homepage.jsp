@@ -6,21 +6,25 @@
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<script src="./js/jquery.js"></script>
 		<script  src="./js/base.js"></script>
+		<script src="js/cookie.js"></script>
 		<script>
-			<!--mettez vos petit script habituelle-->
-			login("true");
+			<!--on verifie si la page contient bien le form avec un id VALIDE !-->
+			if(readCookie("id") === null){
+				document.location.href="index.jsp"; 
+			}
+			<!-- on recup le pseudo du mec-->
+			$(document).ready(function(){
+					$("#disconnect").click(function(){
+						eraseCookie("id");
+						document.location.href="index.jsp"; 
+					});
+			});
 		</script>
+
+
 	</head>
 	<body>
 		<!-- on autorise l acces a cette page que si la session est on-->
-		<%
-			if(session.getAttribute("login") == null)
-				response.sendRedirect("index.jsp");
-		%>
-		//<h1>Welcome mr. <%=session.getAttribute("login")%></h1>
-		
-		
-		
 		<nav class="navbar navbar-inverse" id="barnav">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -45,8 +49,8 @@
         					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> <%=session.getAttribute("login")%></a></li>
-						<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
+						<li><a href="profil.html"><span class="glyphicon glyphicon-user"></span><div id="pseudo"></div></a></li>
+						<li><button id="disconnect"><span class="glyphicon glyphicon-log-out"></span>Deconnexion</button></li>
 					</ul>
 				</div>
 			</div>
@@ -72,20 +76,21 @@
 			</div>
 
 			<div class='col-md-8'>
+				<!-- ECRIRE UNE PUBLICATION-->
 				<ul class="list-group">
 				<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea><br ><button class="btn btn-info">Envoyer Post</button></li>
 				</ul>
-				<ul class="list-group">
-					<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>
-					</li>
-				
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item"><p>Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente 					regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam 						reducere utilia suadendo deberet, ut in actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.</p>
-					</li>
-					
-				</ul>
+				<!-- AFFICHER LES PUBLICATIONS -->
+				<div id="publication">
+					<ul class="list-group">
+						<li class="list-group-item"><p>
+							<!-- la publication en question-->	
+							</p>
+						</li>
+					</ul>
+				</div>
 			</div>
+
 
 			<div class='col-md-2'>
 				<ul class="nav nav-pill nav-stacked">

@@ -72,7 +72,7 @@ function createAccount(player){
 		type:"POST",
 		dataType:"text",
 		success:function() {
-			alert("account created");
+			alert("patate");
 		},
 		error: function(){
 			alert("fail");

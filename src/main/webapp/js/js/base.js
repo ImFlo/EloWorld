@@ -72,7 +72,7 @@ function createAccount(player){
 		type:"POST",
 		dataType:"text",
 		success:function() {
-			alert("account created");
+			alert("votre compte a bien était créer ;) enjoy ;) 1337");
 		},
 		error: function(){
 			alert("fail");
