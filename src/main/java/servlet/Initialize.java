@@ -12,6 +12,7 @@ import javax.ws.rs.client.ClientBuilder;
 import org.skife.jdbi.v2.DBI;
 
 import bdd.App;
+import bdd.Base;
 import bdd.joueur.Joueur;
 import bdd.joueur.JoueurDao;
 
@@ -22,11 +23,9 @@ public class Initialize extends HttpServlet{
 	}
 
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-		App app = new App();
-		DBI dbi = app.dbi;
-		JoueurDao dao = dbi.open(JoueurDao.class);
-		dao.dropJoueurTable();
-		dao.createJoueurTable();
+		Base base = new Base();
+		base.drop();
+		base.create();
 		response.sendRedirect("index.jsp");
 	}
 }

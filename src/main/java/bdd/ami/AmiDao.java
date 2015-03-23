@@ -10,9 +10,11 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 public interface AmiDao {
 
     @SqlUpdate("create table ami ("
-    		+ "idJoueur1 integer foreign key references Joueur(id), "
-    		+ "idJoueur2 integer foreign key references Joueur(id),"
-    		+ "constraint pk_possedeID primary key (idJoueur1, idJoueur2)")
+    		+ "idJoueur1 integer,"
+    		+ "idJoueur2 integer,"
+    		+ "foreign key (idJoueur1) references Joueur(id),"
+    		+ "foreign key (idJoueur2) references Joueur(id),"
+    		+ "constraint pk_possedeID primary key (idJoueur1, idJoueur2))")
     void createAmiTable();
 
     @SqlUpdate("insert into ami (idJoueur1, idJoueur2) "

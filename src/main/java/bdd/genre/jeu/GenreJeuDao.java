@@ -12,9 +12,11 @@ import bdd.possede.jeu.PossedeJeu;
 public interface GenreJeuDao {
 
 	@SqlUpdate("create table genre_jeu ("
-    		+ "idJeu integer foreign key references Jeu(id), "
-    		+ "idCategorie integer foreign key references Categorie(id),"
-    		+ "constraint pk_possedeID primary key (idJeu, idCategorie)")
+    		+ "idJeu integer,"
+    		+ "idCategorie integer,"
+    		+ "foreign key (idJeu) references Jeu(id),"
+    		+ "foreign key (idCategorie) references Categorie(id),"
+    		+ "constraint pk_possedeID primary key (idJeu, idCategorie))")
 	void createGenreJeuTable();
 
 	@SqlUpdate("insert into genre_jeu (idJeu, idCategorie) "

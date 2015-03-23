@@ -10,8 +10,10 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 public interface PossedeTropheeDao {
 
     @SqlUpdate("create table possede_trophee "
-    		+ "(idJoueur integer foreign key references Joueur(id), "
-    		+ "idTrophee integer foreign key references Trophee(id)"
+    		+ "(idJoueur integer,"
+    		+ "idTrophee integer,"
+    		+ "foreign key (idJoueur) references Joueur(id),"
+    		+ "foreign key (idTrophee) references Trophee(id),"
     		+ "constraint pk_possedeId primary key (idJoueur, idTrophee))")
     void createPossedeTropheeTable();
 
