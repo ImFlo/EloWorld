@@ -1,11 +1,11 @@
 var FORM_LOGIN = "<form class=\"form\" role=\"form\" method=\"POST\" action=\"loging\">" +
 		"<div class=\"form-group\">" +
 		"<label for=\"login\">Login : </label>" +
-        "<input type=\"text\" class=\"form-control\" placeholder=\"login\" id=\"login\">" +
+        "<input type=\"text\" class=\"form-control\" placeholder=\"login\" id=\"login\" name=\"login\">" +
         "</div>" +
         "<div class=\"form-group\">" +
 		"<label for=\"passwd\">Password : </label>" +
-        "<input type=\"password\" class=\"form-control\" placeholder=\"password\"id=\"passwd\">" +
+        "<input type=\"password\" class=\"form-control\" placeholder=\"password\"id=\"passwd\" name=\"password\">" +
         "</div>" +
         "<div class=\"form-group\">" +
         "<center><button type=\"submit\" class=\"btn btn-success\" value=\"envoyer\" id=\"submit\">Envoyer</button></center>" +
@@ -44,12 +44,6 @@ function login(str) {
 			//$("#login").append(LINK_CREATE);
 			break;
 	}
-   /* if (isConnected(connecting_key)) {
-        $("#login").append("welcome");
-    } else {
-        $("#login").append(FORM_LOGIN);
-        $("#login").append(LINK_CREATE);
-    }*/
 }
 
 function signIn(log, mdp){

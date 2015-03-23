@@ -60,7 +60,7 @@ public class JoueurDBRessource {
 																			 @PathParam("mdp") String pwd){
 		Joueur j = dao.findJoueur(login, pwd);
 		if(j == null)
-			throw new WebApplicationException(404);
+			throw new WebApplicationException(405);
 		return j;
 	}
 

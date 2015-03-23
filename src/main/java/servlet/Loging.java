@@ -38,8 +38,8 @@ public class Loging extends HttpServlet {
 			}
     }
 
-    public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException {
-
+    public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+			response.sendRedirect("index.jsp");
     }
 
 }
