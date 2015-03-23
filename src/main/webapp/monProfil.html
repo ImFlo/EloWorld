@@ -8,18 +8,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		
-		<script>
-		 $(function(){
-
-			    $(".dropdown-menu").on('click', 'li a', function(){
-			      $(".btn:first-child").text($(this).text());
-			      $(".btn:first-child").val($(this).text());
-			   });
-
-			});
+		<style>
+			div#barnav{
+				background: lightblue;
+			}
 		
-		</script>
-		
+		</style>
 	</head>
 	
 	<body>
@@ -31,7 +25,7 @@
 				</div>
 				 <div>
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="accueil.html">Home</a></li>
+						<li><a href="accueil.html">Home</a></li>
 						<li><a>League of Legends</a></li>
 						<li><a>Dota 2</a></li>
 						<li><a>CS:GO</a></li>
@@ -48,7 +42,7 @@
         					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+						<li class="active"><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
 						<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
 					</ul>
 				</div>
@@ -73,34 +67,38 @@
 			
 				</ul>
 			</div>
-
-			<div class='col-md-8'>
-				<ul class="list-group">
-					<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea></li>
-					<li class="list-group-item dropdown">
-						<div class="btn-group">
-							<button class="btn btn-default">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
-          					<ul class="dropdown-menu">
-           						<li><a href="#">LoL</a></li>
-           						<li><a href="#">Dota 2</a></li>
-            					<li><a href="#">CS:GO</a></li>
-         					</ul>
-         				</div>
-         				<button class="btn btn-info">Envoyer Post</button>
-        			</li>
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>
-					</li>
+			
+			<div class='col-md-2'>
 				
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item"><p>Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente 					regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam 						reducere utilia suadendo deberet, ut in actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.</p>
-					</li>
-					
-				</ul>
+				<img src="./images/iconeProfil.jpg" class="img-responsive" alt="Responsive image">
+				
 			</div>
-
+			
+			<div class="col-md-2">
+			
+				<ul>*Pseudo*</ul>
+				<ul>*Nom*</ul>
+				<ul>*Prenom*</ul>
+					
+			</div>
+			
+			<div class="col-md-2">
+			
+				<ul>*SteamID*</ul>
+				<ul>*LoLIGN*</ul>
+				
+			</div>
+			
+			<div class="col-md-2">
+			
+				<ul>Jeux : <br></br>
+					<li>	*LauL*</li>
+					<li>	*LauL*</li>
+					<li>	*LauL*</li>
+				</ul>
+				
+			</div>
+			
 			<div class='col-md-2'>
 				<ul class="nav nav-pill nav-stacked">
 					<li><a target="top" href="/bllblblbl" class="expl">Example</a></li>
@@ -112,7 +110,22 @@
 
 		</div>
 	
+		<div class="col-md-2"></div>
 		
+		<div class='col-md-8'>
+			<p>Mes derniers posters : </p>
+				<ul class="list-group">
+					<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>
+					</li>
+				
+				</ul>
+				<ul class="list-group">
+					<li class="list-group-item"><p>Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente 					regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam 						reducere utilia suadendo deberet, ut in actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.</p>
+					</li>
+					
+				</ul>
+			</div>
+	
 	
 	</body>
 </html>
