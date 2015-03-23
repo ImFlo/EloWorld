@@ -8,6 +8,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		
+		<script>
+		 $(function(){
+
+			    $(".dropdown-menu").on('click', 'li a', function(){
+			      $(".btn:first-child").text($(this).text());
+			      $(".btn:first-child").val($(this).text());
+			   });
+
+			});
+		
+		</script>
+		
 	</head>
 	
 	<body>
@@ -65,12 +77,15 @@
 			<div class='col-md-8'>
 				<ul class="list-group">
 					<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea></li>
-					<li class="list-group-item dropdown"><button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Jeu <span class="caret"></span></button>
-          				<ul class="dropdown-menu">
-           					<li><a href="#">LoL</a></li>
-           					<li><a href="#">Dota 2</a></li>
-            				<li><a href="#">CS:GO</a></li>
-         				</ul>
+					<li class="list-group-item dropdown">
+						<div class="btn-group">
+							<button class="btn btn-default">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
+          					<ul class="dropdown-menu">
+           						<li><a href="#">LoL</a></li>
+           						<li><a href="#">Dota 2</a></li>
+            					<li><a href="#">CS:GO</a></li>
+         					</ul>
+         				</div>
          				<button class="btn btn-info">Envoyer Post</button>
         			</li>
 				</ul>
