@@ -21,17 +21,16 @@
 				%>
 				create();
 				$("#welcome").append(MSG_WELCOME);
-				
-				
-				
-					$("#sub_account").click(function(){
-						console.log("patate");
+				$("#sub_account").click(function(){
+						console.log("je suis une patate douce !");
+						console.log($("#passwd" ,$("#form_create")).val());
 						var player = new Object();
-						player.pseudo = $("#pseudo").value;
-						player.email = $("#passwd").value;
-						player.mdp = $("#mail").value;
-						player.prenom = $("#prenom").value;
-						player.nom = $("#nom").value;
+						player.pseudo = $("#pseudo").val();
+						player.email = $("#mail").val();
+						player.mdp = $("#passwd", $("#form_create")).val();
+						player.prenom = $("#prenom").val();
+						player.nom = $("#nom").val();
+						console.log(player);
 						alert("clicked");
 						createAccount(player);
 					});
@@ -67,7 +66,9 @@
 
 		<div id="create" class="panel-collapse collapse">
 			<div class="panel-body">
-				<form class="form" role="form">
+
+				<!-- le form commence la !-->
+				<form class="form" role="form" id="form_create">
 					<div class="form-group">
 						<label for="nom">Last-Name : </label>
 						<input type="text" placeholder="Last-Name" id="nom" class="form-control">
@@ -89,9 +90,11 @@
 						<input type="password" placeholder="Password" id="passwd" class="form-control">
 					</div>
 					<div class="form-group">
-						<center><button id=\"sub_account\" type="submit" class="btn btn-success">Créer le compte</button></center>
+						<center><input id="sub_account" type="button" class="btn btn-success" value="Creer le compte" ></center>
 					</div>
 				</form>
+				<!-- il fini la !-->
+			
 			</div>
 		</div>
 	</div>
