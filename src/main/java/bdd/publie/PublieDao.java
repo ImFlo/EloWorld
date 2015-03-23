@@ -10,9 +10,11 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 public interface PublieDao {
 
     @SqlUpdate("create table publie ("
-    		+ "idJoueur integer foreign key references Joueur(id), "
-    		+ "idPublication integer foreign key references Publication(id),"
-    		+ "constraint pk_possedeID primary key (idJoueur, idPublication)")
+    		+ "idJoueur integer,"
+    		+ "idPublication integer,"
+    		+ "foreign key (idJoueur) references Joueur(id),"
+    		+ "foreign key (idPublication) references Publication(id),"
+    		+ "constraint pk_possedeID primary key (idJoueur, idPublication))")
     void createPublieTable();
 
     @SqlUpdate("insert into publie (idJoueur, idPublication) "
