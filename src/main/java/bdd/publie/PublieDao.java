@@ -11,16 +11,18 @@ public interface PublieDao {
 
     @SqlUpdate("create table publie ("
     		+ "idJoueur integer,"
+    		+ "idJeu integer,"
     		+ "idPublication integer,"
     		+ "foreign key (idJoueur) references Joueur(id),"
+    		+ "foreign key (idJeu) references Jeu(id),"
     		+ "foreign key (idPublication) references Publication(id),"
-    		+ "constraint pk_possedeID primary key (idJoueur, idPublication))")
+    		+ "constraint pk_possedeID primary key (idJoueur, idJeu, idPublication))")
     void createPublieTable();
 
-    @SqlUpdate("insert into publie (idJoueur, idPublication) "
-            + "values (:idJoueur, :idPublication)")
+    @SqlUpdate("insert into publie (idJoueur, idJeu, idPublication) "
+            + "values (:idJoueur, :idJeu, :idPublication)")
     @GetGeneratedKeys
-    int insert(@Bind("idJoueur") int idJoueur, @Bind("idPublication") int idPublication);
+    int insert(@Bind("idJoueur") int idJoueur, @Bind("idJeu") int idJeu, @Bind("idPublication") int idPublication);
 
     @SqlQuery("select * from publie where idJoueur = :idJoueur")
     @RegisterMapperFactory(BeanMapperFactory.class)

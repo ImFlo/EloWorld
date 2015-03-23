@@ -2,11 +2,13 @@ package bdd.publie;
 
 public class Publie {
 	private int idJoueur;
+	private int idJeu;
 	private int idPublication;
 
 
-	public Publie(int idJoueur, int idPublication) {
+	public Publie(int idJoueur, int idJeu, int idPublication) {
 		this.idJoueur = idJoueur;
+		this.idJeu = idJeu;
 		this.idPublication = idPublication;
 	}
 
@@ -20,6 +22,14 @@ public class Publie {
 
 	public void setIdJoueur(int idJoueur) {
 		this.idJoueur = idJoueur;
+	}
+	
+	public int getIdJeu() {
+		return idJeu;
+	}
+
+	public void setIdJeu(int idJeu) {
+		this.idJeu = idJeu;
 	}
 	
 	public int getIdPublication() {

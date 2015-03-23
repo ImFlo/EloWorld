@@ -25,7 +25,7 @@ public class PublieDBRessource {
 	
 	@POST
 	public Publie createPublie(Publie publie) {
-		int id = dao.insert(publie.getIdJoueur(), publie.getIdPublication());
+		int id = dao.insert(publie.getIdJoueur(), publie.getIdJeu(), publie.getIdPublication());
 		return publie;
 	}
 
