@@ -37,7 +37,6 @@
 					});
 
 				});
-				create();
 				$("#welcome").append(MSG_WELCOME);
 				$("#sub_account").click(function(){
 						console.log("je suis une patate douce !");
@@ -56,7 +55,6 @@
 			});
 		</script>
 	</head>
-	
 	<body>
 		<div class="container">
 			<div class="jumbotron" id="elo">

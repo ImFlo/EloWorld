@@ -18,6 +18,10 @@
 						eraseCookie("id");
 						document.location.href="index.jsp"; 
 					});
+					$("#send_post").click(function(){
+					<!-- ENVOYER UN POST-->			
+					});
+
 			});
 		</script>
 
@@ -78,7 +82,7 @@
 			<div class='col-md-8'>
 				<!-- ECRIRE UNE PUBLICATION-->
 				<ul class="list-group">
-				<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea><br ><button class="btn btn-info">Envoyer Post</button></li>
+				<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea><br ><button class="btn btn-info" id="send_post">Envoyer Post</button></li>
 				</ul>
 				<!-- AFFICHER LES PUBLICATIONS -->
 				<div id="publication">

@@ -28,7 +28,6 @@ var FORM_CREATE = "<form class=\"form\" role=\"form\" id=\"create_form\">" +
         "<input type=\"button\" id=\"sub_account\" value=\"envoyer\">" +
         "</center><>";
 
-
 var BUTTON_ADD_FRIEND = "<button id=\"add_friend\">ajouter en ami</button>";
 
 var connecting_key = "";
@@ -49,22 +48,7 @@ function login(str) {
 	}
 }
 
-function ajouter_en_ami(j1, j2){
-	$.ajax({
-		url: "http://localhost:8080/v1/amidb",
-		data:"ami="+ami,
-		type:"POST",
-		dataType:"json",
-		succes:function(s){
-			return s;
-		},
-		error:function(e){
-			return undefined;
-		}
-	});
-}
-
-	function getJoueur(id){
+function getJoueur(id){
 	$.ajax({
 		url:"http://localhost:8080/v1/joueurdb/" + id,
 		data:{},
@@ -76,19 +60,35 @@ function ajouter_en_ami(j1, j2){
 		},
 		error:function(){
 			console.log("fail");
+			return undefined;
 		},
 	});
 }
 
-function signIn(log, mdp){
-    if((connecting_key = loginIn(log, mdp)) != undefined){
-        /*renvoi vers la page prioncipal avec la cle en param*/
-    }else{
-        alert("login in Failed !");
-    }
+function ajouter_en_ami(j1, j2){
+
+	var ami;
+	ami.idJoueur1 = j1;
+	ami.idJoueur2 = j2;
+
+	$.ajax({
+		url: "http://localhost:8080/v1/amidb",
+		data:"ami=" + ami,
+		type:"POST",
+		dataType:"json",
+		succes:function(a){
+			console.log(a);	
+		},
+		error:function(e){
+			console.log(e);
+		}
+	});
 }
 
 function createAccount(player){
+
+	var ps = player.pseudo;
+
 	$.ajax({
  		url: "http://localhost:8080/v1/joueurdb/create:"+ player.pseudo +":"+player.mdp+":"
 																										+player.email+":"+player.nom+":"
@@ -104,5 +104,3 @@ function createAccount(player){
 		}
 	});
 }
-
-

@@ -69,7 +69,7 @@ function ajouter_en_ami(j1, j2){
 		url:"http://localhost:8080/v1/joueurdb/" + id,
 		data:{},
 		type:"GET",
-		dataType:"json",
+		dataType"json",
 		succes:function(a){
 			console.log(a);
 			return a;
@@ -104,5 +104,5 @@ function createAccount(player){
 		}
 	});
 }
-
+}
 

@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<script src="./js/jquery.js"></script>
+		<script  src="./js/base.js"></script>
+		<script src="js/cookie.js"></script>
+		<script>
+			if(readCookie("id") === null){
+				document.location.href="index.jsp"; 
+			}
+			$(document).ready(function(){
+				var id = window.location.search.substring(url.lastIndexOf("=")+1);
+				var player = getJoueur(id);
+				if(player !== undefined){
+					if(id === readCookie("id")){
+						$("#action").append(BUTTON_ADD_FRIEND);
+						$("#add_friend", $("#action")).click(ajouter_en_ami(id,  readCookie("id")));
+					}else{
+						<!--PROFIL DE L UTILISATEUR-->
+					}
+					<!-- AFFICHAGE DES INFO DANS LES BON ID-->
+					$("#nom" ,$("#tab_info")).append(player.nom);
+					$("#prenom" ,$("#tab_info")).append(player.prenom);
+					$("#pseudo" ,$("#tab_info")).append(player.pseudo);
+				}
+			});
+
+		</script>
+	</head>
+	<body>
+		<div id="action"></div>
+		<div id="info">
+			<table id="tab_info">
+				<tr>
+					<td>nom:</td>
+					<td id="nom"></td>
+				</tr>
+				<tr>
+					<td>prenom:</td>
+					<td id="prenom"></td>
+				</tr>
+				<tr>
+					<td>pseudo:</td>
+					<td id="pseudo"></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
