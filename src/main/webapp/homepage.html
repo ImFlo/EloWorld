@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>Elo World : Accueil</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script src="./js/jquery.js"></script>
+		<script  src="./js/base.js"></script>
+		<script src="js/cookie.js"></script>
+		<script>
+			<!--on verifie si la page contient bien le form avec un id VALIDE !-->
+			if(readCookie("id") === null){
+				document.location.href="index.jsp"; 
+			}
+			<!-- on recup le pseudo du mec-->
+			$(document).ready(function(){
+					$("#disconnect").click(function(){
+						eraseCookie("id");
+						document.location.href="index.jsp"; 
+					});
+					$("#send_post").click(function(){
+					<!-- ENVOYER UN POST-->			
+					});
+
+			});
+		</script>
+
+
+	</head>
+	<body>
+		<!-- on autorise l acces a cette page que si la session est on-->
+		<nav class="navbar navbar-inverse" id="barnav">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="accueil.html">Elo World</a>
+				</div>
+				 <div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="accueil.html">Home</a></li>
+						<li><a>League of Legends</a></li>
+						<li><a>Dota 2</a></li>
+						<li><a>CS:GO</a></li>
+						<li><a>FF XIV</a></li>
+						<li><a>Starcraft II</a></li>
+						<li><a>HearthStone</a></li>
+						<li><a>Smite</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
+          						<ul class="dropdown-menu">
+           							 <li><a href="#">Jeu 1</a></li>
+           							 <li><a href="#">Jeu 2</a></li>
+            							<li><a href="#">Jeu 3</a></li>
+         						</ul>
+        					</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="profil.html"><span class="glyphicon glyphicon-user"></span><div id="pseudo"></div></a></li>
+						<li><button id="disconnect"><span class="glyphicon glyphicon-log-out"></span>Deconnexion</button></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div>
+		
+		</div>
+		
+		<div class='row'>
+			<div class='col-md-2'>
+
+				<ul class="nav nav-pill nav-stacked">
+					<li class="active">
+						<a target="top" href="/bllblblbl" class="news">News</a></li>
+						<li><a target="top" href="/bllblblbl" class="discu">Discussions</a></li>
+						<li><a target="top" href="/bllblblbl" class="ladder">Ladder</a></li>
+						<li><a target="top" href="/bllblblbl" class="tournois">Tournois</a></li>
+						<li><a target="top" href="/bllblblbl" class="videos">Vidéos</a></li>
+						<li><a target="top" href="/bllblblbl" class="images">Images</a></li>
+			
+				</ul>
+			</div>
+
+			<div class='col-md-8'>
+				<!-- ECRIRE UNE PUBLICATION-->
+				<ul class="list-group">
+				<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea><br ><button class="btn btn-info" id="send_post">Envoyer Post</button></li>
+				</ul>
+				<!-- AFFICHER LES PUBLICATIONS -->
+				<div id="publication">
+					<ul class="list-group">
+						<li class="list-group-item"><p>
+							<!-- la publication en question-->	
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class='col-md-2'>
+				<ul class="nav nav-pill nav-stacked">
+					<li><a target="top" href="/bllblblbl" class="expl">Example</a></li>
+					<li><a target="top" href="/bllblblbl" class="expl">Example</a></li>
+					<li><a target="top" href="/bllblblbl" class="expl">Example</a></li>
+					<li><a target="top" href="/bllblblbl" class="expl">Example</a></li>
+				</ul>
+			</div>
+
+		</div>
+	
+	</body>
+</html>

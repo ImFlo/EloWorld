@@ -66,6 +66,7 @@ public class JoueurDBRessource {
 
 	@GET
 	@Path("/{id}")
+	@Produces("application/json")
 	public Joueur getJoueur(@PathParam("id") int id) {
 		Joueur out = dao.findById(id);
 		if (out == null) {

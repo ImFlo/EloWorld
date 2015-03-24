@@ -65,6 +65,12 @@ function ajouter_en_ami(j1, j2){
 	});
 }
 
+
+function updateValue(a,b){
+	a = b;
+}
+
+
 function getJoueur(id){
 	var IDENTIFICATE_PLAYER;
 	$.ajax({
