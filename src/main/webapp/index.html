@@ -13,7 +13,7 @@
 			$(document).ready(function(){
 				<!-- si lutilisateur est deja co -->
 				if(readCookie("id") != null){
-					 document.location.href="homepage.jsp"; 
+					 document.location.href="homepage.html"; 
 				}
 
 				$("#login").append(FORM_LOGIN);
@@ -28,7 +28,7 @@
 						dataType:"text",
 						success:function(a) {
 							createCookie("id",a,new Date());
-							document.location.href="homepage.jsp";
+							document.location.href="homepage.html";
 						},
 						error: function(a){
 							alert("fail" + a);
