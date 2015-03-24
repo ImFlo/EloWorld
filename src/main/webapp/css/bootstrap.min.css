@@ -13,13 +13,23 @@
  			font-family: solaria;
  			src: url('../fonts/Solaria.ttf');
  		}
+		
+		@font-face{
+ 			font-family: CaviarDreams;
+ 			src: url('../fonts/CaviarDreams.ttf');
+ 		}
  
+		#all{
+				font-family: 'CaviarDreams', Arial, serif;
+		}
 		div#publications .list-group-item{
+				font-family: 'CaviarDreams', Arial, serif;
 				color: #00a2e8;
 				background: #eee;
 		}
 		
 		textarea#comment{
+				font-family: 'CaviarDreams', Arial, serif;
 				color: #00a2e8
 		}
 			
