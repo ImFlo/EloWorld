@@ -3,6 +3,69 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+ 
+		div#publications .list-group-item{
+				color: #00a2e8;
+				background: #eee;
+		}
+		
+		textarea#comment{
+				color: #00a2e8
+		}
+			
+		ul#navGauche{
+				
+				background: #eee;
+				font-size: 20px;
+				text-align: center;
+				
+			}
+			
+		ul#navGauche a{
+				color: #00a2e8;
+		}
+		
+		ul#navDroite a{
+				color: #00a2e8;
+		}
+			
+		ul.nav a:hover { 
+		
+				background: #222 !important; 
+				color: #eee !important;
+		
+		}
+			
+		ul#navDroite{
+				color: #00a2e8;
+				background: #eee;
+				font-size: 20px;
+				text-align: center;
+			
+		}
+		
+		a#ew{
+				font-size: 30px;
+				color: #00a2e8
+		}
+		
+		nav#navHaut{
+				font-size: 20px;
+				color: #00a2e8;
+				background: #222;
+		}
+		
+		ul#plusJeu{
+		
+				font-size: 15px;
+				background: #222;
+		}
+		
+		ul#plusJeu a{
+		
+				color: #00a2e8;
+		}
+			
  html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
  body{margin:0}
  article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
