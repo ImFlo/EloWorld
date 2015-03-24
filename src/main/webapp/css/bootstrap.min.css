@@ -4,6 +4,16 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.2 | MIT License | git.io/normalize */
  
+ 		@font-face{
+ 			font-family: quaaludes;
+ 			src: url('../fonts/Quaaludes-Regular.ttf');
+ 		}
+ 		
+ 		@font-face{
+ 			font-family: solaria;
+ 			src: url('../fonts/Solaria.ttf');
+ 		}
+ 
 		div#publications .list-group-item{
 				color: #00a2e8;
 				background: #eee;
@@ -15,11 +25,22 @@
 			
 		ul#navGauche{
 				
-				background: #eee;
+				background: white;
+				font-family: 'quaaludes', Arial, serif;
 				font-size: 20px;
 				text-align: center;
 				
 			}
+			
+		ul#navGauche li{
+				background: #eee;
+				padding: 2px;
+		}
+		
+		ul#navDroite li{
+				background: #eee;
+				padding: 2px;
+		}
 			
 		ul#navGauche a{
 				color: #00a2e8;
@@ -38,7 +59,8 @@
 			
 		ul#navDroite{
 				color: #00a2e8;
-				background: #eee;
+				background: white;
+				font-family: 'quaaludes', Arial, serif;
 				font-size: 20px;
 				text-align: center;
 			
@@ -50,7 +72,8 @@
 		}
 		
 		nav#navHaut{
-				font-size: 20px;
+				font-family: 'solaria', Arial, serif;
+				font-size: 12.5px;
 				color: #00a2e8;
 				background: #222;
 		}
