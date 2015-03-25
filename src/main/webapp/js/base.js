@@ -8,13 +8,11 @@ var FORM_LOGIN = "<form class=\"form\" role=\"form\" id=\"form_login\">" +
         "<input type=\"password\" class=\"form-control\" placeholder=\"password\"id=\"passwd\" name=\"password\">" +
         "</div>" +
         "<div class=\"form-group\">" +
-        "<center><input type=\"button\" class=\"btn btn-success\" value=\"envoyer\" id=\"submit\"></center>" +
+        "<center><input type=\"button\" class=\"btn btn-success\" value=\"Envoyer\" id=\"submit\"></center>" +
         "</form>";
 
 var LINK_CREATE = "Pas de compte ? <button id=\"button_create\">Cree en un !</button><br>" +
         "<a href=\"./lostPasswd.html\">Mot de passe perdu</a>";
-
-var MSG_WELCOME = "Elo World";
 
 var FORM_CREATE = "<form class=\"form\" role=\"form\" id=\"create_form\">" +
 		"<div class=\"form-group\">" +
@@ -25,7 +23,7 @@ var FORM_CREATE = "<form class=\"form\" role=\"form\" id=\"create_form\">" +
         "<input type=\"text\" placeholder=\"e-mail\" id=\"mail\">" +
 				 "<input type=\"text\" placeholder=\"e-mail\" id=\"nom\">" +
 				  "<input type=\"text\" placeholder=\"e-mail\" id=\"prenom\">" +
-        "<input type=\"button\" id=\"sub_account\" value=\"envoyer\">" +
+        "<input type=\"button\" id=\"sub_account\" value=\"Envoyer\">" +
         "</center><>";
 
 

@@ -35,7 +35,7 @@
 					});
 
 				});
-				$("#welcome").append(MSG_WELCOME);
+				
 				$("#sub_account").click(function(){
 						var player = new Object();
 						player.pseudo = $("#pseudo").val();
@@ -52,18 +52,18 @@
 	<body>
 		<div class="container">
 			<div class="jumbotron" id="elo">
-				<center><h1 id="welcome"></h1>
-				<p>Le réseau social des gamers</p></center>
+				<center><p id="welcome">Elo World</p>
+				<p id="phrase">Le reseau social des gamers</p></center>
 			</div>
 			
-			<h2>Se connecter</h2>
+			<h2 id="co">Se connecter</h2>
 			<div id="login"></div>		
 		</div>
 		
 			<!--- <div id="create"></div>--->
 			<div class="container">
 			<div class="panel-group" id="accordion">
-	<div class="panel panel-default">
+	<div id="all" class="panel panel-default">
 		<div class="panel-heading">
 			<h4 class="panel-title">
 				<center><a data-toggle="collapse" data-parent="#accordion" href="#create">
@@ -109,7 +109,7 @@
 </div>
 </div>
 	
-		<div class="container">
+		<div id="all" class="container">
 			<h3>Qu'est-ce que "Elo World" ?</h3>
 			<p>Elo World est un réseau social qui réunit des joueurs du monde entier, afin de partager leurs connaissances, leurs points de vue.<br />
 			Mais surtout dans le but de faire rencontrer les joueurs entre eux, pour s'affronter !<br />

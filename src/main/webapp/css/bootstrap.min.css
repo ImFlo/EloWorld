@@ -18,6 +18,44 @@
  			font-family: CaviarDreams;
  			src: url('../fonts/CaviarDreams.ttf');
  		}
+		
+		#welcome{
+		
+			font-family: 'quaaludes', Arial, serif;
+			font-size: 110px;
+		}
+		
+		#sub_account{
+			
+			background: #00a2e8;
+		}
+		
+		#submit{
+			
+			background: #00a2e8;
+		}
+		
+		#login{
+		
+			font-family: 'CaviarDreams', Arial, serif;
+		}
+		
+		#co{
+		
+			color: #00a2e8;
+			font-family: 'CaviarDreams', Arial, serif;
+			
+		}
+		
+		#phrase{
+		
+			font-family: 'Solaria', Arial, serif;
+		}
+		
+		#create{
+		
+			font-family: 'CaviarDreams', Arial, serif;
+		}
  
 		#all{
 				font-family: 'CaviarDreams', Arial, serif;
