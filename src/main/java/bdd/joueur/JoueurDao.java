@@ -32,6 +32,20 @@ public interface JoueurDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     Joueur findJoueur(@Bind("pseudo") String pseudo, @Bind("mdp") String mdp);
 
+		@SqlUpdate("Update joueur set nom= :new where id = :id")
+		void changeNom(@Bind("new") String nom, @Bind("id") int id);
+
+		@SqlUpdate("Update joueur set prenom= :new where id = :id")
+		void changePrenom(@Bind("new") String prenom, @Bind("id") int id);
+
+		@SqlUpdate("Update joueur set email= :new where id = :id")
+		void changeMail(@Bind("new") String mail, @Bind("id") int id);
+
+		@SqlUpdate("Update joueur set mdp= :new where id = :id")
+		void changeMdp(@Bind("new") String mdp, @Bind("id") int id);
+
+
+
     @SqlUpdate("drop table if exists joueur")
     void dropJoueurTable();
 
