@@ -113,7 +113,7 @@ function createPublication(publication){
 		type:"POST",
 		dataType:"text",
 		success:function() {
-			alert("publication created");
+			alert(publication.date + " publication created");
 		},
 		error: function(){
 			alert(publication.date + " fail");

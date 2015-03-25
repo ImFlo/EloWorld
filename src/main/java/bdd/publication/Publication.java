@@ -5,10 +5,10 @@ import java.sql.Date;
 public class Publication {
 	private int id = 0;
 	private String texte;
-	private Date date;
+	private String date;
 
 
-	public Publication(int id, String texte, Date date) {
+	public Publication(int id, String texte, String date) {
 		this.id = id;
 		this.texte = texte;
 		this.date = date;
@@ -34,11 +34,11 @@ public class Publication {
 		this.texte = texte;
 	}
 	
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	

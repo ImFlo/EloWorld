@@ -32,7 +32,7 @@ public class PublicationDBRessource {
 	@POST
 	@Path("/create:{texte}:{date}")
 	@Produces("application/json")
-	public String createPublication(@PathParam("texte") String texte, @PathParam("date") Date date){
+	public String createPublication(@PathParam("texte") String texte, @PathParam("date") String date){
 		try{
 		int id = dao.insert(texte, date);
 		System.out.println("patate= " + id);
@@ -47,12 +47,6 @@ public class PublicationDBRessource {
 		int id = dao.insert(pub.getTexte(), pub.getDate());
 		pub.setId(id);
 		return pub;
-	}
-	
-	@GET
-	public List<Publication> getInstanceof(){
-		
-		return dao.getAll();
 	}
 
 	@GET

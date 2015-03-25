@@ -14,22 +14,18 @@ import java.util.List;
 
 public interface PublicationDao {
 
-    @SqlUpdate("create table publication (id integer primary key autoincrement, texte text not null, date date not null)")
+    @SqlUpdate("create table publication (id integer primary key autoincrement, texte text not null, date text not null)")
     void createPublicationTable();
 
     @SqlUpdate("insert into publication (texte, date) "
             + "values (:texte, :date)")
     @GetGeneratedKeys
-    int insert(@Bind("texte") String texte, @Bind("date") Date date);
+    int insert(@Bind("texte") String texte, @Bind("date") String date);
 
     @SqlQuery("select * from publication where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Publication findById(@Bind("id") int id);
-
-    @SqlQuery("select * from publication")
-	@RegisterMapperFactory(BeanMapperFactory.class)
-    List<Publication> getAll();
-    
+   
     @SqlUpdate("drop table if exists publication")
     void dropPublicationTable();
 		

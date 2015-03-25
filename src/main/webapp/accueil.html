@@ -32,9 +32,6 @@
 						var publication = new Object();
 						publication.texte = $("#comment").val();
 						publication.date = new Date();
-						publication.date = publication.date.getURCFullYear() + "-" +
-							('00'+(publication.date.getUTCMonth()+1)).slice(-2) + "-" +
-							('00'+(publication.date.getUTCDate()+1)).slice(-2);
 						createPublication(publication);
 					});
 			});

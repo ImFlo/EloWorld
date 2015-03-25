@@ -43,7 +43,7 @@ public class PublicationRessource {
 	    return Response.accepted().status(Status.NOT_FOUND).build();
 	}
 	
-	protected Publication find(Date date) {
+	protected Publication find(String date) {
 		Publication out = null;
 		for (Publication pub : pubs.values()) {
 			if (pub.getDate().equals(date)) {
