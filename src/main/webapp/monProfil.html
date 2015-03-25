@@ -116,6 +116,50 @@
 						</ul>
 					</div>
 				</div>
+				
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<center><a data-toggle="collapse" data-parent="#accordion" href="#create">
+								Modifier mon profil
+								</a></center>
+							</h4>
+						</div>
+	
+						<div id="create" class="panel-collapse collapse">
+							<div class="panel-body">
+							<!---  FORMULAIRE DE MODIFICATION DE PROFIL --->
+								<form class="form" role="form" id="form_modif_profil">
+									<div class="form-group">
+										<label for="nom">Nouveau Nom : </label>
+										<input type="text" placeholder="Nom" id="nom" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="prenom">Nouveau Prénom : </label>
+										<input type="text" placeholder="Prénom" id="prenom" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="mail">Nouvelle adresse E-mail : </label>
+										<input type="email" placeholder="E-mail" id="mail" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="pwd">Nouveau Mot de Passe : </label>
+										<input type="password" placeholder="Mot de Passe" id="pwd" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="confirm_pwd">Confirmez Mot de Passe : </label>
+										<input type="password" placeholder="Mot de Passe" id="confirm_pwd" class="form-control">
+									</div>
+									<div class="form-group">
+										<center><input id="sub_modif_profil" type="button" class="btn btn-success" value="Modifier Profil" ></center>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 				<div id="publications">
 			<p><h4 id="all">Dernières publications : </h4></p>
 				<ul class="list-group">
