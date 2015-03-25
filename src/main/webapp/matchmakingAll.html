@@ -37,13 +37,22 @@
 				font-family: solaria;
 				src: url('../fonts/Solaria.ttf');
 			}
+			
 			#all{
 				color : #00a2e8;
 			}
 			
 			#trophee{
 				font-family: 'solaria', Arial, serif;
-				font-size: 40px;
+				font-size: 30px;
+			}
+			
+			div#jeuxMM .btn-default{
+				text-align: left;
+				background: #00a2e8;
+				color: white;
+				font-size: 25px;
+				font-family: 'solaria', Arial, serif;
 			}
 			
 		</style>
@@ -93,7 +102,7 @@
 				<ul id="navGauche" class="nav nav-pill nav-stacked">
 					<li>
 						<a target="top" href="/bllblblbl" id="news">News</a></li>
-						<li class="active"><a target="top" href="/bllblblbl" id="mm">Matchmaking</a></li>
+						<li class="active"><a target="top" href="/matchmakingALL.html" id="mm">Matchmaking</a></li>
 						<li><a target="top" href="/bllblblbl" id="discu">Discussions</a></li>
 						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
 						<li><a target="top" href="/bllblblbl" id="tournois">Tournois</a></li>
@@ -106,7 +115,7 @@
 			<div id="jeuxMM" class='col-md-8'>
 				<ul class="list-group">
 					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeLoL.png"></img>TROPHEES : </p>
-					<p id="all">ELO : 
+					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmLOL.html" role="button">Match</a>
 					<br></br>
 					Rank : 
 					</p>
@@ -114,7 +123,7 @@
 				
 				<ul class="list-group">
 					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeCSGO.png"></img>TROPHEES : </p>
-					<p id="all">ELO : 
+					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmCSGO.html" role="button">Match</a>
 					<br></br>
 					Rank : 
 					</p>
@@ -122,7 +131,7 @@
 				
 				<ul class="list-group">
 					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeMC.png"></img>TROPHEES : </p>
-					<p id="all">ELO : 
+					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmMC.html" role="button">Match</a>
 					<br></br>
 					Rank : 
 					</p>
