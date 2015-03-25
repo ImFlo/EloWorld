@@ -33,12 +33,19 @@ public class PossedeJeuDBRessource {
 
 	@GET
 	@Path("/{idJoueur}")
-	public List<String> getPossedeJeu(@PathParam("idJoueur") int idJoueur) {
+	public String getPossedeJeu(@PathParam("idJoueur") int idJoueur) {
 		List<String> out = dao.getJeuDe(idJoueur);
 		System.out.println(out.toString());
 		if (out == null) {
 			throw new WebApplicationException(404);
 		}
-		return out;
+		String str = "";
+		if(out.size() > 0){
+			for(String s : out){
+				str += s + ";";
+			}
+			str = str.substring(0, str.length()-1);
+		}
+		return str;
 	}
 }

@@ -50,4 +50,4 @@ public interface JoueurDao {
     void dropJoueurTable();
 
     void close();
-
+}

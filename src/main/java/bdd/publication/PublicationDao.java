@@ -32,6 +32,9 @@ public interface PublicationDao {
     
     @SqlUpdate("drop table if exists publication")
     void dropPublicationTable();
+		
+		@SqlQuery("SELECT * FROM publication WHERE id IN (SELECT idPublication FROM publie WHERE idJoueur = :id OR idJoueur in (SELECT idJoueur2 FROM amis WHERE idJoueur1 = :id)) ORDER BY date DESC")
+		List<Publication> getPubFor(@Bind("id") int id);
 
     void close();
 }
