@@ -120,3 +120,18 @@ function createPublication(publication){
 		}
 	});
 }
+
+function insertPossedeJeu(player, game){
+	$.ajax({
+		url: "http://localhost:8080/v1/possede_jeudb/insert:"+player.id+":"+game.id,
+		data: {},
+		type:"POST",
+		dataType:"text",
+		success:function() {
+			alert("game added");
+		},
+		error: function(){
+			alert(publication.date + " fail");
+		}
+	});
+}

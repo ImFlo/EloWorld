@@ -26,9 +26,10 @@ public class PossedeJeuDBRessource {
 	}
 	
 	@POST
-	public PossedeJeu createPossedeJeu(PossedeJeu possedeJeu) {
-		int id = dao.insert(possedeJeu.getIdJoueur(), possedeJeu.getIdJeu());
-		return possedeJeu;
+	@Path("/insert:{idPlayer):{idGame}")
+	public PossedeJeu createPossedeJeu(@PathParam("idPlayer") int idPlayer, @PathParam("idGame") int idGame) {
+		int id = dao.insert(idPlayer, idGame);
+		return new PossedeJeu(idPlayer, idGame);
 	}
 
 	@GET
