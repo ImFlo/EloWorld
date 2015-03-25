@@ -24,10 +24,6 @@
 					$("#nom").append(player.nom + "");
 					$("#prenom").append(player.prenom + "");
 					$("#pseudo").append(player.pseudo + "");
-					if(player.steamId != undefined)
-						$("#steamid").append(player.steamId + "");
-					if(player.riotId != undefined)
-						$("#lolign").append(player.riotId + "");
 				}
 			});
 		</script>
@@ -106,8 +102,8 @@
 					</div>
 			
 					<div id="all" class="col-xs-3">
-						<h3 id="steamid"></h3>
-						<h3 id="lolign"></h3>
+						<h3 id="steamid">*SteamID*</h3>
+						<h3 id="lolign">*LoLIGN*</h3>
 					</div>
 			
 					<div id="all" class="col-xs-3">

@@ -24,10 +24,6 @@
 					$("#nom").append(player.nom + "");
 					$("#prenom").append(player.prenom + "");
 					$("#pseudo").append(player.pseudo + "");
-					if(player.steamId != undefined)
-						$("#steamid").append(player.steamId + "");
-					if(player.riotId != undefined)
-						$("#lolign").append(player.riotId + "");
 				}
 			});
 		</script>
@@ -95,19 +91,19 @@
 			
 			<div id="all" class="col-sm-8">
 			
-				<center><h2 id="pseudo"></h2></center>
+				<center><h2 id="pseudo">*Pseudo*</h2></center>
 				<div class="row">
 					<div class='col-xs-3'>
 						<img src="./images/iconeProfil.jpg" class="img-responsive" alt="Responsive image" id="imageProfil">
 					</div>
 					<div id="all" class="col-xs-3">
-						<h3 id="prenom"></h3>
-						<h3 id="nom"><small></small></h3>
+						<h3 id="prenom">*Prenom*</h3>
+						<h3 id="nom"><small>*Nom*</small></h3>
 					</div>
 			
 					<div id="all" class="col-xs-3">
-						<h3 id="steamid"></h3>
-						<h3 id="lolign"></h3>
+						<h3 id="steamid">*SteamID*</h3>
+						<h3 id="lolign">*LoLIGN*</h3>
 					</div>
 			
 					<div id="all" class="col-xs-3">

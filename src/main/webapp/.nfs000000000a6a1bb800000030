@@ -13,7 +13,6 @@
 				document.location.href="index.html"; 
 			}
 			<!-- on recup le pseudo du mec-->
-			var id = readCookie("id");
 			$(document).ready(function(){
 					$("#disconnect").click(function(){
 						eraseCookie("id");

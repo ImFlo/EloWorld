@@ -13,13 +13,12 @@
 				document.location.href="index.html"; 
 			}
 			<!-- on recup le pseudo du mec-->
-			var id = readCookie("id");
 			$(document).ready(function(){
 					$("#disconnect").click(function(){
 						eraseCookie("id");
 						document.location.href="index.html"; 
 					});
-					document.getElementById('myProfil').href = 'profil.html?id=' + id;
+					$("#red_profil").attr("href","profil.html?id=" + id);
 					$("#send_post").click(function(){
 					<!-- ENVOYER UN POST-->			
 					});
@@ -54,7 +53,7 @@
         					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="monProfil" id="myProfil"><span class="glyphicon glyphicon-user"></span><div id="pseudo"></div></a></li>
+						<li><a id="red_profil" href=""><span class="glyphicon glyphicon-user"></span><div id="pseudo"></div></a></li>
 						<li><button id="disconnect"><span class="glyphicon glyphicon-log-out"></span>Deconnexion</button></li>
 					</ul>
 				</div>

@@ -7,36 +7,32 @@
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
-		<script src="./js/jquery.js"></script>
-		<script  src="./js/base.js"></script>
 		<script src="js/cookie.js"></script>
+		
 		<script>
+			$(function(){
+				$(".dropdown-menu").on('click', 'li a', function(){
+					$(".btn:first-child").text($(this).text());
+					$(".btn:first-child").val($(this).text());
+				});
+			});
 			if(readCookie("id") === null){
 				document.location.href="index.html"; 
 			}
+			<!-- on recup le pseudo du mec-->
+			var id = readCookie("id");
 			$(document).ready(function(){
-				var id = readCookie("id");
-				var player = getJoueur(id);
-				if(player !== undefined){
-					console.log(player.nom);
-					<!-- AFFICHAGE DES INFO DANS LES BON ID-->a
-					console.log(player.nom);
-					$("#nom").append(player.nom + "");
-					$("#prenom").append(player.prenom + "");
-					$("#pseudo").append(player.pseudo + "");
-					if(player.steamId != undefined)
-						$("#steamid").append(player.steamId + "");
-					if(player.riotId != undefined)
-						$("#lolign").append(player.riotId + "");
-				}
+					$("#disconnect").click(function(){
+						eraseCookie("id");
+						document.location.href="index.html"; 
+					});
+					document.getElementById('myProfil').href = 'profil.html?id=' + id;
+					$("#send_post").click(function(){
+					<!-- ENVOYER UN POST-->			
+					});
 			});
 		</script>
-		<style>
-			h2#pseudo{
-				color: #00a2e8;
-			}
 		
-		</style>
 	</head>
 	
 	<body>
@@ -48,10 +44,10 @@
 				</div>
 				 <div>
 					<ul class="nav navbar-nav">
-						<li><a href="accueil.html">Home</a></li>
+						<li class="active"><a href="accueil.html">Home</a></li>
 						<li><a>League of Legends</a></li>
 						<li><a>Dota 2</a></li>
-						<li><a>CSGO</a></li>
+						<li><a>CS:GO</a></li>
 						<li><a>FF XIV</a></li>
 						<li><a>Starcraft II</a></li>
 						<li><a>HearthStone</a></li>
@@ -60,13 +56,13 @@
           						<ul id="plusJeu" class="dropdown-menu">
            							 <li><a href="#">Jeu 1</a></li>
            							 <li><a href="#">Jeu 2</a></li>
-            						 <li><a href="#">Jeu 3</a></li>
+									 <li><a href="#">Jeu 3</a></li>
          						</ul>
         					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
-						<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
+						<li><a href="" id="myProfil"><span class="glyphicon glyphicon-user"></span><div id="login"></div></a></li>
+						<li><a id="disconnect" ><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
 					</ul>
 				</div>
 			</div>
@@ -91,33 +87,22 @@
 			
 				</ul>
 			</div>
-			
-			
-			<div id="all" class="col-sm-8">
-			
-				<center><h2 id="pseudo"></h2></center>
-				<div class="row">
-					<div class='col-xs-3'>
-						<img src="./images/iconeProfil.jpg" class="img-responsive" alt="Responsive image" id="imageProfil">
-					</div>
-					<div id="all" class="col-xs-3">
-						<h3 id="prenom"></h3>
-						<h3 id="nom"><small></small></h3>
-					</div>
-			
-					<div id="all" class="col-xs-3">
-						<h3 id="steamid"></h3>
-						<h3 id="lolign"></h3>
-					</div>
-			
-					<div id="all" class="col-xs-3">
-						<ul><h2>Jeux : </h2>
-							<li><h4 id="jeu1">*LauL*</h4></li>
-						</ul>
-					</div>
-				</div>
-				<div id="publications">
-			<p><h4 id="all">Dernières publications : </h4></p>
+
+			<div id="publications" class='col-md-8'>
+				<ul class="list-group">
+					<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea></li>
+					<li class="list-group-item dropdown">
+						<div class="btn-group">
+							<button class="btn btn-default">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
+          					<ul class="dropdown-menu">
+           						<li><a href="#">LoL</a></li>
+           						<li><a href="#">Dota 2</a></li>
+            					<li><a href="#">CS:GO</a></li>
+         					</ul>
+         				</div>
+         				<button class="btn btn-info">Envoyer Post</button>
+        			</li>
+				</ul>
 				<ul class="list-group">
 					<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>
 					</li>
@@ -128,9 +113,8 @@
 					</li>
 					
 				</ul>
-		</div>
 			</div>
-			
+
 			<div class='col-md-2'>
 				<ul id="navDroite" class="nav nav-pill nav-stacked">
 					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
@@ -142,10 +126,7 @@
 
 		</div>
 	
-		<div class="col-md-2"></div>
 		
-		
-	
 	
 	</body>
 </html>

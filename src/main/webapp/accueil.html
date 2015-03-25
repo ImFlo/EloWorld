@@ -7,17 +7,31 @@
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
+		<script src="js/cookie.js"></script>
 		
 		<script>
-		 $(function(){
-
-			    $(".dropdown-menu").on('click', 'li a', function(){
-			      $(".btn:first-child").text($(this).text());
-			      $(".btn:first-child").val($(this).text());
-			   });
-
+			$(function(){
+				$(".dropdown-menu").on('click', 'li a', function(){
+					$(".btn:first-child").text($(this).text());
+					$(".btn:first-child").val($(this).text());
+				});
 			});
-		
+			if(readCookie("id") === null){
+				document.location.href="index.html"; 
+			}
+			<!-- on recup le pseudo du mec-->
+			var id = readCookie("id");
+			$(document).ready(function(){
+					$("#disconnect").click(function(){
+						eraseCookie("id");
+						document.location.href="index.html"; 
+					});
+					document.getElementById('myProfil').href = 'profil.html?id=' + id;
+					$("#send_post").click(function(){
+						<!-- ENVOYER UN POST-->
+					
+					});
+			});
 		</script>
 		
 	</head>
@@ -48,8 +62,8 @@
         					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
-						<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
+						<li><a href="" id="myProfil"><span class="glyphicon glyphicon-user"></span><div id="login"></div></a></li>
+						<li><a id="disconnect" ><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
 					</ul>
 				</div>
 			</div>
@@ -77,6 +91,7 @@
 
 			<div id="publications" class='col-md-8'>
 				<ul class="list-group">
+					<!-- DE LA A-->
 					<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea></li>
 					<li class="list-group-item dropdown">
 						<div class="btn-group">
@@ -87,8 +102,9 @@
             					<li><a href="#">CS:GO</a></li>
          					</ul>
          				</div>
-         				<button class="btn btn-info">Envoyer Post</button>
+         				<button id="send_post" class="btn btn-info">Envoyer Post</button>
         			</li>
+							<!-- LA POUR ECRIRE UNE PUBLICATION-->
 				</ul>
 				<ul class="list-group">
 					<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>

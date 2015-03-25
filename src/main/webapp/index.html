@@ -1,4 +1,3 @@
-<%@ page session="true" %>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -31,24 +30,19 @@
 							document.location.href="homepage.html";
 						},
 						error: function(a){
-							alert("fail" + a);
-							console.log(a);
+							alert("login ou mot de passe erone...");
 						}
 					});
 
 				});
 				$("#welcome").append(MSG_WELCOME);
 				$("#sub_account").click(function(){
-						console.log("je suis une patate douce !");
-						console.log($("#passwd" ,$("#form_create")).val());
 						var player = new Object();
 						player.pseudo = $("#pseudo").val();
 						player.email = $("#mail").val();
 						player.mdp = $("#passwd", $("#form_create")).val();
 						player.prenom = $("#prenom").val();
 						player.nom = $("#nom").val();
-						console.log(player);
-						alert("clicked");
 						createAccount(player);
 					});
 			  		

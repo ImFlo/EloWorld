@@ -24,10 +24,8 @@
 					$("#nom").append(player.nom + "");
 					$("#prenom").append(player.prenom + "");
 					$("#pseudo").append(player.pseudo + "");
-					if(player.steamId != undefined)
-						$("#steamid").append(player.steamId + "");
-					if(player.riotId != undefined)
-						$("#lolign").append(player.riotId + "");
+					$("#steamid").append(player.steamId + "");
+					$("#lolign").append(player.riotId + "");
 				}
 			});
 		</script>
