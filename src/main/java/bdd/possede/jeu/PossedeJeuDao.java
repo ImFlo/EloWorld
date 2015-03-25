@@ -7,6 +7,8 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import java.util.*;
+
 public interface PossedeJeuDao {
 
     @SqlUpdate("create table possede_jeu ("
@@ -28,6 +30,9 @@ public interface PossedeJeuDao {
 
     @SqlUpdate("drop table if exists possede_jeu")
     void dropPossedeJeuTable();
+		
+		@SqlQuery("select nom from jeu where id in (select idJeu from possede_jeu where idJoueur = :id)")
+		List<String> getJeuDe(@Bind("id") int id);
 
     void close();
 }

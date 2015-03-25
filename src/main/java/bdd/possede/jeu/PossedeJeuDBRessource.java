@@ -8,6 +8,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
+import java.util.*;
+
 import bdd.App;
 
 @Path("/possede_jeudb")
@@ -31,8 +33,9 @@ public class PossedeJeuDBRessource {
 
 	@GET
 	@Path("/{idJoueur}")
-	public PossedeJeu getPossedeJeu(@PathParam("idJoueur") int idJoueur) {
-		PossedeJeu out = dao.findById(idJoueur);
+	public List<String> getPossedeJeu(@PathParam("idJoueur") int idJoueur) {
+		List<String> out = dao.getJeuDe(idJoueur);
+		System.out.println(out.toString());
 		if (out == null) {
 			throw new WebApplicationException(404);
 		}
