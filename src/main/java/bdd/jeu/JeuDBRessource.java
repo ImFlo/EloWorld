@@ -34,8 +34,7 @@ public class JeuDBRessource {
 	}
 	
 	@GET
-	public List<Jeu> getInstanceof(){
-		
+	public List<Jeu> getInstanceof(){	
 		return dao.getAll();
 	}
 

@@ -108,13 +108,14 @@
 				 <div>
 					<ul class="nav navbar-nav" id="liste_jeux_test">
 						<li><a href="accueil.html">Home</a></li>
-						<!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
+						<div id="liste_jeux_test"></div>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
           						<ul id="plusJeu" class="dropdown-menu">
            							 <li><a href="#">Jeu 1</a></li>
            							 <li><a href="#">Jeu 2</a></li>
             						 <li><a href="#">Jeu 3</a></li>
          						</ul>
-        					</li>-->
+        					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>

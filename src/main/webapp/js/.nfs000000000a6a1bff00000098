@@ -1,0 +1,15 @@
+function liste_jeux(id){
+	var tab_jeux;
+	$.ajax({
+		url:"http://localhost:8080/v1/jeudb",
+		data:{},
+		type:"GET",
+		dataType:"json",
+		async: false,
+		success:function(a){
+			console.log(a);
+			tab_jeux = a;
+		},
+		error:function(){}
+	});
+}

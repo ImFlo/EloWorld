@@ -108,6 +108,7 @@
 				 <div>
 					<ul class="nav navbar-nav" id="liste_jeux_test">
 						<li><a href="accueil.html">Home</a></li>
+						<div id="liste_jeux_test"></div>
 						<!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
           						<ul id="plusJeu" class="dropdown-menu">
            							 <li><a href="#">Jeu 1</a></li>

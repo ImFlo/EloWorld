@@ -10,7 +10,6 @@
 		<script src="./js/jquery.js"></script>
 		<script  src="./js/base.js"></script>
 		<script src="js/cookie.js"></script>
-		<script src="js/header.js"></script>
 		<script>
 			function modif_profile(field, value){
 				var id = readCookie("id");
@@ -87,7 +86,7 @@
 						document.location.href="monProfil.html"; 
 					});
 				}
-				liste_jeux("liste_jeux_test");
+				liste_jeux(1);
 			});
 		</script>
 		<style>
@@ -106,15 +105,22 @@
 					<a id="ew" class="navbar-brand" href="accueil.html">Elo World</a>
 				</div>
 				 <div>
-					<ul class="nav navbar-nav" id="liste_jeux_test">
+					<ul class="nav navbar-nav">
 						<li><a href="accueil.html">Home</a></li>
-						<!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
+						<li><a>League of Legends</a></li>
+						<li><a>Dota 2</a></li>
+						<li><a>CSGO</a></li>
+						<li><a>FF XIV</a></li>
+						<li><a>Starcraft II</a></li>
+						<li><a>HearthStone</a></li>
+						<li><a>Smite</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
           						<ul id="plusJeu" class="dropdown-menu">
            							 <li><a href="#">Jeu 1</a></li>
            							 <li><a href="#">Jeu 2</a></li>
             						 <li><a href="#">Jeu 3</a></li>
          						</ul>
-        					</li>-->
+        					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>

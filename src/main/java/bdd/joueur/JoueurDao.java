@@ -33,16 +33,16 @@ public interface JoueurDao {
     Joueur findJoueur(@Bind("pseudo") String pseudo, @Bind("mdp") String mdp);
 
 		@SqlUpdate("Update joueur set nom= :new where id = :id")
-		void changeNom(@Bind("new") String nom, @Bind("id") int id);
+		int changeNom(@Bind("new") String nom, @Bind("id") int id);
 
 		@SqlUpdate("Update joueur set prenom= :new where id = :id")
-		void changePrenom(@Bind("new") String prenom, @Bind("id") int id);
+		int changePrenom(@Bind("new") String prenom, @Bind("id") int id);
 
 		@SqlUpdate("Update joueur set email= :new where id = :id")
-		void changeMail(@Bind("new") String mail, @Bind("id") int id);
+		int changeMail(@Bind("new") String mail, @Bind("id") int id);
 
 		@SqlUpdate("Update joueur set mdp= :new where id = :id")
-		void changeMdp(@Bind("new") String mdp, @Bind("id") int id);
+		int changeMdp(@Bind("new") String mdp, @Bind("id") int id);
 
 
 
@@ -50,4 +50,4 @@ public interface JoueurDao {
     void dropJoueurTable();
 
     void close();
-}
+

@@ -74,4 +74,25 @@ public class JoueurDBRessource {
 		}
 		return out;
 	}
+
+	@PUT
+	@Path("/{id}/{field}={value}")
+	public String modif(@PathParam("field") String field, @PathParam("value") String value, @PathParam("id") int id){
+		int ret = 0;
+		switch (field) {
+			case "nom":
+				ret = dao.changeNom(value, id);
+			break;
+			case "prenom":
+				ret = dao.changePrenom(value, id);
+			break;
+			case "mail":
+				ret = dao.changeMail(value, id);
+			break;
+			case "mdp":
+				ret = dao.changeMdp(value, id);
+			break;
+		}
+		return ret + "";
+	}
 }
