@@ -14,13 +14,6 @@
 			if(readCookie("id") === null){
 				document.location.href="index.html"; 
 			}
-			$(function(){
-				$(".dropdown-menu").on('click', 'li a', function(){
-					$(".btn:first-child").text($(this).text());
-					$(".btn:first-child").val($(this).text());
-				});
-			});
-			
 			$(document).ready(function(){
 				var id = readCookie("id");
 				var player = getJoueur(id);
@@ -35,22 +28,23 @@
 						$("#steamid").append(player.steamId + "");
 					if(player.riotId != undefined)
 						$("#lolign").append(player.riotId + "");
+				
+					$.ajax({
+						url:"http://localhost:8080/v1/possede_jeudb/" + id,
+						data:{},
+						type:"GET",
+						dataType:"text",
+						success:function(a){
+							var str = a.split(";");
+							for(var len = str.length; len >=0; len --){
+								if(str[len] !== undefiend && str[len] != "")
+									$("#jeux").append("<li><h4>" + str[len] + "</h4></li>");
+							}
+						},
+						error:function(){}
+					});
 
-						$.ajax({
-							url:"http://localhost:8080/v1/possede_jeudb/" + id,
-							data:{},
-							type:"GET",
-							dataType:"text",
-							success:function(a){
-								var str = a.split(";");
-								for(var len = str.length; len >=0; len --){
-									if(str[len] !== undefined && str[len] != "")
-										$("#jeux").append("<li><h4>" + str[len] + "</h4></li>");
-								}
-							},
-							error:function(){}
-						});
-					}
+				}
 			});
 		</script>
 		<style>
@@ -71,7 +65,7 @@
 				 <div>
 					<ul class="nav navbar-nav">
 						<li><a href="accueil.html">Home</a></li>
-						<li><a>League of Legends</a></li>
+						<li><a href="lol.html">League of Legends</a></li>
 						<li><a>Dota 2</a></li>
 						<li><a>CSGO</a></li>
 						<li><a>FF XIV</a></li>
@@ -136,21 +130,7 @@
 						<ul><h2>Jeux : </h2>
 							<div id="jeux"></div>
 						</ul>
-						<div class="btn-group">
-							<button class="btn btn-default">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
-          					<ul class="dropdown-menu">
-           						<li><a href="#">LoL</a></li>
-           						<li><a href="#">Dota 2</a></li>
-            					<li><a href="#">CS:GO</a></li>
-            					<li><a href="#">Hearthstone</a></li>
-            					<li><a href="#">Smite</a></li>
-            					<li><a href="#">FF XIV</a></li>
-            					<li><a href="#">Minecraft</a></li>
-            					<li><a href="#">Starcraft II</a></li>
-         					</ul>
-         				</div>
-         				<br >
-         				<button id="send_post" class="btn btn-info">Envoyer Post</button>
+						<button class="btn btn-default">Ajouter un jeu</button>
 						
 					</div>
 				</div>

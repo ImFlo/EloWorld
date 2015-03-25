@@ -44,7 +44,7 @@
 							success:function(a){
 								var str = a.split(";");
 								for(var len = str.length; len >=0; len --){
-									if(str[len] !== undefined && str[len] != "")
+									if(str[len] !== undefiend && str[len] != "")
 										$("#jeux").append("<li><h4>" + str[len] + "</h4></li>");
 								}
 							},
