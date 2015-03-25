@@ -42,18 +42,11 @@
 				color : #00a2e8;
 			}
 			
-			#trophee{
+			#vs{
 				font-family: 'solaria', Arial, serif;
-				font-size: 20px;
+				text-align: center;
 			}
 			
-			div#jeuxMM .btn-default{
-				text-align: left;
-				background: #00a2e8;
-				color: white;
-				font-size: 15px;
-				font-family: 'solaria', Arial, serif;
-			}
 			
 		</style>
 		
@@ -112,32 +105,47 @@
 				</ul>
 			</div>
 
-			<div id="jeuxMM" class='col-md-8'>
-				<ul class="list-group">
-					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeLoL.png"></img>TROPHEES : </p>
-					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmLOL.html" role="button">Match</a>
-					<br></br>
-					Rank : 
-					</p>
-				</ul>
-				
-				<ul class="list-group">
-					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeCSGO.png"></img>TROPHEES : </p>
-					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmCSGO.html" role="button">Match</a>
-					<br></br>
-					Rank : 
-					</p>
-				</ul>
-				
-				<ul class="list-group">
-					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeMC.png"></img>TROPHEES : </p>
-					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmMC.html" role="button">Match</a>
-					<br></br>
-					Rank : 
-					</p>
-				</ul>
+			<div id="Team" class='col-xs-3'>
+				<div class="list-group">
+					<div class="list-group-item">
+						<p id="txtTeam">My Team<p>
+						<br></br>
+						<ul id="listMyTeam" class="nav nav-pill nav-stacked">
+							<!--Le premier joueur dans la liste EST TOUJOURS soi-même.-->
+							<li><a target="top" href="myProfil.html" id="moi">Moi</a></li>
+							<li><a target="top" href="" id="">Nombre à</a></li>
+							<li><a target="top" href="" id="">Gérer en</a></li>
+							<li><a target="top" href="" id="">Fonction du</a></li>
+							<li><a target="top" href="" id="">Jeu</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-
+			
+			<div id="vs" class="col-xs-2">
+				<br></br>
+				<br></br>
+				<br></br>
+				<h1 id="vs">VS</h1>
+			</div>
+			
+			<div id="Team" class='col-xs-3'>
+				<div class="list-group">
+					<div class="list-group-item">
+						<p id="txtTeam">Enemy Team<p>
+						<br></br>
+						<ul id="listEnemyTeam" class="nav nav-pill nav-stacked">
+							<li><a target="top" href="" id="">LES MECHANTS</a></li>
+							<li><a target="top" href="" id="">Nombre à</a></li>
+							<li><a target="top" href="" id="">Gérer en</a></li>
+							<li><a target="top" href="" id="">Fonction du</a></li>
+							<li><a target="top" href="" id="">Jeu</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			
 			<div class='col-md-2'>
 				<ul id="navDroite" class="nav nav-pill nav-stacked">
 					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
@@ -145,6 +153,14 @@
 					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
 					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
 				</ul>
+			</div>
+			
+			<div id="infoGame" class='col-xs-8'>
+				<div class="list-group">
+					<div class="list-group-item">
+						<p id="all">Toutes les infos de la game a gérer en fonction du jeu (serveurs dédiés ou p2p)</p>
+					</div>
+				</div>
 			</div>
 
 		</div>

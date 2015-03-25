@@ -19,6 +19,19 @@
  			src: url('../fonts/CaviarDreams.ttf');
  		}
 		
+		#txtTeam{
+			font-family: 'solaria', Arial, serif;
+			font-size: 20px;
+			text-align: center;
+			background: #d5d5d5;
+		}
+		
+		div#Team a{
+			font-family: 'CaviarDreams', Arial, serif;
+			font-size: 15px;
+			color: #00a2e8;
+		}
+		
 		#welcome{
 		
 			font-family: 'quaaludes', Arial, serif;
@@ -64,6 +77,18 @@
 				font-family: 'CaviarDreams', Arial, serif;
 				color: #00a2e8;
 				background: #eee;
+		}
+		
+		div#Team .list-group-item{
+			background: #eee;
+		}
+		
+		div#infoGame .list-group-item{
+			background: #eee;
+		}
+		
+		div#jeuxMM .list-group-item{
+			background: #eee;
 		}
 		
 		textarea#comment{
