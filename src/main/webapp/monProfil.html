@@ -14,6 +14,13 @@
 			if(readCookie("id") === null){
 				document.location.href="index.html"; 
 			}
+			$(function(){
+				$(".dropdown-menu").on('click', 'li a', function(){
+					$(".btn:first-child").text($(this).text());
+					$(".btn:first-child").val($(this).text());
+				});
+			});
+			
 			$(document).ready(function(){
 				var id = readCookie("id");
 				var player = getJoueur(id);
@@ -114,7 +121,21 @@
 						<ul><h2>Jeux : </h2>
 							<li><h4 id="jeu1">*LauL*</h4></li>
 						</ul>
-						<button class="btn btn-default">Ajouter un jeu</button>
+						<div class="btn-group">
+							<button class="btn btn-default">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
+          					<ul class="dropdown-menu">
+           						<li><a href="#">LoL</a></li>
+           						<li><a href="#">Dota 2</a></li>
+            					<li><a href="#">CS:GO</a></li>
+            					<li><a href="#">Hearthstone</a></li>
+            					<li><a href="#">Smite</a></li>
+            					<li><a href="#">FF XIV</a></li>
+            					<li><a href="#">Minecraft</a></li>
+            					<li><a href="#">Starcraft II</a></li>
+         					</ul>
+         				</div>
+         				<br >
+         				<button id="send_post" class="btn btn-info">Envoyer Post</button>
 						
 					</div>
 				</div>
