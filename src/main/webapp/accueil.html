@@ -8,6 +8,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		<script src="js/cookie.js"></script>
+		<script src="js/base.js"></script>
 		
 		<script>
 			$(function(){
@@ -28,7 +29,13 @@
 					});
 					$("#send_post").click(function(){
 						<!-- ENVOYER UN POST-->
-					
+						var publication = new Object();
+						publication.texte = $("#comment").val();
+						publication.date = new Date();
+						publication.date = publication.date.getFullYear() + "-" +
+							('00'+(publication.date.getMonth()+1)).slice(-2) + "-" +
+							('00'+(publication.date.getDate()+1)).slice(-2);
+						createPublication(publication);
 					});
 			});
 		</script>

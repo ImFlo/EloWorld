@@ -106,4 +106,17 @@ function createAccount(player){
 	});
 }
 
-
+function createPublication(publication){
+	$.ajax({
+		url: "http://localhost:8080/v1/publicationdb/create:"+publication.texte+":"+publication.date,
+		data: {},
+		type:"POST",
+		dataType:"text",
+		success:function() {
+			alert("publication created");
+		},
+		error: function(){
+			alert(publication.date + " fail");
+		}
+	});
+}
