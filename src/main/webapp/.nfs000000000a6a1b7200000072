@@ -63,9 +63,11 @@
 						dataType:"json",
 						success:function(a){
 							var str = a;
+							console.log(a);
 							for(var len = str.length -1; len >=0; len --){
 								if(str[len] !== undefined){
-									$("#jeux").append("<li><h4>" + str[len].nom + "</h4></li>");
+									console.log(str[len]);
+									$("#jeux").append("<li><h4>" + str[len] + "</h4></li>");
 								}
 							}
 						},

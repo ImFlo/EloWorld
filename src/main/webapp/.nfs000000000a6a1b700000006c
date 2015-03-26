@@ -60,12 +60,13 @@
 						url:"http://localhost:8080/v1/possede_jeudb/" + id,
 						data:{},
 						type:"GET",
-						dataType:"json",
+						dataType:"text",
 						success:function(a){
-							var str = a;
+							var str = a.split(";");
 							for(var len = str.length -1; len >=0; len --){
-								if(str[len] !== undefined){
-									$("#jeux").append("<li><h4>" + str[len].nom + "</h4></li>");
+								if(str[len] !== undefined && str[len] != ""){
+									console.log(str[len]);
+									$("#jeux").append("<li><h4>" + str[len] + "</h4></li>");
 								}
 							}
 						},

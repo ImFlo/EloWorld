@@ -129,6 +129,7 @@ function insertPossedeJeu(player, game){
 		type:"POST",
 		dataType:"text",
 		success:function(e) {
+			console.log(e);
 			alert("game added");
 		},
 		error: function(){
@@ -147,7 +148,9 @@ function getIdByName(name){
 		dataType:"text",
 		async:false,
 		success: function(e){
+			console.log(e);
 			ret = e;
+			alert("success");
 		},
 		error: function(e){
 			alert("fail");
