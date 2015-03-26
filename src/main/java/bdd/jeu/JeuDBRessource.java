@@ -28,7 +28,7 @@ public class JeuDBRessource {
 	
 	@POST
 	public Jeu createJeu(Jeu jeu) {
-		int id = dao.insert(jeu.getAppID(), jeu.getNom());
+		int id = dao.insert(jeu.getAppID(), jeu.getNom(), jeu.getImage(), jeu.getLien());
 		jeu.setId(id);
 		return jeu;
 	}
