@@ -15,7 +15,7 @@ public interface PossedeJeuDao {
 	@SqlUpdate("create table possede_jeu ("
     		+ "idJoueur integer, "
     		+ "idJeu integer,"
-    		+ "elo integer not null"
+    		+ "elo integer not null,"
     		+ "foreign key (idJoueur) references Joueur(id),"
     		+ "foreign key (idJeu) references Jeu(id),"
     		+ "constraint pk_possedeID primary key (idJoueur, idJeu))")
