@@ -78,10 +78,11 @@ function afficher_publication_de(id){
 		},
 		error : function() {}
 	});
-
-	for(var len = liste.length -1; len >= 0; len --){
-		$("#publications").append("<ul class=\"list-group\"><li class=\"list-group-item\">"+ liste[len].texte+ "</li></ul>");
+/*
+	var len = liste.length;
+	for(var i =0; i < len; i++){
+		$("#publications").append("<ul class=\"list-group\"><li class=\"list-group-item\">"+ liste[i].+ "</li></ul>");
 	}
-
+*/
 	console.log(liste);
 }

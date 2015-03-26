@@ -172,8 +172,8 @@
 							<div id="jeux"></div>
 						</ul>
 						<div class="btn-group">
-							<button  class="btn btn-default">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
-          					<ul id="list_add_game" class="dropdown-menu">
+							<button id="list_add_game" class="btn btn-default">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
+          					<ul class="dropdown-menu">
          					</ul>
          				</div>
          				<br >

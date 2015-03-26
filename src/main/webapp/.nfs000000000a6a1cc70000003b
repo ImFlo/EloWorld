@@ -23,7 +23,6 @@
 			var id = readCookie("id");
 			$(document).ready(function(){
 				isConnected();
-				afficher_publication_de(readCookie("id"));
 				liste_jeux("liste_jeux");
 
 					$("#disconnect").click(function(){
@@ -117,7 +116,12 @@
         			</li>
 							<!-- LA POUR ECRIRE UNE PUBLICATION-->
 				</ul>
-				<div id="publications"></div>
+				<div id="publications">
+					<ul class="list-group">
+						<li class="list-group-item"><p>patate </p>
+						</li>	
+					</ul>
+				</div>
 			</div>
 
 			<div class='col-md-2'>

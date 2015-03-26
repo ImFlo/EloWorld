@@ -117,7 +117,12 @@
         			</li>
 							<!-- LA POUR ECRIRE UNE PUBLICATION-->
 				</ul>
-				<div id="publications"></div>
+				<div id="publications">
+					<ul class="list-group">
+						<li class="list-group-item"><p>patate </p>
+						</li>	
+					</ul>
+				</div>
 			</div>
 
 			<div class='col-md-2'>

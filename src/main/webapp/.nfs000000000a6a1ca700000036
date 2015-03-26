@@ -33,12 +33,6 @@
 			$(document).ready(function(){
 				
 				isConnected();
-
-				<!-- GENERER LISTE POUR AJOUTER JEU-->
-				var tab = getListJeu();
-				for(var len = tab.length - 1; len >= 0; len --){
-					$("#list_add_game").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
-				}
 				
 				var id = readCookie("id");
 				var player = getJoueur(id);
@@ -172,8 +166,16 @@
 							<div id="jeux"></div>
 						</ul>
 						<div class="btn-group">
-							<button  class="btn btn-default">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
-          					<ul id="list_add_game" class="dropdown-menu">
+							<button class="btn btn-default">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
+          					<ul class="dropdown-menu">
+           						<li><a href="#">LoL</a></li>
+           						<li><a href="#">Dota 2</a></li>
+            					<li><a href="#">CS:GO</a></li>
+            					<li><a href="#">Hearthstone</a></li>
+            					<li><a href="#">Smite</a></li>
+            					<li><a href="#">FF XIV</a></li>
+            					<li><a href="#">Minecraft</a></li>
+            					<li><a href="#">Starcraft II</a></li>
          					</ul>
          				</div>
          				<br >
