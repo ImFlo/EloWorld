@@ -1,3 +1,17 @@
+function liste_jeux_de(id){
+	var tab;
+	$.ajax({
+		url:"http://localhost:8080/v1/possede_jeudb/" + id,
+		data:{},
+		type:"GET",
+		dataType:"json",
+		async:false,
+		success:function(s){tab = s;},
+		error:function(){}
+	});
+	return tab;
+}
+
 function liste_jeux(id){
 	var tab_jeux;
 	$.ajax({

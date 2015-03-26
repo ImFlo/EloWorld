@@ -7,7 +7,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
-
+import bdd.jeu.*;
 import java.util.*;
 
 import bdd.App;
@@ -26,7 +26,7 @@ public class PossedeJeuDBRessource {
 	}
 	
 	@POST
-	@Path("/insert:{idPlayer):{idGame}")
+	@Path("/insert:{idPlayer}:{idGame}")
 	public PossedeJeu createPossedeJeu(@PathParam("idPlayer") int idPlayer, @PathParam("idGame") int idGame) {
 		int id = dao.insert(idPlayer, idGame);
 		return new PossedeJeu(idPlayer, idGame);
@@ -34,19 +34,8 @@ public class PossedeJeuDBRessource {
 
 	@GET
 	@Path("/{idJoueur}")
-	public String getPossedeJeu(@PathParam("idJoueur") int idJoueur) {
-		List<String> out = dao.getJeuDe(idJoueur);
-		System.out.println(out.toString());
-		if (out == null) {
-			throw new WebApplicationException(404);
-		}
-		String str = "";
-		if(out.size() > 0){
-			for(String s : out){
-				str += s + ";";
-			}
-			str = str.substring(0, str.length()-1);
-		}
-		return str;
+	public List<Jeu> getPossedeJeu(@PathParam("idJoueur") int idJoueur) {
+		List<Jeu> out = dao.getJeuDe(idJoueur);
+		return out;
 	}
 }

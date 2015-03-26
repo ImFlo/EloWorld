@@ -1,5 +1,6 @@
 package bdd.possede.jeu;
 
+import bdd.jeu.*;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
@@ -31,8 +32,9 @@ public interface PossedeJeuDao {
     @SqlUpdate("drop table if exists possede_jeu")
     void dropPossedeJeuTable();
 		
-		@SqlQuery("select nom from jeu where id in (select idJeu from possede_jeu where idJoueur = :id)")
-		List<String> getJeuDe(@Bind("id") int id);
+		@SqlQuery("select * from jeu where id in (select idJeu from possede_jeu where idJoueur = :id)")
+		@RegisterMapperFactory(BeanMapperFactory.class)
+		List<Jeu> getJeuDe(@Bind("id") int id);
 
     void close();
 }

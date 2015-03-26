@@ -33,7 +33,7 @@
 			$(document).ready(function(){
 				
 				isConnected();
-				afficher_publication_de(readCookie("id"))
+				afficher_publiction_de(readCookie("id"))
 
 
 				<!-- GENERER LISTE POUR AJOUTER JEU-->
