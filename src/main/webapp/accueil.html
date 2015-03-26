@@ -26,10 +26,10 @@
 				afficher_publication_pour(readCookie("id"));
 				liste_jeux("liste_jeux");
 
-					$("#disconnect").click(function(){
+					<!--$("#disconnect").click(function(){
 						eraseCookie("id");
 						document.location.href="index.html"; 
-					});
+					});-->
 
 					<!-- ON REMPLIE LA LISTE DES JEUX POUR LE POSTE -->
 					var tab = getListJeu();
@@ -122,10 +122,10 @@
 
 			<div class='col-md-2'>
 				<ul id="navDroite" class="nav nav-pill nav-stacked">
-					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
-					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
-					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
-					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
+					<li><a target="top" href="./lastUpdate">Derniere MaJ</a><p id="lastUpdate">Ceci contiendra un petit resumé de la dernière maj du site.
+					Le lien redirigera vers "./lastUpdate.html"</p></li>
+					<li><a target="top" href="./lastArticle">Dernier Article</a><p id="lastArticle">Ceci contiendra le titre du dernier article posté sur le site.
+					Le lien redirigera vers "./lastArticle.html"</p></li>
 				</ul>
 			</div>
 
