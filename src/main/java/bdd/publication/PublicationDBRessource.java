@@ -47,9 +47,16 @@ public class PublicationDBRessource {
 	}
 
 	@GET
-	@Path("/id={id}")
+	@Path("/perso/id={id}")
 	public List<Publication> getPublicationDe(@PathParam("id") int id){
 		List<Publication> out = dao.getPubOf(id);
+		return out;
+	}
+
+	@GET
+	@Path("/acc/id={id}")
+	public List<Publication> getPubFor(@PathParam("id") int id){
+		List<Publication> out = dao.getPubFor(id);
 		return out;
 	}
 

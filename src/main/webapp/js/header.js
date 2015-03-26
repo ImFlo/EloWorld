@@ -68,7 +68,7 @@ function isConnected(){
 function afficher_publication_de(id){
 	var liste;
 	$.ajax({
-		url:"http://localhost:8080/v1/publicationdb/id=" + id,
+		url:"http://localhost:8080/v1/publicationdb/acc/id=" + id,
 		data:{},
 		type:"GET",
 		dataType:"json",

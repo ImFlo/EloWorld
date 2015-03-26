@@ -34,7 +34,7 @@ public interface PublicationDao {
 		
 
 		//pour l'accueil
-		@SqlQuery("SELECT * FROM publication WHERE id IN (SELECT idPublication FROM publie WHERE idJoueur = :id OR idJoueur in (SELECT idJoueur2 FROM amis WHERE idJoueur1 = :id)) ORDER BY date DESC")
+		@SqlQuery("SELECT * FROM publication WHERE id IN (SELECT idPublication FROM publie WHERE idJoueur = :id OR idJoueur in (SELECT idJoueur2 FROM ami WHERE idJoueur1 = :id)) ORDER BY date DESC")
 		@RegisterMapperFactory(BeanMapperFactory.class)
 		List<Publication> getPubFor(@Bind("id") int id);
 
