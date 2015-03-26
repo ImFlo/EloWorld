@@ -133,7 +133,9 @@ function insertPossedeJeu(player, game){
 			alert("game added");
 		},
 		error: function(){
-			alert(publication.date + " fail");
+			alert("fail");
 		}
 	});
 }
+	
+	
