@@ -32,6 +32,22 @@
 				font-family: 'CaviarDreams', Arial, serif;
 				color: #EBBF10
 		}
+		
+		#lastUpdate{
+			font-family: 'CaviarDreams', Arial, serif;
+			font-size: 10px;
+			color: white;
+			text-align: left;
+			margin: 2px;
+		}
+		
+		#lastArticle{
+			font-family: 'CaviarDreams', Arial, serif;
+			font-size: 10px;
+			color: white;
+			text-align: left;
+			margin: 2px;
+		}
 			
 		ul#navGauche{
 				
