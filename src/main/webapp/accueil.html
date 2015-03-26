@@ -9,6 +9,7 @@
 		<script src="./js/bootstrap.min.js"></script>
 		<script src="js/cookie.js"></script>
 		<script src="js/base.js"></script>
+		<script src="js/header.js"></script>
 		
 		<script>
 			$(function(){
@@ -17,22 +18,45 @@
 					$(".btn:first-child").val($(this).text());
 				});
 			});
-			if(readCookie("id") === null){
-				document.location.href="index.html"; 
-			}
+			
 			<!-- on recup le pseudo du mec-->
 			var id = readCookie("id");
 			$(document).ready(function(){
+				isConnected();
+				liste_jeux("liste_jeux");
+
 					$("#disconnect").click(function(){
 						eraseCookie("id");
 						document.location.href="index.html"; 
 					});
+
+					<!-- ON REMPLIE LA LISTE DES JEUX POUR LE POSTE -->
+					var tab = getListJeu();
+					for(var len = tab.length - 1; len >= 0; len --){
+						$("#list_jeux_post").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
+					}
+
 					$("#send_post").click(function(){
 						<!-- ENVOYER UN POST-->
 						var publication = new Object();
 						publication.texte = $("#comment").val();
 						publication.date = new Date();
-						createPublication(publication);
+						var id_jeu;
+						<!-- ON GET L ID DU JEU-->
+						$.ajax({
+							url: "http://localhost:8080/v1/jeudb/name=" + $("#list_jeux_button").val(),
+							data:{},
+							type:"GET",
+							dataType:"text",
+							async:false,
+							success:function(s){
+								id_jeu = s;
+							},
+							error:function(e){
+								alert();
+							}
+						});
+						createPublication(publication, id, id_jeu);
 					});
 			});
 		</script>
@@ -47,22 +71,8 @@
 					<a id="ew" class="navbar-brand" href="accueil.html">Elo World</a>
 				</div>
 				 <div>
-					<ul class="nav navbar-nav">
+					<ul id="liste_jeux" class="nav navbar-nav">
 						<li class="active"><a href="accueil.html">Home</a></li>
-						<li><a href="lol.html">League of Legends</a></li>
-						<li><a>Dota 2</a></li>
-						<li><a>CS:GO</a></li>
-						<li><a>FF XIV</a></li>
-						<li><a>Starcraft II</a></li>
-						<li><a>HearthStone</a></li>
-						<li><a>Smite</a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
-          						<ul id="plusJeu" class="dropdown-menu">
-           							 <li><a href="#">Jeu 1</a></li>
-           							 <li><a href="#">Jeu 2</a></li>
-									 <li><a href="#">Jeu 3</a></li>
-         						</ul>
-        					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="monProfil.html" id="myProfil"><span class="glyphicon glyphicon-user"></span><div id="login"></div></a></li>
@@ -98,11 +108,8 @@
 					<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea></li>
 					<li class="list-group-item dropdown">
 						<div class="btn-group">
-							<button class="btn btn-default">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
-          					<ul class="dropdown-menu">
-           						<li><a href="#">LoL</a></li>
-           						<li><a href="#">Dota 2</a></li>
-            					<li><a href="#">CS:GO</a></li>
+							<button class="btn btn-default" id="list_jeux_button">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+          					<ul id="list_jeux_post" class="dropdown-menu">
          					</ul>
          				</div>
          				<button id="send_post" class="btn btn-info">Envoyer Post</button>

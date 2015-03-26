@@ -30,15 +30,12 @@ public class PublicationDBRessource {
 	}
 	
 	@POST
-	@Path("/create:{texte}:{date}")
+	@Path("/{id}/create&{texte}&{date}&{jeu}")
 	@Produces("application/json")
-	public String createPublication(@PathParam("texte") String texte, @PathParam("date") String date){
-		try{
+	public String createPublication(@PathParam("texte") String texte, @PathParam("date") String date, @PathParam("id") int idJ, @PathParam("jeu") int jeu){
 		int id = dao.insert(texte, date);
+		dao.publie(idJ, jeu , id);
 		System.out.println("patate= " + id);
-		}catch(Exception e){
-			return "not ok";
-		}
 		return "ok";
 	}
 	
@@ -47,6 +44,13 @@ public class PublicationDBRessource {
 		int id = dao.insert(pub.getTexte(), pub.getDate());
 		pub.setId(id);
 		return pub;
+	}
+
+	@GET
+	@Path("/id={id}")
+	public List<Publication> getPublicationDe(@PathParam("id") int id){
+		List<Publication> out = dao.getPubOf(id);
+		return out;
 	}
 
 	@GET

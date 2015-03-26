@@ -24,6 +24,9 @@ public interface JeuDao {
     @SqlQuery("select * from jeu where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Jeu findById(@Bind("id") int id);
+
+		@SqlQuery("select id from jeu where nom = :n")
+		String findId(@Bind("n") String nom);
     
     @SqlQuery("select * from jeu")
 	@RegisterMapperFactory(BeanMapperFactory.class)

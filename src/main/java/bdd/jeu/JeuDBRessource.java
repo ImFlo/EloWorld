@@ -39,6 +39,15 @@ public class JeuDBRessource {
 	}
 
 	@GET
+	@Path("/name={txt}")
+	public String getNom(@PathParam("txt") String nom){
+		String out = dao.findId(nom);
+		if(out == null)
+			throw new WebApplicationException(404);
+		return out;
+	}
+
+	@GET
 	@Path("/{id}")
 	public Jeu getJeu(@PathParam("id") int id) {
 		Jeu out = dao.findById(id);

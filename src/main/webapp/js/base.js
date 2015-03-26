@@ -74,7 +74,7 @@ function getJoueur(id){
 		success:function(a){
 			IDENTIFICATE_PLAYER = a;
 		},
-		error:function(){
+		error:function(e){
 			console.log("fail" + e);
 		}
 	});
@@ -106,13 +106,14 @@ function createAccount(player){
 	});
 }
 
-function createPublication(publication){
+function createPublication(publication, id, jeu){
 	$.ajax({
-		url: "http://localhost:8080/v1/publicationdb/create:"+publication.texte+":"+publication.date,
+		url: "http://localhost:8080/v1/publicationdb/" + id + "/create&"+publication.texte+"&"+publication.date +"&" + jeu,
 		data: {},
 		type:"POST",
 		dataType:"text",
-		success:function() {
+		success:function(e) {
+			console.log(e);
 			alert(publication.date + " publication created");
 		},
 		error: function(){
@@ -127,7 +128,8 @@ function insertPossedeJeu(player, game){
 		data: {},
 		type:"POST",
 		dataType:"text",
-		success:function() {
+		success:function(e) {
+			console.log(e);
 			alert("game added");
 		},
 		error: function(){

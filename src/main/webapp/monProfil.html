@@ -23,10 +23,6 @@
 					error:function(e){}
 				});
 			}
-
-			if(readCookie("id") === null){
-				document.location.href="index.html"; 
-			}
 			$(function(){
 				$(".dropdown-menu").on('click', 'li a', function(){
 					$(".btn:first-child").text($(this).text());
@@ -35,6 +31,9 @@
 			});
 			
 			$(document).ready(function(){
+				
+				isConnected();
+				
 				var id = readCookie("id");
 				var player = getJoueur(id);
 				if(player !== undefined){
@@ -229,18 +228,13 @@
 				</div>
 				
 				<div id="publications">
-			<p><h4 id="all">Dernières publications : </h4></p>
-				<ul class="list-group">
-					<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>
-					</li>
-				
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item"><p>Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente 					regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam 						reducere utilia suadendo deberet, ut in actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.</p>
-					</li>
-					
-				</ul>
-		</div>
+					<p><h4 id="all">Dernières publications : </h4></p>
+						<!-- LES PUBLICATIONS-->
+						<ul class="list-group">
+							<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>
+							</li>
+					</ul>
+				</div>
 			</div>
 			
 			<div class='col-md-2'>
