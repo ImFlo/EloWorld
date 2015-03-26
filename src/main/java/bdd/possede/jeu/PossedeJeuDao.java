@@ -21,8 +21,8 @@ public interface PossedeJeuDao {
     		+ "constraint pk_possedeID primary key (idJoueur, idJeu))")
     void createPossedeJeuTable();
 
-    @SqlUpdate("insert into possede_jeu (idJoueur, idJeu) "
-            + "values (:idJoueur, :idJeu)")
+    @SqlUpdate("insert into possede_jeu (idJoueur, idJeu, elo) "
+            + "values (:idJoueur, :idJeu, 1200)")
     @GetGeneratedKeys
     int insert(@Bind("idJoueur") int idJoueur, @Bind("idJeu") int idJeu);
 
@@ -31,7 +31,6 @@ public interface PossedeJeuDao {
     PossedeJeu findById(@Bind("idJoueur") int idJoueur);
     
     @SqlQuery("select elo from possede_jeu where idJoueur = :idJoueur and idJeu = :idJeu")
-    @RegisterMapperFactory(BeanMapperFactory.class)
     int getElo(@Bind("idJoueur") int idJoueur, @Bind("idJeu") int idJeu);
 
     @SqlUpdate("drop table if exists possede_jeu")

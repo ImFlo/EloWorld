@@ -23,10 +23,11 @@ public class AmiDBRessource {
 		}
 	}
 	
-	@POST
-	public Ami createAmi(Ami ami) {
-		int id = dao.insert(ami.getIdJoueur1(), ami.getIdJoueur2());
-		return ami;
+	@GET
+	@Path("/{id1}&{id2}")
+	public int createAmi(@PathParam("id1") int id1, @PathParam("id2") int id2) {
+		int id = dao.insert(id1, id2);
+		return id;
 	}
 
 	@GET

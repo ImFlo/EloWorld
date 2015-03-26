@@ -119,11 +119,11 @@ function afficher_publication_pour(id){
 	}
 }
 
-function get_elo(idJoueur, idJeu){
+function getElo(idJoueur, idJeu){
 	var elo;
-	$ajax({
+	$.ajax({
 		url:"http://localhost:8080/v1/possede_jeudb/"+idJoueur+":"+idJeu,
-		data{},
+		data:{},
 		type:"GET",
 		dataType:"json",
 		async:false,
@@ -132,4 +132,5 @@ function get_elo(idJoueur, idJeu){
 		},
 		error:function(){}
 	});
+	return elo;
 }

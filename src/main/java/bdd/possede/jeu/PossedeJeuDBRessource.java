@@ -43,14 +43,11 @@ public class PossedeJeuDBRessource {
 	
 	@GET
 	@Path("/{idJoueur}:{idJeu}")
-	public int getElo(@PathParam("idJoueur") int idJoueur, @PathParam("idJeu") int idJeu){
+	public String getElo(@PathParam("idJoueur") int idJoueur, @PathParam("idJeu") int idJeu){
 		int out = 0;
-		try{
-			out = dao.getElo(idJoueur, idJeu);
-		}
-		catch(Exception e){
-			throw new WebApplicationException(404);
-		}
-		return out;
+		System.out.println("0 -- **");
+		out = dao.getElo(idJoueur, idJeu);
+		System.out.println("1 -- **");
+		return out + "";
 	}
 }

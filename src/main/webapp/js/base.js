@@ -31,6 +31,10 @@ var BUTTON_ADD_FRIEND = "<button id=\"add_friend\">ajouter en ami</button>";
 
 var connecting_key = "";
 
+function ajouter_ami(idJ1, idJ2){
+
+}
+
 function login(str) {	
 	switch (str) {
 		case "true":  
