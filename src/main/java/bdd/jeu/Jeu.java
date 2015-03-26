@@ -4,12 +4,16 @@ public class Jeu {
 	private int id = 0;
 	private String appID;
 	private String nom;
+	private String image;
+	private String lien;
 
 
-	public Jeu(int id, String appID, String nom) {
+	public Jeu(int id, String appID, String nom, String image, String lien) {
 		this.id = id;
 		this.appID = appID;
 		this.nom = nom;
+		this.image = image;
+		this.lien = lien;
 	}
 
 	public Jeu() {
@@ -38,6 +42,22 @@ public class Jeu {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	
+	public String getImage(){
+		return image;
+	}
+	
+	public void setImage(String image){
+		this.image = image;
+	}
+	
+	public String getLien(){
+		return lien;
+	}
+	
+	public void setLien(String lien){
+		this.lien = lien;
 	}
 	
 	public boolean equals(Object u) {

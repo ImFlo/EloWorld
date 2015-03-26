@@ -13,21 +13,26 @@ import bdd.joueur.Joueur;
 
 public interface JeuDao {
 
-    @SqlUpdate("create table jeu (id integer primary key autoincrement, appID text not null, nom text not null)")
+    @SqlUpdate("create table jeu (id integer primary key autoincrement,"
+    		+ "appID text not null,"
+    		+ "nom text not null,"
+    		+ "image text,"
+    		+ "lien text)")
     void createJeuTable();
 
-    @SqlUpdate("insert into jeu (appID, nom) "
-            + "values (:appID, :nom)")
+    @SqlUpdate("insert into jeu (appID, nom, image, lien) "
+            + "values (:appID, :nom, :image, :lien)")
     @GetGeneratedKeys
-    int insert(@Bind("appID") String appID, @Bind("nom") String nom);
+    int insert(@Bind("appID") String appID, @Bind("nom") String nom,
+    		@Bind("image") String image, @Bind("lien") String lien);
 
     @SqlQuery("select * from jeu where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Jeu findById(@Bind("id") int id);
 
-		@SqlQuery("select id from jeu where nom = :n")
-		String findId(@Bind("n") String nom);
-    
+	@SqlQuery("select id from jeu where nom = :n")
+	String findId(@Bind("n") String nom);
+	
     @SqlQuery("select * from jeu")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 List<Jeu> getAll();
