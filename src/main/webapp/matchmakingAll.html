@@ -35,7 +35,7 @@
 			<!-- recup liste des jeux de lutilisateur -->
 			var tab = liste_jeux_de(id);
 			for(var len = 0; len < tab.length; len ++){
-				$("#patate").append("<ul class=\"list-group\">" +
+				$("#jeuxMM").append("<ul class=\"list-group\">" +
 					"<li class=\"list-group-item\"><p id=\"trophee\" ><img src=\"./images/iconeLoL.png\"></img>TROPHEES : </p>" +
 					"<p id=\"txtJeu\">"+ tab[len].nom +
 					"<p id=\"all\">ELO : <p id="+ tab[len].nom +"<a class=\"btn btn-default pull-right\" href=\"mmLOL.html\" role=\"button\">Match</a>" +
@@ -121,7 +121,7 @@
 						<li><a target="top" href="/bllblblbl" id="images">Images</a></li>
 				</ul>
 			</div>
-			<div id="patate" class='col-md-8'>
+			<div id="jeuxMM" class='col-md-8'>
 			</div>
 			<div class='col-md-2'>
 				<ul id="navDroite" class="nav nav-pill nav-stacked">
