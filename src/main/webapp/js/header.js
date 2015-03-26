@@ -118,3 +118,18 @@ function afficher_publication_pour(id){
 		$("#publications").append("<ul class=\"list-group\"><li class=\"list-group-item\">"+ liste[len].texte+ "</li></ul>");
 	}
 }
+
+function get_elo(idJoueur, idJeu){
+	var elo;
+	$ajax({
+		url:"http://localhost:8080/v1/possede_jeudb/"+idJoueur+":"+idJeu,
+		data{},
+		type:"GET",
+		dataType:"json",
+		async:false,
+		success:function(a){
+			elo = a;
+		},
+		error:function(){}
+	});
+}
