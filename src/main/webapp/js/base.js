@@ -137,5 +137,22 @@ function insertPossedeJeu(player, game){
 		}
 	});
 }
-	
-	
+
+//fonction pour obtenir l'id du jeu	
+function getIdByName(name){
+	$.ajax({
+		url: "http://localhost:8080/v1/jeudb/name=" + name,
+		data: {},
+		type:"GET",
+		dataType:"text",
+		success: function(e){
+			console.log(e);
+			alert("success");
+		},
+		error: function(e){
+			alert("fail");
+		}
+		
+		
+	});
+}

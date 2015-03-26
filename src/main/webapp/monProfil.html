@@ -98,6 +98,10 @@
 				$("#add_game").click(function(){
 					<!-- on a besoin de l'id du jeu, de l'id du joueur -->
 					<!-- on obtient l'id du jeu grace a la valeur du boutton #list-jeu -->
+					var nameGame = $("#jeu_selectionne").val();
+					var idGame = getIdByName(nameGame);
+					var idPlayer = readCookie("id");
+					insertPossedeJeu(idPlayer, idGame);
 					
 				});
 			});
@@ -179,12 +183,12 @@
 							<div id="jeux"></div>
 						</ul>
 						<div class="btn-group">
-							<button  class="btn btn-default">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
+							<button  class="btn btn-default" id="jeu_selectionne">Ajouter un jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
           					<ul id="list_add_game" class="dropdown-menu">
          					</ul>
          				</div>
          				<br >
-         				<button id="send_post" class="btn btn-info">Envoyer Post</button>
+         				<button id="add_game" class="btn btn-info">Ajouter</button>
 						
 					</div>
 				</div>
