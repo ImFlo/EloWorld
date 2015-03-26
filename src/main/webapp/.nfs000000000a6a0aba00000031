@@ -30,21 +30,23 @@
 						<!-- ENVOYER UN POST-->
 					
 					});
-			
+			});
 			
 			<!-- recup liste des jeux de lutilisateur -->
 			var tab = liste_jeux_de(id);
+			console.log(tab);
+			$("#patate").append("truc");
 			for(var len = 0; len < tab.length; len ++){
-				$("#patate").append("<ul class=\"list-group\">" +
+				$("#patate").append("patate");
+				/*		$("#patate").append("<ul class=\"list-group\">" +
 					"<li class=\"list-group-item\"><p id=\"trophee\" ><img src=\"./images/iconeLoL.png\"></img>TROPHEES : </p>" +
 					"<p id=\"txtJeu\">"+ tab[len].nom +
 					"<p id=\"all\">ELO : <p id="+ tab[len].nom +"<a class=\"btn btn-default pull-right\" href=\"mmLOL.html\" role=\"button\">Match</a>" +
 					"<br></br>" +
 					"Rank : "+
 					"</p>"+
-					"</ul>");
+					"</ul>");*/
 					}
-			});
 		</script>
 		
 		<style>

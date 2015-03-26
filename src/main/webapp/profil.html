@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Profil</title>
+		<title>Elo World : Accueil</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
-		
+		<script src="./js/jquery.js"></script>
+		<script  src="./js/base.js"></script>
+		<script src="js/cookie.js"></script>
+		<script src="js/header.js"></script>
+		<script>
+			function modif_profile(field, value){
+				var id = readCookie("id");
+				$.ajax({
+					url:"http://localhost:8080/v1/joueurdb/" + id + "/" + field + "=" + value,
+					data:{},
+					type:"PUT",
+					dataType:"text",
+					success:function(s){console.log(s)},
+					error:function(e){}
+				});
+			}
+			$(function(){
+				$(".dropdown-menu").on('click', 'li a', function(){
+					$(".btn:first-child").text($(this).text());
+					$(".btn:first-child").val($(this).text());
+				});
+			});
+			
+			$(document).ready(function(){
+				
+				isConnected();
+
+				<!-- GENERER LISTE POUR AJOUTER JEU du header-->
+				var tab = getListJeu();
+				for(var len = tab.length - 1; len >= 0; len --){
+					$("#list_add_game").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
+				}
+				
+
+				<!-- INFO DU JOUEUR-->
+				var url = window.location.search;
+				var id = url.substring(url.lastIndexOf("=")+1);
+				if(id === undefined || id === "")
+					document.location.href="index.html";
+				var player = getJoueur(id);
+				afficher_publication_de(id)
+				if(player !== undefined){
+					console.log(player.nom);
+					<!-- AFFICHAGE DES INFO DANS LES BON ID-->a
+					console.log(player.nom);
+					$("#nom").append(player.nom + "");
+					$("#prenom").append(player.prenom + "");
+					$("#pseudo").append(player.pseudo + "");
+					if(player.steamId != undefined)
+						$("#steamid").append(player.steamId + "");
+					if(player.riotId != undefined)
+						$("#lolign").append(player.riotId + "");
+					<!-- affichage des jeux -->
+					$.ajax({
+						url:"http://localhost:8080/v1/possede_jeudb/" + id,
+						data:{},
+						type:"GET",
+						dataType:"json",
+						success:function(a){
+							var str = a;
+							for(var len = str.length -1; len >=0; len --){
+								if(str[len] !== undefined){
+									$("#jeux").append("<li><h4>" + str[len].nom + "</h4></li>");
+								}
+							}
+						},
+						error:function(){}
+					});
+				}
+				liste_jeux("liste_jeux_test");
+			});
+		</script>
 		<style>
-			div#barnav{
-				background-color: rgb(0,162,232);;
+			h2#pseudo{
+				color: #00a2e8;
 			}
 		
 		</style>
@@ -18,28 +89,79 @@
 	
 	<body>
 		
-		<nav class="navbar navbar-inverse" id="barnav">
+		<nav id="navHaut" class="navbar navbar-inverse" id="barnav">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="accueil.html">Elo World</a>
+					<a id="ew" class="navbar-brand" href="accueil.html">Elo World</a>
 				</div>
 				 <div>
-					<ul class="nav navbar-nav">
+					<ul class="nav navbar-nav" id="liste_jeux_test">
 						<li><a href="accueil.html">Home</a></li>
-						<li><a>News</a></li>
-						<li><a>Discussions</a></li>
-						<li><a>Ladder</a></li>
-						<li><a>Tournois</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+						<li class="active"><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
 						<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
+		
+		<div class='row'>
+			<div class='col-md-2'>
+
+				<ul id="navGauche" class="nav nav-pill nav-stacked">
+					<li class="active">
+						<a target="top" href="/bllblblbl" id="news">News</a></li>
+						<li><a target="top" href="./matchmakingALL.html" id="mm">Matchmaking</a></li>
+						<li><a target="top" href="/bllblblbl" id="discu">Discussions</a></li>
+						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
+						<li><a target="top" href="/bllblblbl" id="tournois">Tournois</a></li>
+						<li><a target="top" href="/bllblblbl" id="videos">Videos</a></li>
+						<li><a target="top" href="/bllblblbl" id="images">Images</a></li>
+			
+				</ul>
+			</div>
+			
+			
+			<div id="all" class="col-sm-8">
+			
+				<center><h2 id="pseudo"></h2><button class="btn btn-default"id="" >patate</button></center>
+				<div class="row">
+					<div class='col-xs-3'>
+						<img src="./images/iconeProfil.jpg" class="img-responsive" alt="Responsive image" id="imageProfil">
+					</div>
+					<div id="all" class="col-xs-3">
+						<h3 id="prenom"></h3>
+						<h3 id="nom"><small></small></h3>
+					</div>
+			
+					<div id="all" class="col-xs-3">
+						<h3 id="steamid"></h3>
+						<h3 id="lolign"></h3>
+					</div>
+			
+					<div id="all" class="col-xs-3">
+						<ul><h2>Jeux : </h2>
+							<div id="jeux"></div>
+						</ul>
+					</div>
+				</div>
+				<p><h4 id="all">Dernières publications : </h4></p>
+				<div id="publications">
+				</div>
+			</div>
+			
+			<div class='col-md-2'>
+				<ul id="navDroite" class="nav nav-pill nav-stacked">
+					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
+					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
+					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
+					<li><a target="top" href="/bllblblbl" id="expl">Example</a></li>
+				</ul>
+			</div>
+
+		</div>
 	
-	
-	
+		<div class="col-md-2"></div>
 	</body>
 </html>
