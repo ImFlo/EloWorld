@@ -68,7 +68,7 @@ function isConnected(){
 function afficher_publication_de(id){
 	var liste;
 	$.ajax({
-		url:"http://localhost:8080/v1/publicationdb/acc/id=" + id,
+		url:"http://localhost:8080/v1/publicationdb/perso/id=" + id,
 		data:{},
 		type:"GET",
 		dataType:"json",
@@ -84,4 +84,23 @@ function afficher_publication_de(id){
 	}
 
 	console.log(liste);
+}
+
+function afficher_publication_pour(id){
+	var liste;
+	$.ajax({
+		url:"http://localhost:8080/v1/publicationdb/acc/id=" + id,
+		data:{},
+		type:"GET",
+		dataType:"json",
+		async:false,
+		success:function(a){
+			liste = a;
+		},
+		error : function() {}
+	});
+
+	for(var len = liste.length -1; len >= 0; len --){
+		$("#publications").append("<ul class=\"list-group\"><li class=\"list-group-item\">"+ liste[len].texte+ "</li></ul>");
+	}
 }

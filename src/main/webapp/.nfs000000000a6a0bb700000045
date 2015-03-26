@@ -33,7 +33,7 @@
 			$(document).ready(function(){
 				
 				isConnected();
-				
+
 				<!-- GENERER LISTE POUR AJOUTER JEU-->
 				var tab = getListJeu();
 				for(var len = tab.length - 1; len >= 0; len --){
