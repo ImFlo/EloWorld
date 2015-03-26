@@ -3,11 +3,13 @@ package bdd.possede.jeu;
 public class PossedeJeu {
 	private int idJoueur;
 	private int idJeu;
+	private int elo;
 
 
 	public PossedeJeu(int idJoueur, int idJeu) {
 		this.idJoueur = idJoueur;
 		this.idJeu = idJeu;
+		this.elo = 1200;
 	}
 
 	public PossedeJeu() {
@@ -28,6 +30,14 @@ public class PossedeJeu {
 	
 	public void setIdJeu(int idJeu){
 		this.idJeu = idJeu;
+	}
+	
+	public int getElo(){
+		return elo;
+	}
+	
+	public void setElo(int elo){
+		this.elo=elo;
 	}
 	
 	public boolean equals(Object u) {

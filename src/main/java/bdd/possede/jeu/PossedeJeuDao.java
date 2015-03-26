@@ -12,9 +12,10 @@ import java.util.*;
 
 public interface PossedeJeuDao {
 
-    @SqlUpdate("create table possede_jeu ("
+	@SqlUpdate("create table possede_jeu ("
     		+ "idJoueur integer, "
     		+ "idJeu integer,"
+    		+ "elo integer not null"
     		+ "foreign key (idJoueur) references Joueur(id),"
     		+ "foreign key (idJeu) references Jeu(id),"
     		+ "constraint pk_possedeID primary key (idJoueur, idJeu))")
@@ -28,6 +29,10 @@ public interface PossedeJeuDao {
     @SqlQuery("select * from possede_jeu where idJoueur = :idJoueur")
     @RegisterMapperFactory(BeanMapperFactory.class)
     PossedeJeu findById(@Bind("idJoueur") int idJoueur);
+    
+    @SqlQuery("select elo from possede_jeu where idJoueur = :idJoueur and idJeu = :idJeu")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    int getElo(@Bind("idJoueur") int idJoueur, @Bind("idJeu") int idJeu);
 
     @SqlUpdate("drop table if exists possede_jeu")
     void dropPossedeJeuTable();
