@@ -29,6 +29,19 @@
 					
 					});
 			});
+			
+			<!-- recup liste des jeux de l'utilisateur -->
+			var tab = liste_jeux_de("id");
+			for(var len = tab.length - 1; len >= 0; len --){
+						$("#jeuxMM").append("<ul class=\"list-group\">" +
+					"<li class=\"list-group-item\"><p id=\"trophee\" ><img src=\"./images/iconeLoL.png\"></img>TROPHEES : </p>" +
+					"<p id=\"txtJeu\">"+ tab[len].nom +
+					"<p id=\"all\">ELO : <p id="+ tab[len].nom +"<a class=\"btn btn-default pull-right\" href=\"mmLOL.html\" role=\"button\">Match</a>" +
+					"<br></br>" +
+					"Rank : "+
+					"</p>"+
+					"</ul>");
+					}
 		</script>
 		
 		<style>
@@ -113,29 +126,7 @@
 			</div>
 
 			<div id="jeuxMM" class='col-md-8'>
-				<ul class="list-group">
-					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeLoL.png"></img>TROPHEES : </p>
-					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmLOL.html" role="button">Match</a>
-					<br></br>
-					Rank : 
-					</p>
-				</ul>
 				
-				<ul class="list-group">
-					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeCSGO.png"></img>TROPHEES : </p>
-					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmCSGO.html" role="button">Match</a>
-					<br></br>
-					Rank : 
-					</p>
-				</ul>
-				
-				<ul class="list-group">
-					<li class="list-group-item"><p id="trophee" ><img src="./images/iconeMC.png"></img>TROPHEES : </p>
-					<p id="all">ELO : <a class="btn btn-default pull-right" href="mmMC.html" role="button">Match</a>
-					<br></br>
-					Rank : 
-					</p>
-				</ul>
 			</div>
 
 			<div class='col-md-2'>
