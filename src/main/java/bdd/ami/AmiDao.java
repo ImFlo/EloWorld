@@ -7,6 +7,9 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import java.util.List;
+import bdd.joueur.*;
+
 public interface AmiDao {
 
     @SqlUpdate("create table ami ("
@@ -28,6 +31,10 @@ public interface AmiDao {
 
     @SqlQuery("select count(*) from ami where (idJoueur1 = :idJ1 and idJoueur2 = :idJ2) or (idJoueur2 = :idJ1 and idJoueur1 = :idJ2) ")
     int areFriend(@Bind("idJ1") int idJ1, @Bind("idJ2") int idJ2);
+
+		@SqlQuery("select *  from joueur where id in (select idJoueur2 from ami where idJoueur1 = :id) or id in (select idJoueur1 from ami where idJoueur2 = :id)")
+		@RegisterMapperFactory(BeanMapperFactory.class)
+		List<Joueur> getFriendList(@Bind("id") int id);
 
     @SqlUpdate("drop table if exists ami")
     void dropAmiTable();

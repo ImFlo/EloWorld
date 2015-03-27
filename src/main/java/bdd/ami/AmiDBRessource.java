@@ -9,6 +9,8 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
 import bdd.App;
+import bdd.joueur.*;
+import java.util.List;
 
 @Path("/amidb")
 @Produces(MediaType.APPLICATION_JSON)
@@ -39,11 +41,8 @@ public class AmiDBRessource {
 
 	@GET
 	@Path("/{idJoueur1}")
-	public Ami getAmi(@PathParam("idJoueur1") int idJoueur1) {
-		Ami out = dao.findById(idJoueur1);
-		if (out == null) {
-			throw new WebApplicationException(404);
-		}
+	public List<Joueur> getAmi(@PathParam("idJoueur1") int idJoueur1) {
+		List<Joueur>  out = dao.getFriendList(idJoueur1);
 		return out;
 	}
 }

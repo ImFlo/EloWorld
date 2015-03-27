@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
-		<title>Elo World : Accueil</title>
+		<title>Elo World : Recherche d'un profil</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -10,61 +10,46 @@
 		<script src="js/cookie.js"></script>
 		<script src="js/base.js"></script>
 		<script src="js/header.js"></script>
-		
 		<script>
-			$(function(){
-				$(".dropdown-menu").on('click', 'li a', function(){
-					$(".btn:first-child").text($(this).text());
-					$(".btn:first-child").val($(this).text());
-				});
-			});
-			
-			<!-- on recup le pseudo du mec-->
-			var id = readCookie("id");
 			$(document).ready(function(){
+				
 				isConnected();
-				afficher_publication_pour(readCookie("id"));
-				liste_jeux("liste_jeux");
 
-				$("#disconnect").click(function(){
-					eraseCookie("id");
-					document.location.href="index.html"; 
-				});
-
-				<!-- ON REMPLIE LA LISTE DES JEUX POUR LE POSTE -->
+				<!-- GENERER LISTE POUR AJOUTER JEU du header-->
 				var tab = getListJeu();
 				for(var len = tab.length - 1; len >= 0; len --){
-					$("#list_jeux_post").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
+					$("#list_add_game").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
 				}
-				$("#send_post").click(function(){
-					<!-- ENVOYER UN POST-->
-					var publication = new Object();
-					publication.texte = $("#comment").val();
-					publication.date = new Date();
-					var id_jeu;
-					<!-- ON GET L ID DU JEU-->
-					$.ajax({
-						url: "http://localhost:8080/v1/jeudb/name=" + $("#list_jeux_button").val(),
-						data:{},
-						type:"GET",
-						dataType:"text",
-						async:false,
-						success:function(s){
-							id_jeu = s;
-						},
-						error:function(e){
-							alert();
+				<!-- GENERE LA LISTE DES PERSONNE TROUVER -->
+				$.ajax({
+					url:"http://localhost:8080/v1/amidb/" + readCookie("id"),
+					data:{},
+					type:"GET",
+					dataType:"json",
+					success:function(list){
+						var len = list.length;
+						for(var i = 0; i < len; i++){
+							$("#tableau_profil_contenu").append('<tr>'+
+     					'<th>'+ list[i].nom+'</th><th>' +list[i].pseudo + '</th><th>' + list[i].prenom +'</th><th><a href="profil.html?id='+ list[i].id +'"> see profile</a></th>'+
+     					'</tr>');
 						}
-					});
-					createPublication(publication, id, id_jeu);
+					},
+					error:function(){}
 				});
+				
 			});
 		</script>
+		<style>
+			
+		.recherche, .list-group-item{
+			font-family: 'solaria', Arial, serif;
+		}
+		
+		</style>
 		
 	</head>
 	
 	<body>
-		
 		<nav id="navHaut" class="navbar navbar-inverse" id="barnav">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -82,17 +67,12 @@
 			</div>
 		</nav>
 		
-		<div>
-		
-		</div>
-		
 		<div class='row'>
 			<div class='col-md-2'>
 
 				<ul id="navGauche" class="nav nav-pill nav-stacked">
-					<li class="active">
-						<a target="top" href="/bllblblbl" id="news">News</a></li>
-						<li><a target="top" href="./recherche.html" id="recherche">Recherche</a></li>
+						<li><a target="top" href="/bllblblbl" id="news">News</a></li>
+						<li class="active"><a target="top" href="./recherche.html" id="recherche">Recherche</a></li>
 						<li><a target="top" href="./matchmakingAll.html" id="mm">Matchmaking</a></li>
 						<li><a target="top" href="amis.html" id="discu">Liste d'amis</a></li>
 						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
@@ -102,24 +82,23 @@
 			
 				</ul>
 			</div>
-
-			<div class='col-md-8'>
-				<ul class="list-group">
-					<!-- DE LA A-->
-					<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea></li>
-					<li class="list-group-item dropdown">
-						<div class="btn-group">
-							<button class="btn btn-default" id="list_jeux_button">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-          					<ul id="list_jeux_post" class="dropdown-menu">
-         					</ul>
-         				</div>
-         				<button id="send_post" class="btn btn-info">Envoyer Post</button>
-        			</li>
-							<!-- LA POUR ECRIRE UNE PUBLICATION-->
-				</ul>
-				<div id="publications"></div>
-				</div>
-
+			
+			<div class="col-md-8">
+			<div class="tableau">
+				<table id="tableau_profils" class="table table-striped">
+					<thead>
+						<tr>
+     						<th>Nom</th><th>Pseudo</th><th>Prenom</th>
+     					</tr>
+     				</thead>
+     				<tbody id="tableau_profil_contenu">
+     				</tbody>
+				</table>
+				
+			</div>
+			
+			</div>
+			
 			<div class='col-md-2'>
 				<ul id="navDroite" class="nav nav-pill nav-stacked">
 					<li><a target="top" href="./lastUpdate">Derniere MaJ</a><p id="lastUpdate">Ceci contiendra un petit resumé de la dernière maj du site.
@@ -128,10 +107,11 @@
 					Le lien redirigera vers "./lastArticle.html"</p></li>
 				</ul>
 			</div>
-
-		</div>
-	
 		
+		</div>
+		
+		
+	
 	
 	</body>
 </html>

@@ -26,38 +26,39 @@
 				afficher_publication_pour(readCookie("id"));
 				liste_jeux("liste_jeux");
 
-				$("#disconnect").click(function(){
-					eraseCookie("id");
-					document.location.href="index.html"; 
-				});
-
-				<!-- ON REMPLIE LA LISTE DES JEUX POUR LE POSTE -->
-				var tab = getListJeu();
-				for(var len = tab.length - 1; len >= 0; len --){
-					$("#list_jeux_post").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
-				}
-				$("#send_post").click(function(){
-					<!-- ENVOYER UN POST-->
-					var publication = new Object();
-					publication.texte = $("#comment").val();
-					publication.date = new Date();
-					var id_jeu;
-					<!-- ON GET L ID DU JEU-->
-					$.ajax({
-						url: "http://localhost:8080/v1/jeudb/name=" + $("#list_jeux_button").val(),
-						data:{},
-						type:"GET",
-						dataType:"text",
-						async:false,
-						success:function(s){
-							id_jeu = s;
-						},
-						error:function(e){
-							alert();
-						}
+					<!--$("#disconnect").click(function(){
+						eraseCookie("id");
+						document.location.href="index.html"; 
 					});
-					createPublication(publication, id, id_jeu);
-				});
+
+					<!-- ON REMPLIE LA LISTE DES JEUX POUR LE POSTE -->
+					var tab = getListJeu();
+					for(var len = tab.length - 1; len >= 0; len --){
+						$("#list_jeux_post").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
+					}
+
+					$("#send_post").click(function(){
+						<!-- ENVOYER UN POST-->
+						var publication = new Object();
+						publication.texte = $("#comment").val();
+						publication.date = new Date();
+						var id_jeu;
+						<!-- ON GET L ID DU JEU-->
+						$.ajax({
+							url: "http://localhost:8080/v1/jeudb/name=" + $("#list_jeux_button").val(),
+							data:{},
+							type:"GET",
+							dataType:"text",
+							async:false,
+							success:function(s){
+								id_jeu = s;
+							},
+							error:function(e){
+								alert();
+							}
+						});
+						createPublication(publication, id, id_jeu);
+					});
 			});
 		</script>
 		
