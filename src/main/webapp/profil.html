@@ -41,6 +41,7 @@
 				}
 				
 
+
 				<!-- INFO DU JOUEUR-->
 				var url = window.location.search;
 				var id = url.substring(url.lastIndexOf("=")+1);
@@ -77,6 +78,15 @@
 					});
 				}
 				liste_jeux("liste_jeux_test");
+
+				<!-- AJOUTER EN AMI-->
+				console.log(sont_ami(readCookie("id"), id));
+				if(sont_ami(readCookie("id"), id) === "false")
+					$("#add_friend").click(function(){
+						ajouter_ami(readCookie("id"), id);
+					});
+				else
+					$("#add_friend").hide();
 			});
 		</script>
 		<style>
@@ -126,7 +136,7 @@
 			
 			<div id="all" class="col-sm-8">
 			
-				<center><h2 id="pseudo"></h2><button class="btn btn-info"id="" ><span class="glyphicon glyphicon-user"></span> ajouter en ami</button></center>
+				<center><h2 id="pseudo"></h2><button class="btn btn-info" id="add_friend" ><span class="glyphicon glyphicon-user"></span> ajouter en ami</button></center>
 				<div class="row">
 					<div class='col-xs-3'>
 						<img src="./images/iconeProfil.jpg" class="img-responsive" alt="Responsive image" id="imageProfil">

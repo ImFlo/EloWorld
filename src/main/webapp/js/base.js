@@ -32,7 +32,35 @@ var BUTTON_ADD_FRIEND = "<button id=\"add_friend\">ajouter en ami</button>";
 var connecting_key = "";
 
 function ajouter_ami(idJ1, idJ2){
+	console.log(idj1 + "" + idJ2);
+	$.ajax({
+		url:"http://localhost:8080/v1/amidb/"+idJ1 + "&" + idJ2,
+		data:{},
+		type:"POST",
+		dataType:"text",
+		success:function(){
+			alert("cette utilisateur a etait ajouter a votre liste d'ami..");
+		},
+		error:function(e){
+			console.log(e);
+		}
+	});
+}
 
+function sont_ami(id1, id2){
+	var ret;
+	$.ajax({
+		url:"http://localhost:8080/v1/amidb/" + id1 + "&" + id2,
+		data:{},
+		type:"GET",
+		dataType:"text",
+		async:false,
+		success:function(s){
+			ret = s;
+		},
+		error:function(e){}
+	});
+	return ret; 
 }
 
 function login(str) {	
@@ -42,11 +70,9 @@ function login(str) {
 			break;
 		case "false":
 			$("#login").append(FORM_LOGIN);
-			//$("#login").append(LINK_CREATE);
 			break;
 		case "":
 			$("#login").append(FORM_LOGIN);
-			//$("#login").append(LINK_CREATE);
 			break;
 	}
 }

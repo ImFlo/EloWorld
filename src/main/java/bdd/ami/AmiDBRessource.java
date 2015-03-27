@@ -23,11 +23,18 @@ public class AmiDBRessource {
 		}
 	}
 	
-	@GET
+	@POST
 	@Path("/{id1}&{id2}")
-	public int createAmi(@PathParam("id1") int id1, @PathParam("id2") int id2) {
+	public String createAmi(@PathParam("id1") int id1, @PathParam("id2") int id2) {
 		int id = dao.insert(id1, id2);
-		return id;
+		return id + "";
+	}
+
+	@GET
+	@Path("/{j1}&{j2}")
+	public String areFriend(@PathParam("j1") int idj1, @PathParam("j2") int idj2){
+		int out = dao.areFriend(idj1, idj2);
+		return (out > 0) + "";
 	}
 
 	@GET

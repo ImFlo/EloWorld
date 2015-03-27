@@ -26,6 +26,9 @@ public interface AmiDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     Ami findById(@Bind("idJoueur1") int idJoueur1);
 
+    @SqlQuery("select count(*) from ami where (idJoueur1 = :idJ1 and idJoueur2 = :idJ2) or (idJoueur2 = :idJ1 and idJoueur1 = :idJ2) ")
+    int areFriend(@Bind("idJ1") int idJ1, @Bind("idJ2") int idJ2);
+
     @SqlUpdate("drop table if exists ami")
     void dropAmiTable();
 
