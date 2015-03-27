@@ -10,8 +10,23 @@
 		<script src="js/cookie.js"></script>
 		<script src="js/base.js"></script>
 		<script src="js/header.js"></script>
-		
-		
+		<script>
+			$(document).ready(function(){
+				
+				isConnected();
+
+				<!-- GENERER LISTE POUR AJOUTER JEU du header-->
+				var tab = getListJeu();
+				for(var len = tab.length - 1; len >= 0; len --){
+					$("#list_add_game").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
+				}
+				<!-- GENERE LA LISTE DES PERSONNE TROUVER -->
+				$("#search").click(function(){
+					var list = trouver_gens($("#area_search").val());
+					console.log(ret);
+				});
+			});
+		</script>
 		<style>
 			
 		.recherche, .list-group-item{
@@ -44,8 +59,8 @@
 			<div class='col-md-2'>
 
 				<ul id="navGauche" class="nav nav-pill nav-stacked">
-					<li class="active">
-						<a target="top" href="/bllblblbl" id="news">News</a></li>
+						<li><a target="top" href="/bllblblbl" id="news">News</a></li>
+						<li class="active"><a target="top" href="./recherche.html" id="recherche">Recherche</a></li>
 						<li><a target="top" href="./matchmakingAll.html" id="mm">Matchmaking</a></li>
 						<li><a target="top" href="/bllblblbl" id="discu">Discussions</a></li>
 						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
@@ -66,10 +81,10 @@
 								<h4 class="recherhe">Rechercher</h4>
 							</div>
 							<div class="col-sm-9">
-								<textarea class="form-control" style="resize: none;" rows="1"></textarea>
+								<textarea id="area_search" class="form-control" style="resize: none;" rows="1"></textarea>
 							</div>
 							<div class="col-sm-1">
-								<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+								<button class="btn btn-default" id="search"><span class="glyphicon glyphicon-search"></span></button>
 							</div>
 						</div>
 					</div>
@@ -84,18 +99,6 @@
      					</tr>
      				</thead>
      				<tbody id="tableau_profil_contenu">
-     					<tr>
-     						<th>Example</th><th>"Example"</th><th>Example</th><th><a href="profil.html?id="><span class="glyphicon glyphicon-user"></span></a></th>
-     					</tr>
-     					<tr>
-     						<th>Example</th><th>"Example"</th><th>Example</th><th><a href="profil.html?id="><span class="glyphicon glyphicon-user"></span></a></th>
-     					</tr>
-     					<tr>
-     						<th>Example</th><th>"Example"</th><th>Example</th><th><a href="profil.html?id="><span class="glyphicon glyphicon-user"></span></a></th>
-     					</tr>
-     					<tr>
-     						<th>Example</th><th>"Example"</th><th>Example</th><th><a href="profil.html?id="><span class="glyphicon glyphicon-user"></span></a></th>
-     					</tr>
      					<tr>
      						<th>Example</th><th>"Example"</th><th>Example</th><th><a href="profil.html?id="><span class="glyphicon glyphicon-user"></span></a></th>
      					</tr>

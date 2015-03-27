@@ -28,6 +28,10 @@ public interface JoueurDao {
 		@RegisterMapperFactory(BeanMapperFactory.class)
     List<Joueur> getAll();
 
+    @SqlQuery("select * from joueur where pseudo = :str or nom = :str or prenom = :str")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<Joueur> getFinded(@Bind("str") String str);
+
     @SqlQuery("select * from joueur where pseudo = :pseudo and mdp = :mdp")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Joueur findJoueur(@Bind("pseudo") String pseudo, @Bind("mdp") String mdp);

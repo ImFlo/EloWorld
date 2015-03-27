@@ -24,6 +24,16 @@ public class JoueurDBRessource {
 		}
 	}
 	
+	@GET
+	@Path("/search/{str}")
+	public List<Joueur> getFinded(@PathParam("str") String str){
+		List<Joueur> out = dao.getFinded(str);
+
+		if(out == null)
+			throw new WebApplicationException(404);
+		return out;
+	}
+
 	@POST
 	@Path("/create:{pseudo}:{mdp}:{email}:{nom}:{prenom}")
 	@Produces("application/json")
