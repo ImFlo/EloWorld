@@ -37,8 +37,14 @@
 			for(var len = 0; len < tab.length; len ++){
 				var elo = getElo(id,tab[len].id);
 				
+				console.log(tab[len].image);
+				
+				var img = tab[len].image;
+				
+				
+				
 				$("#jeuxMM").append("<ul class=\"list-group\">" +
-					"<li class=\"list-group-item\"><p id=\"trophee\" ><img src=\"./images/iconeLoL.png\"></img>TROPHEES : </p>" +
+					"<li class=\"list-group-item\"><p id=\"trophee\" ><img src=\""+img+"\"></img>TROPHEES : </p>" +
 					"<p id=\"txtJeu\">"+ tab[len].nom +
 					"<p id=\"all\">ELO : " + elo + "<p id="+ tab[len].nom +"<a class=\"btn btn-default pull-right\" href=\"mmLOL.html\" role=\"button\">Match</a>" +
 					"<br></br>" +
