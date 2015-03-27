@@ -19,23 +19,29 @@
 					eraseCookie("id");
 					document.location.href="index.html"; 
 				});
+
 				<!-- GENERER LISTE POUR AJOUTER JEU du header-->
 				var tab = getListJeu();
 				for(var len = tab.length - 1; len >= 0; len --){
 					$("#list_add_game").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
 				}
 				<!-- GENERE LA LISTE DES PERSONNE TROUVER -->
-				
-				$("#patate").click(function(){
-					$("#tableau_profil_contenu").empty();
-					var list = trouver_gens($("#area_search").val());
-					for(var i = 0; i < list.length; i++){
-						$("#tableau_profil_contenu").append('<tr>'+
+				$.ajax({
+					url:"http://localhost:8080/v1/amidb/" + readCookie("id"),
+					data:{},
+					type:"GET",
+					dataType:"json",
+					success:function(list){
+						var len = list.length;
+						for(var i = 0; i < len; i++){
+							$("#tableau_profil_contenu").append('<tr>'+
      					'<th>'+ list[i].nom+'</th><th>' +list[i].pseudo + '</th><th>' + list[i].prenom +'</th><th><a href="profil.html?id='+ list[i].id +'"> see profile</a></th>'+
      					'</tr>');
-					}
-					console.log(list);
+						}
+					},
+					error:function(){}
 				});
+				
 			});
 		</script>
 		<style>
@@ -70,40 +76,19 @@
 			<div class='col-md-2'>
 
 				<ul id="navGauche" class="nav nav-pill nav-stacked">
-						<li class="active">
-						<a target="top" href="erreur.html" id="news">News</a></li>
-						<li><a target="top" href="recherche.html" id="recherche">Recherche</a></li>
-						<li><a target="top" href="matchmakingAll.html" id="mm">Matchmaking</a></li>
-						<li><a target="top" href="amis.html" id="discu">Contacts</a></li>
-						<li><a target="top" href="erreur.html" id="discussions">Discussions</a></li>
-						<li><a target="top" href="erreur.html" id="ladder">Ladder</a></li>
-						<li><a target="top" href="erreur.html" id="tournois">Tournois</a></li>
-						<li><a target="top" href="erreur.html" id="videos">Videos</a></li>
-						<li><a target="top" href="erreur.html" id="images">Images</a></li>
+						<li><a target="top" href="/bllblblbl" id="news">News</a></li>
+						<li class="active"><a target="top" href="./recherche.html" id="recherche">Recherche</a></li>
+						<li><a target="top" href="./matchmakingAll.html" id="mm">Matchmaking</a></li>
+						<li><a target="top" href="amis.html" id="discu">Liste d'amis</a></li>
+						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
+						<li><a target="top" href="/bllblblbl" id="tournois">Tournois</a></li>
+						<li><a target="top" href="/bllblblbl" id="videos">Videos</a></li>
+						<li><a target="top" href="/bllblblbl" id="images">Images</a></li>
 			
 				</ul>
 			</div>
 			
 			<div class="col-md-8">
-			<ul class="list-group">
-			<li class="list-group-item">
-				<form class="form">
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-2">
-								<h4 class="recherhe">Rechercher</h4>
-							</div>
-							<div class="col-sm-9">
-								<textarea id="area_search" class="form-control" style="resize: none;" rows="1"></textarea>
-							</div>
-							<div class="col-sm-1">
-							</div>
-						</div>
-					</div>
-				</form>
-			</li>
-			</ul>
-			<button class="btn btn-default" id="patate"><span class="glyphicon glyphicon-search"></span></button>
 			<div class="tableau">
 				<table id="tableau_profils" class="table table-striped">
 					<thead>

@@ -14,6 +14,11 @@
 			$(document).ready(function(){
 				
 				isConnected();
+				liste_jeux("liste_jeux");
+				$("#disconnect").click(function(){
+					eraseCookie("id");
+					document.location.href="index.html"; 
+				});
 
 				<!-- GENERER LISTE POUR AJOUTER JEU du header-->
 				var tab = getListJeu();
@@ -75,10 +80,10 @@
 						<li class="active"><a target="top" href="./recherche.html" id="recherche">Recherche</a></li>
 						<li><a target="top" href="./matchmakingAll.html" id="mm">Matchmaking</a></li>
 						<li><a target="top" href="amis.html" id="discu">Liste d'amis</a></li>
-						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
-						<li><a target="top" href="/bllblblbl" id="tournois">Tournois</a></li>
-						<li><a target="top" href="/bllblblbl" id="videos">Videos</a></li>
-						<li><a target="top" href="/bllblblbl" id="images">Images</a></li>
+						<li><a target="top" href="erreur.html" id="ladder">Ladder</a></li>
+						<li><a target="top" href="erreur.html" id="tournois">Tournois</a></li>
+						<li><a target="top" href="erreur.html" id="videos">Videos</a></li>
+						<li><a target="top" href="erreur.html" id="images">Images</a></li>
 			
 				</ul>
 			</div>

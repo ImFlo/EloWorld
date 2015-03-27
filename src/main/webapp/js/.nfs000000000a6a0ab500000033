@@ -92,7 +92,7 @@ function afficher_publication_de(id){
 		},
 		error : function() {}
 	});
-	return liste;
+
 	var len = liste.length;
 	console.log(liste)
 	for(var i; i < len; i++){

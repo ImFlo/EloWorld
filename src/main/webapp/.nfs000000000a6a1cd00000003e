@@ -38,7 +38,6 @@
 				var player = getJoueur(id);
 				<!--PATATE -->
 				var liste = afficher_publication_de(id);
-				console.log(liste);
 				var len = liste.length;
 				for(var i; i < len; i++){
 					$("#publications").append("<ul class=\"list-group\"><li class=\"list-group-item\">"+ "</li><li class=\"list-group-item\">"+ liste[i].texte+ "</li></ul>");
@@ -156,7 +155,7 @@
 					</div>
 				</div>
 				<p><h4 id="all">Dernières publications : </h4></p>
-				<ul id="publications"></ul>
+				<div id="publications"></div>
 			</div>
 
 			<div class='col-md-2'>

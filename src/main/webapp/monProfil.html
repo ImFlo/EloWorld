@@ -34,7 +34,10 @@
 				
 				isConnected();
 				afficher_publication_de(readCookie("id"))
-
+				$("#disconnect").click(function(){
+					eraseCookie("id");
+					document.location.href="index.html"; 
+				});
 
 				<!-- GENERER LISTE POUR AJOUTER JEU-->
 				var tab = getListJeu();
@@ -137,7 +140,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="monProfil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
-						<li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
+						<li><a id="disconnect"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
 					</ul>
 				</div>
 			</div>

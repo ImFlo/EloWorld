@@ -22,6 +22,8 @@
 			<!-- on recup le pseudo du mec-->
 			var id = readCookie("id");
 			$(document).ready(function(){
+				isConnected();
+				liste_jeux("liste_jeux");
 					$("#disconnect").click(function(){
 						eraseCookie("id");
 						document.location.href="index.html"; 
@@ -36,9 +38,7 @@
 			var tab = liste_jeux_de(id);
 			for(var len = 0; len < tab.length; len ++){
 				var elo = getElo(id,tab[len].id);
-				
 				console.log(tab[len].image);
-				
 				var img = tab[len].image;
 				
 				
@@ -91,22 +91,7 @@
 					<a id="ew" class="navbar-brand" href="accueil.html">Elo World</a>
 				</div>
 				 <div>
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="accueil.html">Home</a></li>
-						<li><a href="lol.html">League of Legends</a></li>
-						<li><a>Dota 2</a></li>
-						<li><a>CS:GO</a></li>
-						<li><a>FF XIV</a></li>
-						<li><a>Starcraft II</a></li>
-						<li><a>HearthStone</a></li>
-						<li><a>Smite</a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
-          						<ul id="plusJeu" class="dropdown-menu">
-           							 <li><a href="#">Jeu 1</a></li>
-           							 <li><a href="#">Jeu 2</a></li>
-									 <li><a href="#">Jeu 3</a></li>
-         						</ul>
-        					</li>
+					<ul id="liste_jeux" class="nav navbar-nav">
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="monProfil.html" id="myProfil"><span class="glyphicon glyphicon-user"></span><div id="login"></div></a></li>
@@ -120,14 +105,14 @@
 			<div class='col-md-2'>
 				<ul id="navGauche" class="nav nav-pill nav-stacked">
 					<li>
-						<a target="top" href="/bllblblbl" id="news">News</a></li>
+						<a target="top" href="erreur.html" id="news">News</a></li>
 						<li><a target="top" href="./recherche.html" id="recherche">Recherche</a></li>
 						<li class="active"><a target="top" href="matchmakingALL.html" id="mm">Matchmaking</a></li>
 						<li><a target="top" href="amis.html" id="discu">Liste d'amis</a></li>
-						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
-						<li><a target="top" href="/bllblblbl" id="tournois">Tournois</a></li>
-						<li><a target="top" href="/bllblblbl" id="videos">Videos</a></li>
-						<li><a target="top" href="/bllblblbl" id="images">Images</a></li>
+						<li><a target="top" href="erreur.html" id="ladder">Ladder</a></li>
+						<li><a target="top" href="erreur.html" id="tournois">Tournois</a></li>
+						<li><a target="top" href="erreur.html" id="videos">Videos</a></li>
+						<li><a target="top" href="erreur.html" id="images">Images</a></li>
 				</ul>
 			</div>
 			<div id="jeuxMM" class='col-md-8'>

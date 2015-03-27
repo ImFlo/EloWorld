@@ -19,6 +19,7 @@
 					eraseCookie("id");
 					document.location.href="index.html"; 
 				});
+
 				<!-- GENERER LISTE POUR AJOUTER JEU du header-->
 				var tab = getListJeu();
 				for(var len = tab.length - 1; len >= 0; len --){

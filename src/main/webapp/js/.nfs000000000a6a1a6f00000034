@@ -160,6 +160,7 @@ function createPublication(publication, id, jeu){
 			console.log(e);
 		},
 		error: function(){
+			alert("erreur lors de la publication, verifier vos entre...");
 		}
 	});
 }

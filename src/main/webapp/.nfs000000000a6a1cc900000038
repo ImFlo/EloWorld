@@ -20,6 +20,7 @@
 			});
 			
 			$(document).ready(function(){
+				
 				isConnected();
 
 				<!-- GENERER LISTE POUR AJOUTER JEU du header-->
@@ -36,14 +37,7 @@
 				if(id === undefined || id === "")
 					document.location.href="index.html";
 				var player = getJoueur(id);
-				<!--PATATE -->
-				var liste = afficher_publication_de(id);
-				console.log(liste);
-				var len = liste.length;
-				for(var i; i < len; i++){
-					$("#publications").append("<ul class=\"list-group\"><li class=\"list-group-item\">"+ "</li><li class=\"list-group-item\">"+ liste[i].texte+ "</li></ul>");
-				}
-				<!-- PATATE -->
+				afficher_publication_de(id)
 				if(player !== undefined){
 					console.log(player.nom);
 					<!-- AFFICHAGE DES INFO DANS LES BON ID-->a
@@ -84,6 +78,7 @@
 					$("#add_friend").hide();
 
 				<!-- AFFICHER LES PUBLI DU MEC-->
+				affiche_publications_de(id);
 			});
 		</script>
 		<style>
@@ -156,9 +151,10 @@
 					</div>
 				</div>
 				<p><h4 id="all">Dernières publications : </h4></p>
-				<ul id="publications"></ul>
+				<div id="publications">
+				</div>
 			</div>
-
+			
 			<div class='col-md-2'>
 				<ul id="navDroite" class="nav nav-pill nav-stacked">
 					<li><a target="top" href="./lastUpdate">Derniere MaJ</a><p id="lastUpdate">Ceci contiendra un petit resumé de la dernière maj du site.

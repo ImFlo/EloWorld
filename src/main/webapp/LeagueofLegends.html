@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Elo World : Accueil</title>
+		<title>League of Legends</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/bootstrap.lol.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
-		<script src="js/cookie.js"></script>
-		<script src="js/base.js"></script>
 		<script src="js/header.js"></script>
+		<script src="js/base.js"></script>
+		<script src="js/cookie.js"></script>
 		
 		<script>
 			$(function(){
@@ -18,47 +18,28 @@
 					$(".btn:first-child").val($(this).text());
 				});
 			});
-			
+			if(readCookie("id") === null){
+				document.location.href="index.html"; 
+			}
 			<!-- on recup le pseudo du mec-->
 			var id = readCookie("id");
 			$(document).ready(function(){
-				isConnected();
-				afficher_publication_pour(readCookie("id"));
-				liste_jeux("liste_jeux");
-
-				$("#disconnect").click(function(){
-					eraseCookie("id");
-					document.location.href="index.html"; 
-				});
-
-				<!-- ON REMPLIE LA LISTE DES JEUX POUR LE POSTE -->
-				var tab = getListJeu();
-				for(var len = tab.length - 1; len >= 0; len --){
-					$("#list_jeux_post").append("<li><a href=\"#\">" + tab[len].nom + "</a></li>");
-				}
-				$("#send_post").click(function(){
-					<!-- ENVOYER UN POST-->
-					var publication = new Object();
-					publication.texte = $("#comment").val();
-					publication.date = new Date();
-					var id_jeu;
-					<!-- ON GET L ID DU JEU-->
-					$.ajax({
-						url: "http://localhost:8080/v1/jeudb/name=" + $("#list_jeux_button").val(),
-						data:{},
-						type:"GET",
-						dataType:"text",
-						async:false,
-						success:function(s){
-							id_jeu = s;
-						},
-						error:function(e){
-							alert();
-						}
+					isConnected();
+					liste_jeux("liste_jeux");
+					$("#disconnect").click(function(){
+						eraseCookie("id");
+						document.location.href="index.html"; 
 					});
-					createPublication(publication, id, id_jeu);
-					document.location.href="accueil.html"; 
-				});
+					$("#send_post").click(function(){
+						<!-- ENVOYER UN POST-->
+						var publication = new Object();
+						publication.texte = $("#comment").val();
+						publication.date = new Date();
+						publication.date = publication.date.getFullYear() + "-" +
+							('00'+(publication.date.getMonth()+1)).slice(-2) + "-" +
+							('00'+(publication.date.getDate()+1)).slice(-2);
+						createPublication(publication);
+					});
 			});
 		</script>
 		
@@ -73,7 +54,7 @@
 				</div>
 				 <div>
 					<ul id="liste_jeux" class="nav navbar-nav">
-						<li class="active"><a href="accueil.html">Home</a></li>
+						<li><a href="accueil.html">Home</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="monProfil.html" id="myProfil"><span class="glyphicon glyphicon-user"></span><div id="login"></div></a></li>
@@ -105,29 +86,41 @@
 				</ul>
 			</div>
 
-			<div class='col-md-8'>
+			<div id="publications" class='col-md-8'>
 				<ul class="list-group">
 					<!-- DE LA A-->
 					<li class="list-group-item"><textarea style="resize: none;" class="form-control" rows="5" id="comment"></textarea></li>
 					<li class="list-group-item dropdown">
 						<div class="btn-group">
-							<button class="btn btn-default" id="list_jeux_button">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-          					<ul id="list_jeux_post" class="dropdown-menu">
+							<button class="btn btn-default">Jeu</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="list-jeu"><span class="caret"></span></button>
+          					<ul class="dropdown-menu">
+           						<li><a href="#">LoL</a></li>
+           						<li><a href="#">Dota 2</a></li>
+            					<li><a href="#">CS:GO</a></li>
          					</ul>
          				</div>
          				<button id="send_post" class="btn btn-info">Envoyer Post</button>
         			</li>
 							<!-- LA POUR ECRIRE UNE PUBLICATION-->
 				</ul>
-				<div id="publications"></div>
-				</div>
+				<ul class="list-group">
+					<li class="list-group-item"><p>Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si 						lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare 					permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex 						necessitate ultima fortiter dimicante, superati periculose per prona discedunt.</p>
+					</li>
+				
+				</ul>
+				<ul class="list-group">
+					<li class="list-group-item"><p>Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente 					regina, quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis humanitatisque viam 						reducere utilia suadendo deberet, ut in actibus factitasse Maximini truculenti illius imperatoris rettulimus coniugem.</p>
+					</li>
+					
+				</ul>
+			</div>
 
 			<div class='col-md-2'>
 				<ul id="navDroite" class="nav nav-pill nav-stacked">
 					<li><a target="top" href="./lastUpdate">Derniere MaJ</a><p id="lastUpdate">Ceci contiendra un petit resumé de la dernière maj du site.
 					Le lien redirigera vers "./lastUpdate.html"</p></li>
-					<li><a target="top" href="./lastArticle">Dernier Article</a><p id="lastArticle">Ceci contiendra le titre du dernier article posté sur le site.
-					Le lien redirigera vers "./lastArticle.html"</p></li>
+					<li><a target="top" href="./lastArticle">Dernier Article</a><p id="lastArticle">Ceci contiendra le titre du dernier article posté sur le site DE LOL.
+					Le lien redirigera vers "./lastArticleLOL.html"</p></li>
 				</ul>
 			</div>
 
