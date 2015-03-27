@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>ELo World : Erreur</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="js/cookie.js"></script>
+		<script src="js/header.js"></script>
+		<script src="js/jquery.js"></script>
+		<script>
+			liste_jeux("liste_jeux_test");
+		</script>
+		
+		<style type="text/css">
+			h1{
+				font-size: 60px;
+				font-family: "solaria", Arial, serif;
+			}
+			
+			p{
+				font-size: 20px;
+				font-family: "CaviarDreams", Arial, serif;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<nav id="navHaut" class="navbar navbar-inverse" id="barnav">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a id="ew" class="navbar-brand" href="accueil.html">Elo World</a>
+				</div>
+				 <div>
+					<ul class="nav navbar-nav" id="liste_jeux_test">
+						<li><a href="accueil.html">Home</a></li>
+						<!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plus de jeux <span class="caret"></span></a>
+          						<ul id="plusJeu" class="dropdown-menu">
+           							 <li><a href="#">Jeu 1</a></li>
+           							 <li><a href="#">Jeu 2</a></li>
+            						 <li><a href="#">Jeu 3</a></li>
+         						</ul>
+        					</li>-->
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="monProfil.html" id="myProfil"><span class="glyphicon glyphicon-user"></span><div id="login"></div></a></li>
+						<li><a id="disconnect" ><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class='row'>
+			<div class='col-md-2'>
+				<ul id="navGauche" class="nav nav-pill nav-stacked">
+					<li>
+						<a target="top" href="/bllblblbl" id="news">News</a></li>
+						<li><a target="top" href="./recherche.html" id="recherche">Recherche</a></li>
+						<li class="active"><a target="top" href="matchmakingALL.html" id="mm">Matchmaking</a></li>
+						<li><a target="top" href="amis.html" id="discu">Liste d'amis</a></li>
+						<li><a target="top" href="/bllblblbl" id="ladder">Ladder</a></li>
+						<li><a target="top" href="/bllblblbl" id="tournois">Tournois</a></li>
+						<li><a target="top" href="/bllblblbl" id="videos">Videos</a></li>
+						<li><a target="top" href="/bllblblbl" id="images">Images</a></li>
+				</ul>
+			</div>
+			<div id="oups" class='col-md-8'>
+			<center>
+				<h1>Oups... :/</h1>
+				<p>Il semble que la page que vous avez demandée n'est pas disponible, ou n'existe pas.</p>
+				</center>
+			</div>
+			<div class='col-md-2'>
+				<ul id="navDroite" class="nav nav-pill nav-stacked">
+					<li><a target="top" href="./lastUpdate">Derniere MaJ</a><p id="lastUpdate">Ceci contiendra un petit resumé de la dernière maj du site.
+					Le lien redirigera vers "./lastUpdate.html"</p></li>
+					<li><a target="top" href="./lastArticle">Dernier Article</a><p id="lastArticle">Ceci contiendra le titre du dernier article posté sur le site.
+					Le lien redirigera vers "./lastArticle.html"</p></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
