@@ -36,6 +36,7 @@
 			var tab = liste_jeux_de(id);
 			for(var len = 0; len < tab.length; len ++){
 				var elo = getElo(id,tab[len].id);
+				
 				$("#jeuxMM").append("<ul class=\"list-group\">" +
 					"<li class=\"list-group-item\"><p id=\"trophee\" ><img src=\"./images/iconeLoL.png\"></img>TROPHEES : </p>" +
 					"<p id=\"txtJeu\">"+ tab[len].nom +
