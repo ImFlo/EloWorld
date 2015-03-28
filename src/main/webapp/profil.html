@@ -12,17 +12,6 @@
 		<script src="js/cookie.js"></script>
 		<script src="js/header.js"></script>
 		<script>
-			function modif_profile(field, value){
-				var id = readCookie("id");
-				$.ajax({
-					url:"http://localhost:8080/v1/joueurdb/" + id + "/" + field + "=" + value,
-					data:{},
-					type:"PUT",
-					dataType:"text",
-					success:function(s){console.log(s)},
-					error:function(e){}
-				});
-			}
 			$(function(){
 				$(".dropdown-menu").on('click', 'li a', function(){
 					$(".btn:first-child").text($(this).text());

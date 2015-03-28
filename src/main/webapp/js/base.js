@@ -31,6 +31,20 @@ var BUTTON_ADD_FRIEND = "<button id=\"add_friend\">ajouter en ami</button>";
 
 var connecting_key = "";
 
+function trouver_gens(str){
+	var ret;
+	$.ajax({
+		url:"http://localhost:8080/joueurdb/search/" + str,
+		data:{},
+		type:"GET",
+		dataType:"json",
+		async:false,
+		success:function(s){ret = s;},
+		error:function(){}
+	});
+	return ret;
+}
+
 function ajouter_ami(idJ1, idJ2){
 	console.log(idj1 + "" + idJ2);
 	$.ajax({
