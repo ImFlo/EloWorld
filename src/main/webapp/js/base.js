@@ -34,7 +34,7 @@ var connecting_key = "";
 function trouver_gens(str){
 	var ret;
 	$.ajax({
-		url:"http://localhost:8080/joueurdb/search/" + str,
+		url:"http://localhost:8080/v1/joueurdb/search/" + str,
 		data:{},
 		type:"GET",
 		dataType:"json",
